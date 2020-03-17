@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<title>Tofu Blog</title>
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://sobamchan.github.ioindex.xml" title="Site Title">
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://sobamchan.github.iocss/main.css" />
+<link rel="stylesheet" href="https://sobamchan.github.iocss/syntax.css" />
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://sobamchan.github.iocss/dark.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous" />
+<meta name="generator" content="Hugo 0.67.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="posts-heading">
+          
+            <h1>scikit-learnのTfidfVectorizerを日本語に使うときの注意</h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html">scikit-learnのTfidfVectorizer</a></p>
+<p>はものすごく便利で、分類とか類似度計算とかを数行で実装することができる。<br>
+インターフェイスもシンプルなので、これまでもいくつかのプロジェクトで使用してきたが、結構大きな罠が日本語に対して適応するときにあるのにこの前気づいた。<br>
+何も考えずに使用するとこんな感じで書ける。</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I like a dog .&#39;</span><span class="p">,</span> <span class="s1">&#39;I am a dog .&#39;</span><span class="p">,</span> <span class="s1">&#39;She was a cat before .&#39;</span><span class="p">]</span>
+
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">vectorizer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+</code></pre></div><p>ただここで、文章をベクトル化する際に変換の対象になっているvectorizerのattributeであるvocabulary_を確認すると、</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span><span class="nt">&#34;am&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&#34;cat&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nt">&#34;dog&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nt">&#34;like&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nt">&#34;she&#34;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nt">&#34;was&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+</code></pre></div><p>がとなっていて、&lsquo;I'や&rsquo;a'は特徴として使用されないことがわかる。</p>
+<p>最初これに遭遇したときに、TfidfVectorizerの引数であるmax_df等のせいかと思ったがdefaultで1.0なのでそんなこともなくて、 何でだろうかと思っていた。</p>
+<p>するとTfidfVectorizerにはtoken_patternという引数もあり、それにはdefaultで<code>’(?u)\b\w\w+\b’</code>が渡されている。 Vectorizerがtokenとして認識する文字列の正規表現を指定しているのだが、このままだと文字数が2以上じゃないと認識されない。</p>
+<p>なのでこれを<code>'(?u)\\b\\w+\\b'</code>にしてあげる必要がある。</p>
+<p>つまりこう</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I like a dog .&#39;</span><span class="p">,</span> <span class="s1">&#39;I am a dog .&#39;</span><span class="p">,</span> <span class="s1">&#39;She was a cat before .&#39;</span><span class="p">]</span>
+
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">token_pattern</span><span class="o">=</span><span class="s1">&#39;(?u)</span><span class="se">\\</span><span class="s1">b</span><span class="se">\\</span><span class="s1">w+</span><span class="se">\\</span><span class="s1">b&#39;</span><span class="p">)</span>
+<span class="n">vectorizer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+</code></pre></div><p>こうするとvocabulary_が</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span><span class="nt">&#34;a&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&#34;am&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nt">&#34;cat&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nt">&#34;dog&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nt">&#34;I&#34;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nt">&#34;like&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nt">&#34;she&#34;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nt">&#34;was&#34;</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+</code></pre></div><p>になる。</p>
+<p>英語を扱っている場合は、一文字の単語は意味のあまりないものが多いが、日本語の場合は漢字があるので結構危ない。 (象、 猿とか)</p>
+
+
+      
+    </article>
+  </div>
+
+    <footer>
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://sobamchan.github.ioabout">sobamchan</a>
+      &nbsp;&copy;
+      2020
+
+      
+        &nbsp;/&nbsp;
+        <a href="https://sobamchan.github.io">Tofu Blog</a>
+      
+
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+      </p>
+    </p>
+  </div>
+</footer>
+
+  </body>
+  <script>
+  var toggle = document.getElementById("dark-mode-toggle");
+  var darkTheme = document.getElementById("dark-mode-theme");
+
+  
+  var savedTheme = localStorage.getItem("dark-mode-storage") || "light";
+  setTheme(savedTheme);
+
+  toggle.addEventListener("click", () => {
+    if (toggle.className === "fas fa-moon") {
+        setTheme("dark");
+    } else if (toggle.className === "fas fa-sun") {
+        setTheme("light");
+    }
+  });
+
+  function setTheme(mode) {
+    localStorage.setItem("dark-mode-storage", mode);
+
+    if (mode === "dark") {
+        darkTheme.disabled = false;
+        toggle.className = "fas fa-sun";
+    } else if (mode === "light") {
+        darkTheme.disabled = true;
+        toggle.className = "fas fa-moon";
+    }
+  }
+</script>
+
+</html>

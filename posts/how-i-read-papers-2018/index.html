@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<title>Tofu Blog</title>
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://sobamchan.github.ioindex.xml" title="Site Title">
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://sobamchan.github.iocss/main.css" />
+<link rel="stylesheet" href="https://sobamchan.github.iocss/syntax.css" />
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://sobamchan.github.iocss/dark.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous" />
+<meta name="generator" content="Hugo 0.67.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="posts-heading">
+          
+            <h1>How I Read Papers 2018</h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <p>研究室に所属してから一年経って、自分の論文の「速読」スタイルが少し固まったので記録しておく。（多くの人が似たことをしていると思うが）
+随時、読み方に変更が出たら更新していく。</p>
+<h1 id="背景">背景</h1>
+<ul>
+<li>自然言語処理系の研究をしているM1で、深層強化学習をSeq2Seqに応用する系の研究をしたいと思っている。</li>
+<li>分野に関する知見は少なく手探り感が強いため、とにかくたくさん論文を読む必要がある。</li>
+</ul>
+<h1 id="要件">要件</h1>
+<ul>
+<li>具体的な研究テーマも決まっていないので、手広く見てテーマ決めに対する知識が欲しい。</li>
+</ul>
+<h1 id="読み方">読み方</h1>
+<h2 id="論文収集リソース">論文収集リソース</h2>
+<ul>
+<li><a href="https://qiita.com/mhangyo/items/4eb5add038d6d4e76c79">この辺の会議のaccepted paper</a></li>
+<li><a href="https://aclanthology.coli.uni-saarland.de/">自分の興味のある単語をacl anthologyで検索して引っかかったものたち</a></li>
+</ul>
+<h2 id="論文選択">論文選択</h2>
+<p>上のソースで得られた論文のリストを以下の順番でフィルタリングしていていく。 1. titleだけ見て少しでも面白そうと思うもの 2. abstractだけ読んでまあ面白そうと思うもの</p>
+<h2 id="論文管理">論文管理</h2>
+<p>上のフィルタリングで残ったのみをabstractのメモとともにTrelloにソースごとにListにしていく。
+結果として会議とか検索ワードごとに積読される。</p>
+<h2 id="読み">読み</h2>
+<p>読む論文をTrelloから選択したら、論文をMendeleyにインポートしてからIpad miniで読む。
+速読する際には基本的に論文中の以下の点のみ読む。</p>
+<ul>
+<li>Abstract</li>
+<li>Introductionの最後</li>
+<li>Related worksの最後</li>
+<li>手法の概要（methodみたいな章の最初に書いてあることが多い？）</li>
+<li>Conclusion</li>
+</ul>
+<p>自分が知っていることが多い分野の論文だと、これだけで概要はつかめる。 けど、知らない手法とかをベースに成り立っている論文とかだと、これだけじゃわからないことがあるので、 method等の章をもう少しちゃんと読む必要が出てくる。</p>
+<h2 id="読んだ後">読んだ後</h2>
+<p>このテンプレートに従って簡単にまとめを書き、Trelloのカードをdid readに移動し、 まとめサイトを更新し、終える。
+（このテンプレートは、なんか変える必要がある気がしている）</p>
+
+
+      
+    </article>
+  </div>
+
+    <footer>
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://sobamchan.github.ioabout">sobamchan</a>
+      &nbsp;&copy;
+      2020
+
+      
+        &nbsp;/&nbsp;
+        <a href="https://sobamchan.github.io">Tofu Blog</a>
+      
+
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+      </p>
+    </p>
+  </div>
+</footer>
+
+  </body>
+  <script>
+  var toggle = document.getElementById("dark-mode-toggle");
+  var darkTheme = document.getElementById("dark-mode-theme");
+
+  
+  var savedTheme = localStorage.getItem("dark-mode-storage") || "light";
+  setTheme(savedTheme);
+
+  toggle.addEventListener("click", () => {
+    if (toggle.className === "fas fa-moon") {
+        setTheme("dark");
+    } else if (toggle.className === "fas fa-sun") {
+        setTheme("light");
+    }
+  });
+
+  function setTheme(mode) {
+    localStorage.setItem("dark-mode-storage", mode);
+
+    if (mode === "dark") {
+        darkTheme.disabled = false;
+        toggle.className = "fas fa-sun";
+    } else if (mode === "light") {
+        darkTheme.disabled = true;
+        toggle.className = "fas fa-moon";
+    }
+  }
+</script>
+
+</html>

@@ -6,9 +6,20 @@
     <description>Recent content in Tags on Tofu Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 17 Mar 2020 09:08:29 +0900</lastBuildDate>
     
 	<atom:link href="https://sobamchan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>nlp</title>
+      <link>https://sobamchan.github.io/tags/nlp/</link>
+      <pubDate>Tue, 17 Mar 2020 09:08:29 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/tags/nlp/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

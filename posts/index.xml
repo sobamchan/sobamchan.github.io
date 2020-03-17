@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tofu Blog</title>
-    <link>https://sobamchan.github.io/</link>
-    <description>Recent content on Tofu Blog</description>
+    <title>Posts on Tofu Blog</title>
+    <link>https://sobamchan.github.io/posts/</link>
+    <description>Recent content in Posts on Tofu Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Tue, 17 Mar 2020 09:08:29 +0900</lastBuildDate>
     
-	<atom:link href="https://sobamchan.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sobamchan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

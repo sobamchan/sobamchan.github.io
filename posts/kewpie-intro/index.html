@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<title>Tofu Blog</title>
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://sobamchan.github.ioindex.xml" title="Site Title">
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://sobamchan.github.iocss/main.css" />
+<link rel="stylesheet" href="https://sobamchan.github.iocss/syntax.css" />
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://sobamchan.github.iocss/dark.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous" />
+<meta name="generator" content="Hugo 0.67.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="posts-heading">
+          
+            <h1>kewpie: KEyWord PIckEr with tf-idf</h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <figure>
+    <img src="/imgs/kewpie-intro-header.jpg"
+         alt="image"/> 
+</figure>
+
+<h2 id="tldr">tl;dr</h2>
+<ul>
+<li>tf-idfをscikit-learnから利用</li>
+<li>それをさらに抽象化しまくった<a href="https://github.com/tofunlp/kewpie">kewpie</a>の紹介</li>
+</ul>
+<h2 id="概要">概要</h2>
+<p>自然言語を含んだデータの分析を行っていると，対象としている文書群，それぞれの特徴的な単語を抽出したいことが多々あります．
+ここでの特徴的な単語とは，今見ているある文書をそれ以外の文書らと比較した際に，&ldquo;際立つ&rdquo; 単語のことを今回は指すことにします．</p>
+<p>この目的を達成するために，自然言語処理分野では最も基本的なテクニックの一つに，<a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">tf-idf</a>がある．
+これは，文書中のそれぞれの単語に対して単語の&quot;特徴的度&quot;を計算してくれます．
+本記事は実装に関してのものなので，細かい説明は省きますが，ざっくりというと次の2点を満たす単語には高いスコアが付与されます．</p>
+<ol>
+<li>対象の文書中にたくさん出現しているか？</li>
+<li>対象の文書以外ではあまり出現していないか？</li>
+</ol>
+<p>要約すると，tf-idfは「対象とする文書で特別多く出現する単語」を発見することのできる手法となっています．</p>
+<h2 id="tf-idfの利用">tf-idfの利用</h2>
+<p>tf-idf自体は，先に述べた要点からも分かるように，数え上げを基本とするので実装を一から自分でするのも簡単に行うことができます．
+が，pythonの機械学習ライブラリのボスである<a href="https://scikit-learn.org/stable/">scikit-learn</a>にすでに<a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn-feature-extraction-text-tfidfvectorizer">実装されたもの</a>がありますので，
+それを使うと，何も考えずに文書だけ用意すれば簡単にスコアを計算することができます．</p>
+<h3 id="scikit-learnのインストール">scikit-learnのインストール</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">pip install scikit-learn
+</code></pre></div><h3 id="tfidfvectorizerの利用">TfidfVectorizerの利用</h3>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span>
+<span class="o">...</span>    <span class="s2">&#34;我々 は 宇宙人 だ ．&#34;</span><span class="p">,</span>
+<span class="o">...</span>    <span class="s2">&#34;我々 は 野蛮人 だ ．&#34;</span><span class="p">,</span>
+<span class="o">...</span>    <span class="s2">&#34;我々 は 海人 だ ．&#34;</span><span class="p">,</span>
+<span class="o">...</span> <span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">token_pattern</span><span class="o">=</span><span class="s1">&#39;(?u)</span><span class="se">\\</span><span class="s1">b</span><span class="se">\\</span><span class="s1">w+</span><span class="se">\\</span><span class="s1">b&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">())</span>
+<span class="o">...</span> <span class="p">[</span><span class="s1">&#39;だ&#39;</span><span class="p">,</span> <span class="s1">&#39;は&#39;</span><span class="p">,</span> <span class="s1">&#39;宇宙人&#39;</span><span class="p">,</span> <span class="s1">&#39;我々&#39;</span><span class="p">,</span> <span class="s1">&#39;海人&#39;</span><span class="p">,</span> <span class="s1">&#39;野蛮人&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="o">...</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</code></pre></div><p>注意) <code>TfidfVectorizer</code>を利用する際に<code>token_pattern</code>を指定していないと，1文字からなるトークン (eg, は, だ) が消えます．<br>
+これだけのコードで得られた<code>X</code>のなかに，<code>(corpus n, feature n)</code>分のtf-idfスコアが格納されています．
+よって，これを<code>numpy</code>なりで大きい順にソートしてあげると，各corpusにおける特徴的な単語がわかります．</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">X</span><span class="o">.</span><span class="n">todense</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">...</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>  <span class="c1"># -&gt; (&#39;宇宙人&#39;, &#39;だ&#39;, &#39;は&#39;, &#39;我々&#39;, &#39;海人&#39;, &#39;野蛮人&#39;)</span>
+<span class="o">...</span>         <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>  <span class="c1"># -&gt; ( &#39;野蛮人&#39;, &#39;だ&#39;, &#39;は&#39;, &#39;我々&#39;, &#39;宇宙人&#39;, &#39;海人&#39;)</span>
+<span class="o">...</span>         <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>  <span class="c1"># -&gt; (&#39;海人&#39;, &#39;だ&#39;, &#39;は&#39;, &#39;我々&#39;, &#39;宇宙人&#39;, &#39;野蛮人&#39;)</span>
+</code></pre></div><p>この<code>X.todense()</code>は<code>TfidfVectorizer</code>の出力はそのままではnumpyでソートできないので，できる形に変換していて，
+最初に<code>-1</code>をかけているのは，そのままだと昇順なので，降順にしています．</p>
+<p>この例では<code>corpus</code>が小さく単語の種類も限られていますが，ちゃんと各文書のみで出現する単語が，リストの最初に来ていることがわかります．</p>
+<h2 id="kewpie-keyword-picker-with-tf-idf">kewpie: KEyWord PIckEr with tf-idf</h2>
+<p>このように<code>TfidfVectorizer</code>を使えば，簡単に文書の特徴的な単語を発見することができるのですが，
+僕自身，個人プロジェクト，研究やアルバイトであまりに多用するため，少し前から<a href="https://github.com/tofunlp/kewpie">pip installできる形でライブラリ化</a>して使っています．<br>
+ここでは，その使い方を少しだけ紹介します．</p>
+<h3 id="インストール">インストール</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">&gt;&gt;&gt; pip install kewpie
+</code></pre></div><h3 id="kewpieの利用">kewpieの利用</h3>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">kewpie</span> <span class="kn">import</span> <span class="n">KwPicker</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span>
+<span class="o">...</span>    <span class="s2">&#34;我々 は 宇宙人 だ ．&#34;</span><span class="p">,</span>
+<span class="o">...</span>    <span class="s2">&#34;我々 は 野蛮人 だ ．&#34;</span><span class="p">,</span>
+<span class="o">...</span>    <span class="s2">&#34;我々 は 海人 だ ．&#34;</span><span class="p">,</span>
+<span class="o">...</span> <span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">picker</span> <span class="o">=</span> <span class="n">KwPicker</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span> <span class="n">savedir</span><span class="o">=</span><span class="s1">&#39;/dir/to/save/model/&#39;</span><span class="p">)</span>  <span class="c1"># corpusを渡してBuild</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sentence</span> <span class="o">=</span> <span class="s2">&#34;我々 は 宇宙人 だ ．&#34;</span>  <span class="c1"># 今回特徴単語を発見したい文</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">span</span><span class="p">,</span> <span class="n">keyword</span> <span class="o">=</span> <span class="n">picker</span><span class="o">.</span><span class="n">get_keyword</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>  <span class="c1"># を渡すと，，，</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">keyword</span><span class="p">)</span>  <span class="c1"># -&gt; &#39;宇宙人&#39;  # 抽出される</span>
+</code></pre></div><p>コード量はそんなに変わりませんが，実装を間違えそうなソートの処理が隠蔽されて，文をそのまま渡せるAPIを生やしています．
+また，<code>KwPicker.bulid</code>の際に，<code>savedir</code>を渡すと，tf-idf行列の計算をファイルに書き出して保存しておいてくれます．
+小さな文書群の時は良いですが，大きくなると計算時間が少しかかるので，少し時間の節約になります．</p>
+<p>以下のコードでロードしてまた使えます．</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="o">&gt;&gt;&gt;</span> <span class="n">loaded_picker</span> <span class="o">=</span> <span class="n">KwPicker</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">savedir</span><span class="o">=</span><span class="s1">&#39;/dir/you/saved/model&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+
+      
+        <div class="blog-tags">
+          
+            <a href="https://sobamchan.github.io/tags/nlp/">nlp</a>&nbsp;
+          
+        </div>
+      
+    </article>
+  </div>
+
+    <footer>
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://sobamchan.github.ioabout">sobamchan</a>
+      &nbsp;&copy;
+      2020
+
+      
+        &nbsp;/&nbsp;
+        <a href="https://sobamchan.github.io">Tofu Blog</a>
+      
+
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+      </p>
+    </p>
+  </div>
+</footer>
+
+  </body>
+  <script>
+  var toggle = document.getElementById("dark-mode-toggle");
+  var darkTheme = document.getElementById("dark-mode-theme");
+
+  
+  var savedTheme = localStorage.getItem("dark-mode-storage") || "light";
+  setTheme(savedTheme);
+
+  toggle.addEventListener("click", () => {
+    if (toggle.className === "fas fa-moon") {
+        setTheme("dark");
+    } else if (toggle.className === "fas fa-sun") {
+        setTheme("light");
+    }
+  });
+
+  function setTheme(mode) {
+    localStorage.setItem("dark-mode-storage", mode);
+
+    if (mode === "dark") {
+        darkTheme.disabled = false;
+        toggle.className = "fas fa-sun";
+    } else if (mode === "light") {
+        darkTheme.disabled = true;
+        toggle.className = "fas fa-moon";
+    }
+  }
+</script>
+
+</html>

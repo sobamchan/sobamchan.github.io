@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<title>Tofu Blog</title>
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://sobamchan.github.ioindex.xml" title="Site Title">
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://sobamchan.github.iocss/main.css" />
+<link rel="stylesheet" href="https://sobamchan.github.iocss/syntax.css" />
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://sobamchan.github.iocss/dark.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous" />
+<meta name="generator" content="Hugo 0.67.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="posts-heading">
+          
+            <h1>Backtranslation Papers</h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <h1 id="目的">目的</h1>
+<p>最近、教師なし翻訳とかでよく使用されているback-translationだが、 直接翻訳に使用する以外ではどんな感じの研究があるかを知りたかったので、 あまり見つからなかったが論文いくつか読んだのでここにまとめておく。（随時更新）</p>
+<h1 id="全体感">全体感</h1>
+<p>back-translateした結果をsource sentenceのparaphraseとして、paraphrase detectionとかgeneration に使用されるのが多かった。</p>
+<h1 id="論文s">論文s</h1>
+<h2 id="iterative-back-translation-for-neural-machine-translationhttpsaclanthologycoliuni-saarlanddepapersw18-2703w18-2703"><a href="https://aclanthology.coli.uni-saarland.de/papers/W18-2703/w18-2703">Iterative Back-Translation for Neural Machine Translation</a></h2>
+<p>source to targetの機械翻訳機を学習するのだけど、まず先に手持ちのparallel corpusでtarget to sourceを学習し それを用いて、monolingual corpus (in source language)からparallel corpusを生成してparallel corpusを カサ増ししてデータセットに加えてしまおうというもの。</p>
+<h2 id="style-transfer-through-back-translationhttpsaclanthologycoliuni-saarlanddepapersp18-1080p18-1080"><a href="https://aclanthology.coli.uni-saarland.de/papers/P18-1080/p18-1080">Style Transfer Through Back-Translation</a></h2>
+<p>Style Transferを行う文生成器を学習するんだけど、生成器 (decoder)への入力をいきなり、文をそのまま入れるのではなくて 別学習のNMT modelを使用してsource -&gt; target -&gt; sourceと一度back-translateし、そのsourceをencodeしたものを 入れることで、意味情報を濃く、style情報が削られた状態にしている。 こうすることでstyleを変換しやすくしているらしい。</p>
+<h2 id="learning-paraphrastic-sentence-embeddings-from-back-translated-bitexthttpsaclanthologycoliuni-saarlanddepapersd17-1026d17-1026"><a href="https://aclanthology.coli.uni-saarland.de/papers/D17-1026/d17-1026">Learning Paraphrastic Sentence Embeddings from Back-Translated Bitext</a></h2>
+<p>paraphrase sentenceの生成をback-translationすることで生成する。</p>
+<h2 id="paraphrasing-revisited-with-neural-machine-translationhttpaclweborganthologye17-1083"><a href="http://aclweb.org/anthology/E17-1083">Paraphrasing Revisited with Neural Machine Translation</a></h2>
+<p>paraphraseを生成するモデルをNMTのframeworkでやっているのだが、 back-translationで生成すると翻訳例がone-to-oneでmappingすることはできない理由で、必ずしも意味を完全に捉えたparaphraseを生成することはできない。 なので、target sentenceを生成する際に一つではなく複数生成したり、target languageを複数用意することで、source sentenceのaspectをできるだけ捉えてから生成するようにしている。</p>
+
+
+      
+    </article>
+  </div>
+
+    <footer>
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://sobamchan.github.ioabout">sobamchan</a>
+      &nbsp;&copy;
+      2020
+
+      
+        &nbsp;/&nbsp;
+        <a href="https://sobamchan.github.io">Tofu Blog</a>
+      
+
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+      </p>
+    </p>
+  </div>
+</footer>
+
+  </body>
+  <script>
+  var toggle = document.getElementById("dark-mode-toggle");
+  var darkTheme = document.getElementById("dark-mode-theme");
+
+  
+  var savedTheme = localStorage.getItem("dark-mode-storage") || "light";
+  setTheme(savedTheme);
+
+  toggle.addEventListener("click", () => {
+    if (toggle.className === "fas fa-moon") {
+        setTheme("dark");
+    } else if (toggle.className === "fas fa-sun") {
+        setTheme("light");
+    }
+  });
+
+  function setTheme(mode) {
+    localStorage.setItem("dark-mode-storage", mode);
+
+    if (mode === "dark") {
+        darkTheme.disabled = false;
+        toggle.className = "fas fa-sun";
+    } else if (mode === "light") {
+        darkTheme.disabled = true;
+        toggle.className = "fas fa-moon";
+    }
+  }
+</script>
+
+</html>
