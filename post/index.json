@@ -2,11 +2,61 @@
     
         
             {
+                "ref": "https://sobamchan.github.io/post/naacl-2018/",
+                "title": "Naacl 2018",
+            "section": "post",
+                "date" : "2020.03.16",
+                "body": "目的 NAACL 2018の論文で自分の興味沿っているやつリストを消化したので、 面白かったものを10本選択して、ここにまとめる。\n基本的にはここに投稿しているものを選択して、 内容をコピーしただけ。\n背景  Totalで40本くらい読んだ。 対話、QA、翻訳、生成全般に興味があるのでそれに偏っている。 急いで読んだものも多いので、理解に間違いがある可能性あり。  中身 Multi-Reward Reinforced Summarization with Saliency and Entailment Abstractive summarizationにおいてpolicy gradientを使うことが増えてきた。\nこの論文では、報酬関数にはROUGEが使用されることがほとんどだが、 本研究では新しい二つの報酬関数を作成提案した。 1. ROUGESal\nKeyword detecteを使用して、salientな情報に対して重みをつけたROUGE 2. Entail\nEntailment classifierを使用して、包含しているものに対して重みづけする\nAttentive Interaction Model: Modeling Changes in View in Argumentation redditの”change my view” forumっていう、スレッドの開始者が最初に述べた 意見に対して後続の参加者たちが、その意見を変えるためにいろんな意見を投稿するforumがある。\nこの研究では、後続の意見がviewを変化させる事が出来たかを推定するモデルを、 最初の意見に対してのattentionや最初の意見と、後続の意見のinteractionをmodelingするネットワークで学習している。\nImproving Lexical Choice in Neural Machine Translation 従来のenc-decでのNMTは出現頻度の少ないrare wordsの翻訳をうまくできていない。\n本研究では、従来の翻訳フレームワークの最後のoperationである、 hidden stateから単語idに対してmappingする式でのベクトル達のnormをconstant valueに固定してあげることで、row-resourceな言語間での翻訳も精度を保つことに成功した。\nDeep Generative Model for Joint Alignment and Word Representation word embeddingをtranslation datasetを使用して学習した。 その際に、\nを仮定して、language 1のword embeddingをlanguage 2を使用して学習した\nSelf-Training for Jointly Learning to Ask and Answer Questions QAタスクでの課題としてデータセットの作成がexpensiveであるというものがあり、これをunlabeled corpusを使用して改善する手法を提案している。\nlabeled datasetでQA (Question answer) model, QG (Question generation) modelをまず学習する。 そのmodelsを使用して、unlabeled corpusからさらに、questionとanswerを生成し学習に役立てている。\nCombining Character and Word Information in Neural Machine Translation Using a Multi-Level Attentione 従来の機械翻訳はword / sub-word / char levelから粒度を選択して使用する必要があった。\n本研究ではchar levelの情報をattentionを通して使用して(sub)word levelのencodingとdecodingに役立てるframeworkを提案している。\nImproving Neural Machine Translation with Conditional Sequence Generative Adversarial Nets 二つの手法の合わせ技でNMTの精度向上を狙っている。\nGAN frameworkによる、教師データと生成されたデータをdiscriminatorに 判別されないように学習。 RLを使用して評価指標であるBLEUを直接最大化するように学習する。 最近はやりの両方のダブルパンチ。\nDialog Generation Using Multi-turn Reasoning Neural Networks QA taskで最近よく使用されるような、memoryが拡張されているmodelを使用してqaでのdocumentを対話のcontextをして、\nqueryをuser utteranceとして、memoryを参照して発話を生成することで、よりそれっぽくて、多様性のある発話を作ることができた。\nKnowledge-enriched Two-layered Attention Network for Sentiment Analysis sentiment analysis taskにおいて二つのモデルのensembleで精度向上を狙った。 二つのモデルは、文章を入力として受け取るRNNと特徴量を入力として受け取るSVRを使用している。\n単語に対する情報をrichにするために、word netから作成したKnowledge Graph Embeddingを 特徴量としてSVRへの入力の一つとして使用している。\n感想 QAはまあまあ追ってきたけど、なんかあんまり面白くないところに着地しつつあるかなって感じ。 QAやりたいって最初の方思ってたけど、なんか微妙。\n要約はここにのせたのも面白いし、乗せてなくても面白いのあった。\n"
+            }
+        
+    ,
+        
+            {
+                "ref": "https://sobamchan.github.io/post/pytorch-s2s-projects/",
+                "title": "Pytorch S2s Projects",
+            "section": "post",
+                "date" : "2019.01.22",
+                "body": "目的 少し前からPytorchをベースとしたSeq2Seqのライブラリ？(or boilerplate的なもの)を作っているんだけど、 それの全体的な構成の参考のために類似プロジェクトを探しているのでリストとしてここにまとめておく。\nOpenNMTとか、allennlpは完成度は非常に高くていいのだが、ここではもう少し小さくて簡単に全体の見通しがたてれるものに絞る。 構造の参考にしたいだけなので、動作確認まではしていない。\n(随時更新)\n探し方 githubで\u0026quot;pytorch\u0026rdquo;, \u0026ldquo;seq2seq\u0026quot;で検索して、スター件数上位である程度コードが構造化されているものたち。\n上位からいくつか  IBM/pytorch-seq2seq\n半年前くらいから開発が止まってしまっているっぽいが、シンプルな実装で全体の見通しは良い。 MaximumEntropy/Seq2Seq-PyTorch\nこれも二年前から開発が止まっているぽい。要約とかも実装してあるが、training loopとかがベタッとしている。 eladhoffer/seq2seq.pytorch\nかなりいい感じ。同作者の他のutil repoを使用していたり、広大になっているが構造も実装もすごく参考になる。Transformerも実装されている。 lium-lst/nmtpytorch\npipでインストールしてコマンドラインから使用できる。 keon/seq2se\ntrain, model, utilsからなるかなりシンプルな実装 outcastofmusic/quick-nlp\nfast.ai inspiredな実装になっているらしい。Transformerもある。Dockerfileも置いてあっていきなり使えるようになっている。 "
+            }
+        
+    ,
+        
+            {
                 "ref": "https://sobamchan.github.io/post/goals-2019/",
                 "title": "Goals 2019",
             "section": "post",
                 "date" : "2019.01.01",
                 "body": "目的 自分はいろんなことに対してすぐに脱線しがちなので、年始にまとめておくことで そのリスクをできるだけ軽減できることを期待している。 今年は大学院終了後のキャリアについても、多くの選択をしなければならないので アドホックな作業が多くなり予想通りに行かないと思うが、終了したときの満足感ができるだけ大きくしたい。\nGoals in 2019 キャリア 進路の決定 これが何よりも大事な目標。\n博士課程へ進学したいこと自体は、自分の中では昨年に心ぎめしてぼちぼち研究室探しとかをしてはいた。 今年は、とにかくプロセスを早いペースで進めていきたい。 先生方にアポをもらい話を聞いて、年の前半に何かしら安心できる結果がほしい。\n研究 国際会議に出せる論文を書く これは、結局去年は達成できなかった。\n今年はもっと効率良く手を動かして、なんとしてもこぎつけたい。\nライブラリ開発 昨年末から少しずつ、pytorchベースでseq2seqを統一されたインターフェイスで色々実験できるような ものを実装してきたので、今年はこれをある程度自信を持って人に見せれるくらいのクオリティーにしていきたい。\nその他  本\n先月から開始しているが、月2,3冊ペースで小説以外の本を読んでいきたい。 料理\nいろんなものに挑戦して行きたい。凝ったものまで ビール\nいろんな新しい人と、飲んだことないビールを飲んでいきたい。 競プロ\nというよりも、データ構造とアルゴリズムをちゃんと学習し直したい。（そして競プロを趣味にしたい。） Apple製品 無しの生活にしていきたい。（macbook, iphone高すぎるのでもう買いたくない） "
+            }
+        
+    ,
+        
+            {
+                "ref": "https://sobamchan.github.io/post/review-2018/",
+                "title": "Review 2018",
+            "section": "post",
+                "date" : "2018.12.31",
+                "body": "目的 本当は月単位とかで自分をレビューして、それを年単位でまとめ振り返るってのが 本当の粒度としては正しい気がするんだけど、なかなかできなかった。 ここでは、数十年後自分で見て楽しむために一年間なにをしてきたか、を書いておこうと思う。\nReview of 2018 さきに全体感 この年は、一ヶ月単位で実行される大きめのイベントが2つあり（NTT研究所インターンとブラジル研究留学）、 年の最初に考えていたほど、自分の研究や学習をすすめることができなかったのが反省としてある。 ただ、どちらのイベントからも大きく自分の考え方を変える経験を得ることができたので公開は全くしていない。\nNTT研究所インターンシップ なぜいったか これのことを知った直後は、自分の研究の時間が減ることを恐れて興味はあまりなかったが、 少ししてから研究テーマの選定で行き詰まり、参加することで新しい視点が得られることを期待したのが 一番大きい理由。 それに加えて、参加した際にメンターとしてついてくれる人が分野で知られている人だったのでそれも大きかった。\n何をしたのか 大きな枠組みとしては、大学での研究生活とあまり変わりなく、研究分野での問題があり、関連論文を読んで アプローチを考え実装・評価をしていた。 具体的なテーマとしては対話システム関連で、結構抽象度が高く問題設定レベルから難しいテーマだった。\n何を学んだか インターンとして一ヶ月で問題の理解から成果の発表までする必要があったので、 スケジュールをある程度組んで、テンポ良く進めていく必要があったというのが一番普段の研究生活との違いだった。\n最初は自然言語処理という分野での知識はあったが、今回の対話ってことに関しては 知識があまりなかったので無理かと思ったが、やってみると 各フェーズでの目的をちゃんと設定してから行動してみると、文献の収集から実装の優先順位付けから、なんだかんだで やりきることができたので体験として今後の参考になった。\n経験後の自分の変化 研究においての自分が現在何をしているのかを明確に理解しながら作業することを以前より強く意識するようになった。 これはまだまだ上手く路線に乗っていないので継続して意識していこうと思う。\nブラジル留学 なぜいったか 大学に以前ブラジルから留学生が来ていて、彼らと仲良くしていたので もともとブラジルに機会があれば迷わず行こうと思っていたのが一番の理由だった。 サブの理由としては、長いスパンで抱えている自分の課題として、自分の住むところをガンガン探索する ってのがあるので時間が許す限り海外へはどんどん行く必要があったから。\n何をしたのか 形式としては、研究インターンシップみたいな形で行ったので、平日の日中はロボティクス系の研究室にてコンピュータービジョンのコードを書いてた。 週末とか夜は、20人くらい住んでいるシェアハウスに住んでいたこともあって彼らと遊んでいた。（破壊的に楽しかった。）\n何を学んだか 一番大きい学び（再確認）は、結局どれだけ良い人間関係を人生を通して築けるかってのが、 満足感を高める一番の方法ってことだった。 どれだけ信頼できて、楽しく一緒に時間を過ごせる人を家族を含めて作っていくことの大事を再実感した。 研究とか仕事も自分は今の所楽しみ過ぎで、忘れがちになるが気をつけたい。\n経験後の自分の変化 自分から人を誘って飲みに行ったり、時間を取って料理を自分でしたりするようになった。 あと、新しい人と合う機会を逃さないようにしたいって気持ちが大きくなった。\nその他起きたこととか、やったこと  YANS\n結果として微妙な成果を持っていくことになってしまったが、多くの有用な意見とモチベーションをもらえた。 ジム\n体力が低下しているのを体感するようになってきてしまったので、週２，３で短時間でもできるだけ行くようになった。 大学院\nまあ学部と特に変化なし。 "
+            }
+        
+    ,
+        
+            {
+                "ref": "https://sobamchan.github.io/post/backtranslation-papers/",
+                "title": "Backtranslation Papers",
+            "section": "post",
+                "date" : "2018.01.02",
+                "body": "目的 最近、教師なし翻訳とかでよく使用されているback-translationだが、 直接翻訳に使用する以外ではどんな感じの研究があるかを知りたかったので、 あまり見つからなかったが論文いくつか読んだのでここにまとめておく。（随時更新）\n全体感 back-translateした結果をsource sentenceのparaphraseとして、paraphrase detectionとかgeneration に使用されるのが多かった。\n論文s Iterative Back-Translation for Neural Machine Translation source to targetの機械翻訳機を学習するのだけど、まず先に手持ちのparallel corpusでtarget to sourceを学習し それを用いて、monolingual corpus (in source language)からparallel corpusを生成してparallel corpusを カサ増ししてデータセットに加えてしまおうというもの。\nStyle Transfer Through Back-Translation Style Transferを行う文生成器を学習するんだけど、生成器 (decoder)への入力をいきなり、文をそのまま入れるのではなくて 別学習のNMT modelを使用してsource -\u0026gt; target -\u0026gt; sourceと一度back-translateし、そのsourceをencodeしたものを 入れることで、意味情報を濃く、style情報が削られた状態にしている。 こうすることでstyleを変換しやすくしているらしい。\nLearning Paraphrastic Sentence Embeddings from Back-Translated Bitext paraphrase sentenceの生成をback-translationすることで生成する。\nParaphrasing Revisited with Neural Machine Translation paraphraseを生成するモデルをNMTのframeworkでやっているのだが、 back-translationで生成すると翻訳例がone-to-oneでmappingすることはできない理由で、必ずしも意味を完全に捉えたparaphraseを生成することはできない。 なので、target sentenceを生成する際に一つではなく複数生成したり、target languageを複数用意することで、source sentenceのaspectをできるだけ捉えてから生成するようにしている。\n"
+            }
+        
+    ,
+        
+            {
+                "ref": "https://sobamchan.github.io/post/how-i-read-papers-2018/",
+                "title": "How I Read Papers 2018",
+            "section": "post",
+                "date" : "2018.01.01",
+                "body": "研究室に所属してから一年経って、自分の論文の「速読」スタイルが少し固まったので記録しておく。（多くの人が似たことをしていると思うが） 随時、読み方に変更が出たら更新していく。\n背景  自然言語処理系の研究をしているM1で、深層強化学習をSeq2Seqに応用する系の研究をしたいと思っている。 分野に関する知見は少なく手探り感が強いため、とにかくたくさん論文を読む必要がある。  要件  具体的な研究テーマも決まっていないので、手広く見てテーマ決めに対する知識が欲しい。  読み方 論文収集リソース  この辺の会議のaccepted paper 自分の興味のある単語をacl anthologyで検索して引っかかったものたち  論文選択 上のソースで得られた論文のリストを以下の順番でフィルタリングしていていく。 1. titleだけ見て少しでも面白そうと思うもの 2. abstractだけ読んでまあ面白そうと思うもの\n論文管理 上のフィルタリングで残ったのみをabstractのメモとともにTrelloにソースごとにListにしていく。 結果として会議とか検索ワードごとに積読される。\n読み 読む論文をTrelloから選択したら、論文をMendeleyにインポートしてからIpad miniで読む。 速読する際には基本的に論文中の以下の点のみ読む。\n Abstract Introductionの最後 Related worksの最後 手法の概要（methodみたいな章の最初に書いてあることが多い？） Conclusion  自分が知っていることが多い分野の論文だと、これだけで概要はつかめる。 けど、知らない手法とかをベースに成り立っている論文とかだと、これだけじゃわからないことがあるので、 method等の章をもう少しちゃんと読む必要が出てくる。\n読んだ後 このテンプレートに従って簡単にまとめを書き、Trelloのカードをdid readに移動し、 まとめサイトを更新し、終える。 （このテンプレートは、なんか変える必要がある気がしている）\n"
             }
         
     ,

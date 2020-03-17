@@ -6,10 +6,33 @@
     <description>Recent content on Tofu Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jan 2019 23:37:29 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2020 23:31:58 +0900</lastBuildDate>
     
 	<atom:link href="https://sobamchan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Naacl 2018</title>
+      <link>https://sobamchan.github.io/post/naacl-2018/</link>
+      <pubDate>Mon, 16 Mar 2020 23:31:58 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/post/naacl-2018/</guid>
+      <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://aclanthology.coli.uni-saarland.de/events/naacl-2018&#34;&gt;NAACL 2018&lt;/a&gt;の論文で自分の興味沿っているやつリストを消化したので、 面白かったものを10本選択して、ここにまとめる。&lt;br&gt;
+基本的には&lt;a href=&#34;https://sobamchan.github.io/summaries/&#34;&gt;ここ&lt;/a&gt;に投稿しているものを選択して、 内容をコピーしただけ。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pytorch S2s Projects</title>
+      <link>https://sobamchan.github.io/post/pytorch-s2s-projects/</link>
+      <pubDate>Tue, 22 Jan 2019 23:39:57 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/post/pytorch-s2s-projects/</guid>
+      <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
+&lt;p&gt;少し前からPytorchをベースとしたSeq2Seqのライブラリ？(or boilerplate的なもの)を作っているんだけど、 それの全体的な構成の参考のために類似プロジェクトを探しているのでリストとしてここにまとめておく。&lt;br&gt;
+OpenNMTとか、allennlpは完成度は非常に高くていいのだが、ここではもう少し小さくて簡単に全体の見通しがたてれるものに絞る。 構造の参考にしたいだけなので、動作確認まではしていない。&lt;br&gt;
+(随時更新)&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Goals 2019</title>
@@ -19,6 +42,36 @@
       <guid>https://sobamchan.github.io/post/goals-2019/</guid>
       <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;自分はいろんなことに対してすぐに脱線しがちなので、年始にまとめておくことで そのリスクをできるだけ軽減できることを期待している。 今年は大学院終了後のキャリアについても、多くの選択をしなければならないので アドホックな作業が多くなり予想通りに行かないと思うが、終了したときの満足感ができるだけ大きくしたい。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Review 2018</title>
+      <link>https://sobamchan.github.io/post/review-2018/</link>
+      <pubDate>Mon, 31 Dec 2018 23:36:13 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/post/review-2018/</guid>
+      <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
+&lt;p&gt;本当は月単位とかで自分をレビューして、それを年単位でまとめ振り返るってのが 本当の粒度としては正しい気がするんだけど、なかなかできなかった。 ここでは、数十年後自分で見て楽しむために一年間なにをしてきたか、を書いておこうと思う。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Backtranslation Papers</title>
+      <link>https://sobamchan.github.io/post/backtranslation-papers/</link>
+      <pubDate>Tue, 02 Jan 2018 23:38:56 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/post/backtranslation-papers/</guid>
+      <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
+&lt;p&gt;最近、教師なし翻訳とかでよく使用されているback-translationだが、 直接翻訳に使用する以外ではどんな感じの研究があるかを知りたかったので、 あまり見つからなかったが論文いくつか読んだのでここにまとめておく。（随時更新）&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How I Read Papers 2018</title>
+      <link>https://sobamchan.github.io/post/how-i-read-papers-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 23:25:54 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/post/how-i-read-papers-2018/</guid>
+      <description>&lt;p&gt;研究室に所属してから一年経って、自分の論文の「速読」スタイルが少し固まったので記録しておく。（多くの人が似たことをしていると思うが）
+随時、読み方に変更が出たら更新していく。&lt;/p&gt;</description>
     </item>
     
     <item>

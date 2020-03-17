@@ -61,10 +61,15 @@
 
     <div class="intro-header">
       <div class="container">
-        <div class="categories-heading">
+        <div class="post-heading">
           
-            <h1>Categories</h1>
+            <h1>Pytorch S2s Projects</h1>
           
+          
+            <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jan 22, 2019
+</span>
+
           
         </div>
       </div>
@@ -73,13 +78,35 @@
 
 
     
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <h1 id="目的">目的</h1>
+<p>少し前からPytorchをベースとしたSeq2Seqのライブラリ？(or boilerplate的なもの)を作っているんだけど、 それの全体的な構成の参考のために類似プロジェクトを探しているのでリストとしてここにまとめておく。<br>
+OpenNMTとか、allennlpは完成度は非常に高くていいのだが、ここではもう少し小さくて簡単に全体の見通しがたてれるものに絞る。 構造の参考にしたいだけなので、動作確認まではしていない。<br>
+(随時更新)</p>
+<h1 id="探し方">探し方</h1>
+<p>githubで&quot;pytorch&rdquo;, &ldquo;seq2seq&quot;で検索して、スター件数上位である程度コードが構造化されているものたち。</p>
+<h1 id="上位からいくつか">上位からいくつか</h1>
+<ul>
+<li><a href="https://github.com/IBM/pytorch-seq2seq">IBM/pytorch-seq2seq</a><br>
+半年前くらいから開発が止まってしまっているっぽいが、シンプルな実装で全体の見通しは良い。</li>
+<li><a href="https://github.com/MaximumEntropy/Seq2Seq-PyTorch">MaximumEntropy/Seq2Seq-PyTorch</a><br>
+これも二年前から開発が止まっているぽい。要約とかも実装してあるが、training loopとかがベタッとしている。</li>
+<li><a href="https://github.com/eladhoffer/seq2seq.pytorch">eladhoffer/seq2seq.pytorch</a><br>
+かなりいい感じ。同作者の他のutil repoを使用していたり、広大になっているが構造も実装もすごく参考になる。Transformerも実装されている。</li>
+<li><a href="https://github.com/lium-lst/nmtpytorch">lium-lst/nmtpytorch</a><br>
+pipでインストールしてコマンドラインから使用できる。</li>
+<li><a href="https://github.com/keon/seq2seq">keon/seq2se</a><br>
+train, model, utilsからなるかなりシンプルな実装</li>
+<li><a href="https://github.com/outcastofmusic/quick-nlp">outcastofmusic/quick-nlp</a><br>
+fast.ai inspiredな実装になっているらしい。Transformerもある。Dockerfileも置いてあっていきなり使えるようになっている。</li>
+</ul>
 
-<div class="container" role="main">
-  <article class="post-preview">
-    
-  </article>
-</div>
 
+      
+    </article>
+  </div>
 
     <footer>
   <div class="container">
