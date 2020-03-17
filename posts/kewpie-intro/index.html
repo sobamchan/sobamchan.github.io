@@ -1,69 +1,117 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-<title>Tofu Blog</title>
+<html lang="en-us">
 
-  
-
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-<link rel="alternate" type="application/rss+xml" href="https://sobamchan.github.io/index.xml" title="Site Title">
-
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://sobamchan.github.io/css/main.css" />
-<link rel="stylesheet" href="https://sobamchan.github.io/css/syntax.css" />
-<link disabled id="dark-mode-theme" rel="stylesheet" href="https://sobamchan.github.io/css/dark.css" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous" />
-<meta name="generator" content="Hugo 0.67.1" />
-  </head>
-  <body>
-    
-  
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+<meta itemprop="name" content="kewpie: KEyWord PIckEr with tf-idf">
+<meta itemprop="description" content="
+     
 
 
+tl;dr
+
+tf-idfをscikit-learnから利用
+それをさらに抽象化しまくったkewpieの紹介
+">
+<meta itemprop="datePublished" content="2020-03-17T09:08:29&#43;09:00" />
+<meta itemprop="dateModified" content="2020-03-17T09:08:29&#43;09:00" />
+<meta itemprop="wordCount" content="1955">
+<meta itemprop="image" content="https://sobamchan.github.io/imgs/kewpie-intro-header.jpg">
 
 
-  <header>
-    <nav class="navbar">
-  <div class="nav">
-    
 
-    <ul class="nav-links">
-      
-    </ul>
-  </div>
-</nav>
-
-    <div class="intro-header">
-      <div class="container">
-        <div class="posts-heading">
-          
-            <h1>kewpie: KEyWord PIckEr with tf-idf</h1>
-          
-          
-        </div>
-      </div>
-    </div>
-  </header>
+<meta itemprop="keywords" content="nlp," /><meta property="og:title" content="kewpie: KEyWord PIckEr with tf-idf" />
+<meta property="og:description" content="
+     
 
 
-    
-  <div class="container" role="main">
-    <article class="article" class="blog-post">
-      
-    <figure>
+tl;dr
+
+tf-idfをscikit-learnから利用
+それをさらに抽象化しまくったkewpieの紹介
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sobamchan.github.io/posts/kewpie-intro/" />
+<meta property="og:image" content="https://sobamchan.github.io/imgs/kewpie-intro-header.jpg" />
+<meta property="article:published_time" content="2020-03-17T09:08:29+09:00" />
+<meta property="article:modified_time" content="2020-03-17T09:08:29+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://sobamchan.github.io/imgs/kewpie-intro-header.jpg"/>
+
+<meta name="twitter:title" content="kewpie: KEyWord PIckEr with tf-idf"/>
+<meta name="twitter:description" content="
+     
+
+
+tl;dr
+
+tf-idfをscikit-learnから利用
+それをさらに抽象化しまくったkewpieの紹介
+"/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>kewpie: KEyWord PIckEr with tf-idf</title>
+	<link rel="stylesheet" href="https://sobamchan.github.io/css/style.min.657bcb7af31123e4156b1a3d2ff60a636717e54ead74f882136b5114cf72b55e.css" integrity="sha256-ZXvLevMRI+QVaxo9L/YKY2cX5U6tdPiCE2tRFM9ytV4=" crossorigin="anonymous">
+	<style>.bg-img {background-image: url('https://sobamchan.github.io/imgs/kewpie-intro-header.jpg');}</style>
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://sobamchan.github.io/">Tofu Blog</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="https://sobamchan.github.io/posts/">Posts</a>
+				<a href="https://sobamchan.github.io/about/">About</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="img-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-image"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></button><span class="hdr-social hide-in-mobile"><a href="https://twitter.com/sobamchan" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://github.com/sobamchan" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://sobamchan.github.io/posts/">Posts</a></li>
+			<li><a href="https://sobamchan.github.io/about/">About</a></li>
+		</ul>
+	</div>
+
+
+	<div class="bg-img"></div>
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Mar 17, 2020</span></div>
+				<h1>kewpie: KEyWord PIckEr with tf-idf</h1>
+			</header>
+			<div class="content">
+				<figure>
     <img src="/imgs/kewpie-intro-header.jpg"
          alt="image"/> 
 </figure>
 
-<h2 id="tldr">tl;dr</h2>
+<h2 id="tldr">tl;dr<a href="#tldr" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <ul>
 <li>tf-idfをscikit-learnから利用</li>
 <li>それをさらに抽象化しまくった<a href="https://github.com/tofunlp/kewpie">kewpie</a>の紹介</li>
 </ul>
-<h2 id="概要">概要</h2>
+<h2 id="概要">概要<a href="#概要" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <p>自然言語を含んだデータの分析を行っていると，対象としている文書群，それぞれの特徴的な単語を抽出したいことが多々あります．
 ここでの特徴的な単語とは，今見ているある文書をそれ以外の文書らと比較した際に，&ldquo;際立つ&rdquo; 単語のことを今回は指すことにします．</p>
 <p>この目的を達成するために，自然言語処理分野では最も基本的なテクニックの一つに，<a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">tf-idf</a>がある．
@@ -74,13 +122,13 @@
 <li>対象の文書以外ではあまり出現していないか？</li>
 </ol>
 <p>要約すると，tf-idfは「対象とする文書で特別多く出現する単語」を発見することのできる手法となっています．</p>
-<h2 id="tf-idfの利用">tf-idfの利用</h2>
+<h2 id="tf-idfの利用">tf-idfの利用<a href="#tf-idfの利用" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <p>tf-idf自体は，先に述べた要点からも分かるように，数え上げを基本とするので実装を一から自分でするのも簡単に行うことができます．
 が，pythonの機械学習ライブラリのボスである<a href="https://scikit-learn.org/stable/">scikit-learn</a>にすでに<a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn-feature-extraction-text-tfidfvectorizer">実装されたもの</a>がありますので，
 それを使うと，何も考えずに文書だけ用意すれば簡単にスコアを計算することができます．</p>
-<h3 id="scikit-learnのインストール">scikit-learnのインストール</h3>
+<h3 id="scikit-learnのインストール">scikit-learnのインストール<a href="#scikit-learnのインストール" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">pip install scikit-learn
-</code></pre></div><h3 id="tfidfvectorizerの利用">TfidfVectorizerの利用</h3>
+</code></pre></div><h3 id="tfidfvectorizerの利用">TfidfVectorizerの利用<a href="#tfidfvectorizerの利用" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span>
 <span class="o">...</span>    <span class="s2">&#34;我々 は 宇宙人 だ ．&#34;</span><span class="p">,</span>
@@ -104,13 +152,13 @@
 </code></pre></div><p>この<code>X.todense()</code>は<code>TfidfVectorizer</code>の出力はそのままではnumpyでソートできないので，できる形に変換していて，
 最初に<code>-1</code>をかけているのは，そのままだと昇順なので，降順にしています．</p>
 <p>この例では<code>corpus</code>が小さく単語の種類も限られていますが，ちゃんと各文書のみで出現する単語が，リストの最初に来ていることがわかります．</p>
-<h2 id="kewpie-keyword-picker-with-tf-idf">kewpie: KEyWord PIckEr with tf-idf</h2>
+<h2 id="kewpie-keyword-picker-with-tf-idf">kewpie: KEyWord PIckEr with tf-idf<a href="#kewpie-keyword-picker-with-tf-idf" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <p>このように<code>TfidfVectorizer</code>を使えば，簡単に文書の特徴的な単語を発見することができるのですが，
 僕自身，個人プロジェクト，研究やアルバイトであまりに多用するため，少し前から<a href="https://github.com/tofunlp/kewpie">pip installできる形でライブラリ化</a>して使っています．<br>
 ここでは，その使い方を少しだけ紹介します．</p>
-<h3 id="インストール">インストール</h3>
+<h3 id="インストール">インストール<a href="#インストール" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">&gt;&gt;&gt; pip install kewpie
-</code></pre></div><h3 id="kewpieの利用">kewpieの利用</h3>
+</code></pre></div><h3 id="kewpieの利用">kewpieの利用<a href="#kewpieの利用" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">kewpie</span> <span class="kn">import</span> <span class="n">KwPicker</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span>
@@ -131,68 +179,38 @@
 <p>以下のコードでロードしてまた使えます．</p>
 <div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="o">&gt;&gt;&gt;</span> <span class="n">loaded_picker</span> <span class="o">=</span> <span class="n">KwPicker</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">savedir</span><span class="o">=</span><span class="s1">&#39;/dir/you/saved/model&#39;</span><span class="p">)</span>
 </code></pre></div>
+			</div>
+
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://sobamchan.github.io/tags/nlp">nlp</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-03-17 09:08 &#43;0900</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="prev-post" href="https://sobamchan.github.io/posts/naacl-2018/">
+				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Naacl 2018</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2020 <a href="https://sobamchan.github.io/">sobamchan</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://sobamchan.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
 
 
-      
-        <div class="blog-tags">
-          
-            <a href="https://sobamchan.github.io//tags/nlp/">nlp</a>&nbsp;
-          
-        </div>
-      
-    </article>
-  </div>
 
-    <footer>
-  <div class="container">
-    <p class="credits copyright">
-      <a href="https://sobamchan.github.io/about">sobamchan</a>
-      &nbsp;&copy;
-      2020
+	<script src="https://sobamchan.github.io/js/bundle.min.4a9a0ac3d2217822c7865b4161e6c2a71de1d70492264337755427898dd718f6.js" integrity="sha256-SpoKw9IheCLHhltBYebCpx3h1wSSJkM3dVQniY3XGPY=" crossorigin="anonymous"></script>
+	
 
-      
-        &nbsp;/&nbsp;
-        <a href="https://sobamchan.github.io/">Tofu Blog</a>
-      
-
-      &nbsp;&ndash;&nbsp;
-      <i class="fas fa-moon" id="dark-mode-toggle"></i>
-
-      <p class="credits theme-by">
-        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
-      </p>
-    </p>
-  </div>
-</footer>
-
-  </body>
-  <script>
-  var toggle = document.getElementById("dark-mode-toggle");
-  var darkTheme = document.getElementById("dark-mode-theme");
-
-  
-  var savedTheme = localStorage.getItem("dark-mode-storage") || "light";
-  setTheme(savedTheme);
-
-  toggle.addEventListener("click", () => {
-    if (toggle.className === "fas fa-moon") {
-        setTheme("dark");
-    } else if (toggle.className === "fas fa-sun") {
-        setTheme("light");
-    }
-  });
-
-  function setTheme(mode) {
-    localStorage.setItem("dark-mode-storage", mode);
-
-    if (mode === "dark") {
-        darkTheme.disabled = false;
-        toggle.className = "fas fa-sun";
-    } else if (mode === "light") {
-        darkTheme.disabled = true;
-        toggle.className = "fas fa-moon";
-    }
-  }
-</script>
+</body>
 
 </html>

@@ -1,24 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Tofu Blog</title>
-    <link>https://sobamchan.github.io/posts/</link>
-    <description>Recent content in Posts on Tofu Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 17 Mar 2020 09:08:29 +0900</lastBuildDate>
-    
-	<atom:link href="https://sobamchan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>kewpie: KEyWord PIckEr with tf-idf</title>
-      <link>https://sobamchan.github.io/posts/kewpie-intro/</link>
-      <pubDate>Tue, 17 Mar 2020 09:08:29 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/posts/kewpie-intro/</guid>
-      <description>&lt;figure&gt;
+	<channel>
+		<title>Posts on Tofu Blog</title>
+		<link>https://sobamchan.github.io/posts/</link>
+		<description>Recent content in Posts on Tofu Blog</description>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>en-us</language>
+		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+		<lastBuildDate>Tue, 17 Mar 2020 09:08:29 +0900</lastBuildDate>
+		<atom:link href="https://sobamchan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>kewpie: KEyWord PIckEr with tf-idf</title>
+			<link>https://sobamchan.github.io/posts/kewpie-intro/</link>
+			<pubDate>Tue, 17 Mar 2020 09:08:29 +0900</pubDate>
+			
+			<guid>https://sobamchan.github.io/posts/kewpie-intro/</guid>
+			<description>&lt;figure&gt;
     &lt;img src=&#34;https://sobamchan.github.io/imgs/kewpie-intro-header.jpg&#34;
          alt=&#34;image&#34;/&gt; 
 &lt;/figure&gt;
@@ -28,82 +25,357 @@
 &lt;li&gt;tf-idfをscikit-learnから利用&lt;/li&gt;
 &lt;li&gt;それをさらに抽象化しまくった&lt;a href=&#34;https://github.com/tofunlp/kewpie&#34;&gt;kewpie&lt;/a&gt;の紹介&lt;/li&gt;
 &lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Naacl 2018</title>
-      <link>https://sobamchan.github.io/posts/naacl-2018/</link>
-      <pubDate>Mon, 16 Mar 2020 23:31:58 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/posts/naacl-2018/</guid>
-      <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
+			<content type="html"><![CDATA[<figure>
+    <img src="/imgs/kewpie-intro-header.jpg"
+         alt="image"/> 
+</figure>
+
+<h2 id="tldr">tl;dr</h2>
+<ul>
+<li>tf-idfをscikit-learnから利用</li>
+<li>それをさらに抽象化しまくった<a href="https://github.com/tofunlp/kewpie">kewpie</a>の紹介</li>
+</ul>
+<h2 id="概要">概要</h2>
+<p>自然言語を含んだデータの分析を行っていると，対象としている文書群，それぞれの特徴的な単語を抽出したいことが多々あります．
+ここでの特徴的な単語とは，今見ているある文書をそれ以外の文書らと比較した際に，&ldquo;際立つ&rdquo; 単語のことを今回は指すことにします．</p>
+<p>この目的を達成するために，自然言語処理分野では最も基本的なテクニックの一つに，<a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">tf-idf</a>がある．
+これは，文書中のそれぞれの単語に対して単語の&quot;特徴的度&quot;を計算してくれます．
+本記事は実装に関してのものなので，細かい説明は省きますが，ざっくりというと次の2点を満たす単語には高いスコアが付与されます．</p>
+<ol>
+<li>対象の文書中にたくさん出現しているか？</li>
+<li>対象の文書以外ではあまり出現していないか？</li>
+</ol>
+<p>要約すると，tf-idfは「対象とする文書で特別多く出現する単語」を発見することのできる手法となっています．</p>
+<h2 id="tf-idfの利用">tf-idfの利用</h2>
+<p>tf-idf自体は，先に述べた要点からも分かるように，数え上げを基本とするので実装を一から自分でするのも簡単に行うことができます．
+が，pythonの機械学習ライブラリのボスである<a href="https://scikit-learn.org/stable/">scikit-learn</a>にすでに<a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn-feature-extraction-text-tfidfvectorizer">実装されたもの</a>がありますので，
+それを使うと，何も考えずに文書だけ用意すれば簡単にスコアを計算することができます．</p>
+<h3 id="scikit-learnのインストール">scikit-learnのインストール</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">pip install scikit-learn
+</code></pre></div><h3 id="tfidfvectorizerの利用">TfidfVectorizerの利用</h3>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span>
+<span class="o">...</span>    <span class="s2">&#34;我々 は 宇宙人 だ ．&#34;</span><span class="p">,</span>
+<span class="o">...</span>    <span class="s2">&#34;我々 は 野蛮人 だ ．&#34;</span><span class="p">,</span>
+<span class="o">...</span>    <span class="s2">&#34;我々 は 海人 だ ．&#34;</span><span class="p">,</span>
+<span class="o">...</span> <span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">token_pattern</span><span class="o">=</span><span class="s1">&#39;(?u)</span><span class="se">\\</span><span class="s1">b</span><span class="se">\\</span><span class="s1">w+</span><span class="se">\\</span><span class="s1">b&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">())</span>
+<span class="o">...</span> <span class="p">[</span><span class="s1">&#39;だ&#39;</span><span class="p">,</span> <span class="s1">&#39;は&#39;</span><span class="p">,</span> <span class="s1">&#39;宇宙人&#39;</span><span class="p">,</span> <span class="s1">&#39;我々&#39;</span><span class="p">,</span> <span class="s1">&#39;海人&#39;</span><span class="p">,</span> <span class="s1">&#39;野蛮人&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="o">...</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</code></pre></div><p>注意) <code>TfidfVectorizer</code>を利用する際に<code>token_pattern</code>を指定していないと，1文字からなるトークン (eg, は, だ) が消えます．<br>
+これだけのコードで得られた<code>X</code>のなかに，<code>(corpus n, feature n)</code>分のtf-idfスコアが格納されています．
+よって，これを<code>numpy</code>なりで大きい順にソートしてあげると，各corpusにおける特徴的な単語がわかります．</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">X</span><span class="o">.</span><span class="n">todense</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">...</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>  <span class="c1"># -&gt; (&#39;宇宙人&#39;, &#39;だ&#39;, &#39;は&#39;, &#39;我々&#39;, &#39;海人&#39;, &#39;野蛮人&#39;)</span>
+<span class="o">...</span>         <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>  <span class="c1"># -&gt; ( &#39;野蛮人&#39;, &#39;だ&#39;, &#39;は&#39;, &#39;我々&#39;, &#39;宇宙人&#39;, &#39;海人&#39;)</span>
+<span class="o">...</span>         <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>  <span class="c1"># -&gt; (&#39;海人&#39;, &#39;だ&#39;, &#39;は&#39;, &#39;我々&#39;, &#39;宇宙人&#39;, &#39;野蛮人&#39;)</span>
+</code></pre></div><p>この<code>X.todense()</code>は<code>TfidfVectorizer</code>の出力はそのままではnumpyでソートできないので，できる形に変換していて，
+最初に<code>-1</code>をかけているのは，そのままだと昇順なので，降順にしています．</p>
+<p>この例では<code>corpus</code>が小さく単語の種類も限られていますが，ちゃんと各文書のみで出現する単語が，リストの最初に来ていることがわかります．</p>
+<h2 id="kewpie-keyword-picker-with-tf-idf">kewpie: KEyWord PIckEr with tf-idf</h2>
+<p>このように<code>TfidfVectorizer</code>を使えば，簡単に文書の特徴的な単語を発見することができるのですが，
+僕自身，個人プロジェクト，研究やアルバイトであまりに多用するため，少し前から<a href="https://github.com/tofunlp/kewpie">pip installできる形でライブラリ化</a>して使っています．<br>
+ここでは，その使い方を少しだけ紹介します．</p>
+<h3 id="インストール">インストール</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">&gt;&gt;&gt; pip install kewpie
+</code></pre></div><h3 id="kewpieの利用">kewpieの利用</h3>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">kewpie</span> <span class="kn">import</span> <span class="n">KwPicker</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span>
+<span class="o">...</span>    <span class="s2">&#34;我々 は 宇宙人 だ ．&#34;</span><span class="p">,</span>
+<span class="o">...</span>    <span class="s2">&#34;我々 は 野蛮人 だ ．&#34;</span><span class="p">,</span>
+<span class="o">...</span>    <span class="s2">&#34;我々 は 海人 だ ．&#34;</span><span class="p">,</span>
+<span class="o">...</span> <span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">picker</span> <span class="o">=</span> <span class="n">KwPicker</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span> <span class="n">savedir</span><span class="o">=</span><span class="s1">&#39;/dir/to/save/model/&#39;</span><span class="p">)</span>  <span class="c1"># corpusを渡してBuild</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sentence</span> <span class="o">=</span> <span class="s2">&#34;我々 は 宇宙人 だ ．&#34;</span>  <span class="c1"># 今回特徴単語を発見したい文</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">span</span><span class="p">,</span> <span class="n">keyword</span> <span class="o">=</span> <span class="n">picker</span><span class="o">.</span><span class="n">get_keyword</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>  <span class="c1"># を渡すと，，，</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">keyword</span><span class="p">)</span>  <span class="c1"># -&gt; &#39;宇宙人&#39;  # 抽出される</span>
+</code></pre></div><p>コード量はそんなに変わりませんが，実装を間違えそうなソートの処理が隠蔽されて，文をそのまま渡せるAPIを生やしています．
+また，<code>KwPicker.bulid</code>の際に，<code>savedir</code>を渡すと，tf-idf行列の計算をファイルに書き出して保存しておいてくれます．
+小さな文書群の時は良いですが，大きくなると計算時間が少しかかるので，少し時間の節約になります．</p>
+<p>以下のコードでロードしてまた使えます．</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="o">&gt;&gt;&gt;</span> <span class="n">loaded_picker</span> <span class="o">=</span> <span class="n">KwPicker</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">savedir</span><span class="o">=</span><span class="s1">&#39;/dir/you/saved/model&#39;</span><span class="p">)</span>
+</code></pre></div>]]></content>
+		</item>
+		
+		<item>
+			<title>Naacl 2018</title>
+			<link>https://sobamchan.github.io/posts/naacl-2018/</link>
+			<pubDate>Mon, 16 Mar 2020 23:31:58 +0900</pubDate>
+			
+			<guid>https://sobamchan.github.io/posts/naacl-2018/</guid>
+			<description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://aclanthology.coli.uni-saarland.de/events/naacl-2018&#34;&gt;NAACL 2018&lt;/a&gt;の論文で自分の興味沿っているやつリストを消化したので、 面白かったものを10本選択して、ここにまとめる。&lt;br&gt;
 基本的には&lt;a href=&#34;https://sobamchan.github.io/summaries/&#34;&gt;ここ&lt;/a&gt;に投稿しているものを選択して、 内容をコピーしただけ。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Pytorch S2s Projects</title>
-      <link>https://sobamchan.github.io/posts/pytorch-s2s-projects/</link>
-      <pubDate>Tue, 22 Jan 2019 23:39:57 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/posts/pytorch-s2s-projects/</guid>
-      <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
+			<content type="html"><![CDATA[<h1 id="目的">目的</h1>
+<p><a href="https://aclanthology.coli.uni-saarland.de/events/naacl-2018">NAACL 2018</a>の論文で自分の興味沿っているやつリストを消化したので、 面白かったものを10本選択して、ここにまとめる。<br>
+基本的には<a href="https://sobamchan.github.io/summaries/">ここ</a>に投稿しているものを選択して、 内容をコピーしただけ。</p>
+<h1 id="背景">背景</h1>
+<ul>
+<li>Totalで40本くらい読んだ。</li>
+<li>対話、QA、翻訳、生成全般に興味があるのでそれに偏っている。</li>
+<li>急いで読んだものも多いので、理解に間違いがある可能性あり。</li>
+</ul>
+<h1 id="中身">中身</h1>
+<h2 id="multi-reward-reinforced-summarization-with-saliency-and-entailmenthttpssobamchangithubiopaper_summariesmulti-reward20reinforced20summarization20with20saliency20and20entailment"><a href="https://sobamchan.github.io/paper_summaries/Multi-Reward%20Reinforced%20Summarization%20with%20Saliency%20and%20Entailment/">Multi-Reward Reinforced Summarization with Saliency and Entailment</a></h2>
+<p>Abstractive summarizationにおいてpolicy gradientを使うことが増えてきた。<br>
+この論文では、報酬関数にはROUGEが使用されることがほとんどだが、 本研究では新しい二つの報酬関数を作成提案した。 1. ROUGESal<br>
+Keyword detecteを使用して、salientな情報に対して重みをつけたROUGE 2. Entail<br>
+Entailment classifierを使用して、包含しているものに対して重みづけする</p>
+<h2 id="attentive-interaction-model-modeling-changes-in-view-in-argumentationhttpssobamchangithubiopaper_summariesattentive20interaction20model20modeling20changes20in20view20in20argumentation"><a href="https://sobamchan.github.io/paper_summaries/Attentive%20Interaction%20Model:%20Modeling%20Changes%20in%20View%20in%20Argumentation/">Attentive Interaction Model: Modeling Changes in View in Argumentation</a></h2>
+<p>redditの”change my view” forumっていう、スレッドの開始者が最初に述べた 意見に対して後続の参加者たちが、その意見を変えるためにいろんな意見を投稿するforumがある。<br>
+この研究では、後続の意見がviewを変化させる事が出来たかを推定するモデルを、 最初の意見に対してのattentionや最初の意見と、後続の意見のinteractionをmodelingするネットワークで学習している。</p>
+<h2 id="improving-lexical-choice-in-neural-machine-translationhttpssobamchangithubiopaper_summariesimproving20lexical20choice20in20neural20machine20translation"><a href="https://sobamchan.github.io/paper_summaries/Improving%20Lexical%20Choice%20in%20Neural%20Machine%20Translation/">Improving Lexical Choice in Neural Machine Translation</a></h2>
+<p>従来のenc-decでのNMTは出現頻度の少ないrare wordsの翻訳をうまくできていない。<br>
+本研究では、従来の翻訳フレームワークの最後のoperationである、 hidden stateから単語idに対してmappingする式でのベクトル達のnormをconstant valueに固定してあげることで、row-resourceな言語間での翻訳も精度を保つことに成功した。</p>
+<h2 id="deep-generative-model-for-joint-alignment-and-word-representationhttpssobamchangithubiopaper_summariesdeep20generative20model20for20joint20alignment20and20word20representation"><a href="https://sobamchan.github.io/paper_summaries/Deep%20Generative%20Model%20for%20Joint%20Alignment%20and%20Word%20Representation/">Deep Generative Model for Joint Alignment and Word Representation</a></h2>
+<p>word embeddingをtranslation datasetを使用して学習した。 その際に、</p>
+<p>を仮定して、language 1のword embeddingをlanguage 2を使用して学習した</p>
+<h2 id="self-training-for-jointly-learning-to-ask-and-answer-questionshttpssobamchangithubiopaper_summariesself-training20for20jointly20learning20to20ask20and20answer20questions"><a href="https://sobamchan.github.io/paper_summaries/Self-Training%20for%20Jointly%20Learning%20to%20Ask%20and%20Answer%20Questions/">Self-Training for Jointly Learning to Ask and Answer Questions</a></h2>
+<p>QAタスクでの課題としてデータセットの作成がexpensiveであるというものがあり、これをunlabeled corpusを使用して改善する手法を提案している。<br>
+labeled datasetでQA (Question answer) model, QG (Question generation) modelをまず学習する。 そのmodelsを使用して、unlabeled corpusからさらに、questionとanswerを生成し学習に役立てている。</p>
+<h2 id="combining-character-and-word-information-in-neural-machine-translation-using-a-multi-level-attentionehttpssobamchangithubiopaper_summariescombining20character20and20word20information20in20neural20machine20translation20using20a20multi-level20attention"><a href="https://sobamchan.github.io/paper_summaries/Combining%20Character%20and%20Word%20Information%20in%20Neural%20Machine%20Translation%20Using%20a%20Multi-Level%20Attention/">Combining Character and Word Information in Neural Machine Translation Using a Multi-Level Attentione</a></h2>
+<p>従来の機械翻訳はword / sub-word / char levelから粒度を選択して使用する必要があった。<br>
+本研究ではchar levelの情報をattentionを通して使用して(sub)word levelのencodingとdecodingに役立てるframeworkを提案している。</p>
+<h2 id="improving-neural-machine-translation-with-conditional-sequence-generative-adversarial-netshttpssobamchangithubiopaper_summariesimproving20neural20machine20translation20with20conditional20sequence20generative20adversarial20nets"><a href="https://sobamchan.github.io/paper_summaries/Improving%20Neural%20Machine%20Translation%20with%20Conditional%20Sequence%20Generative%20Adversarial%20Nets/">Improving Neural Machine Translation with Conditional Sequence Generative Adversarial Nets</a></h2>
+<p>二つの手法の合わせ技でNMTの精度向上を狙っている。<br>
+GAN frameworkによる、教師データと生成されたデータをdiscriminatorに 判別されないように学習。 RLを使用して評価指標であるBLEUを直接最大化するように学習する。 最近はやりの両方のダブルパンチ。</p>
+<h2 id="dialog-generation-using-multi-turn-reasoning-neural-networkshttpssobamchangithubiopaper_summariesdialog20generation20using20multi-turn20reasoning20neural20networks"><a href="https://sobamchan.github.io/paper_summaries/Dialog%20Generation%20Using%20Multi-turn%20Reasoning%20Neural%20Networks/">Dialog Generation Using Multi-turn Reasoning Neural Networks</a></h2>
+<p>QA taskで最近よく使用されるような、memoryが拡張されているmodelを使用してqaでのdocumentを対話のcontextをして、<br>
+queryをuser utteranceとして、memoryを参照して発話を生成することで、よりそれっぽくて、多様性のある発話を作ることができた。</p>
+<h2 id="knowledge-enriched-two-layered-attention-network-for-sentiment-analysishttpssobamchangithubiopaper_summariesknowledge-enriched20two-layered20attention20network20for20sentiment20analysis"><a href="https://sobamchan.github.io/paper_summaries/Knowledge-enriched%20Two-layered%20Attention%20Network%20for%20Sentiment%20Analysis/">Knowledge-enriched Two-layered Attention Network for Sentiment Analysis</a></h2>
+<p>sentiment analysis taskにおいて二つのモデルのensembleで精度向上を狙った。 二つのモデルは、文章を入力として受け取るRNNと特徴量を入力として受け取るSVRを使用している。<br>
+単語に対する情報をrichにするために、word netから作成したKnowledge Graph Embeddingを 特徴量としてSVRへの入力の一つとして使用している。</p>
+<h1 id="感想">感想</h1>
+<p>QAはまあまあ追ってきたけど、なんかあんまり面白くないところに着地しつつあるかなって感じ。 QAやりたいって最初の方思ってたけど、なんか微妙。<br>
+要約はここにのせたのも面白いし、乗せてなくても面白いのあった。</p>]]></content>
+		</item>
+		
+		<item>
+			<title>Pytorch S2s Projects</title>
+			<link>https://sobamchan.github.io/posts/pytorch-s2s-projects/</link>
+			<pubDate>Tue, 22 Jan 2019 23:39:57 +0900</pubDate>
+			
+			<guid>https://sobamchan.github.io/posts/pytorch-s2s-projects/</guid>
+			<description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;少し前からPytorchをベースとしたSeq2Seqのライブラリ？(or boilerplate的なもの)を作っているんだけど、 それの全体的な構成の参考のために類似プロジェクトを探しているのでリストとしてここにまとめておく。&lt;br&gt;
 OpenNMTとか、allennlpは完成度は非常に高くていいのだが、ここではもう少し小さくて簡単に全体の見通しがたてれるものに絞る。 構造の参考にしたいだけなので、動作確認まではしていない。&lt;br&gt;
 (随時更新)&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Goals 2019</title>
-      <link>https://sobamchan.github.io/posts/goals-2019/</link>
-      <pubDate>Tue, 01 Jan 2019 23:37:29 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/posts/goals-2019/</guid>
-      <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
+			<content type="html"><![CDATA[<h1 id="目的">目的</h1>
+<p>少し前からPytorchをベースとしたSeq2Seqのライブラリ？(or boilerplate的なもの)を作っているんだけど、 それの全体的な構成の参考のために類似プロジェクトを探しているのでリストとしてここにまとめておく。<br>
+OpenNMTとか、allennlpは完成度は非常に高くていいのだが、ここではもう少し小さくて簡単に全体の見通しがたてれるものに絞る。 構造の参考にしたいだけなので、動作確認まではしていない。<br>
+(随時更新)</p>
+<h1 id="探し方">探し方</h1>
+<p>githubで&quot;pytorch&rdquo;, &ldquo;seq2seq&quot;で検索して、スター件数上位である程度コードが構造化されているものたち。</p>
+<h1 id="上位からいくつか">上位からいくつか</h1>
+<ul>
+<li><a href="https://github.com/IBM/pytorch-seq2seq">IBM/pytorch-seq2seq</a><br>
+半年前くらいから開発が止まってしまっているっぽいが、シンプルな実装で全体の見通しは良い。</li>
+<li><a href="https://github.com/MaximumEntropy/Seq2Seq-PyTorch">MaximumEntropy/Seq2Seq-PyTorch</a><br>
+これも二年前から開発が止まっているぽい。要約とかも実装してあるが、training loopとかがベタッとしている。</li>
+<li><a href="https://github.com/eladhoffer/seq2seq.pytorch">eladhoffer/seq2seq.pytorch</a><br>
+かなりいい感じ。同作者の他のutil repoを使用していたり、広大になっているが構造も実装もすごく参考になる。Transformerも実装されている。</li>
+<li><a href="https://github.com/lium-lst/nmtpytorch">lium-lst/nmtpytorch</a><br>
+pipでインストールしてコマンドラインから使用できる。</li>
+<li><a href="https://github.com/keon/seq2seq">keon/seq2se</a><br>
+train, model, utilsからなるかなりシンプルな実装</li>
+<li><a href="https://github.com/outcastofmusic/quick-nlp">outcastofmusic/quick-nlp</a><br>
+fast.ai inspiredな実装になっているらしい。Transformerもある。Dockerfileも置いてあっていきなり使えるようになっている。</li>
+</ul>]]></content>
+		</item>
+		
+		<item>
+			<title>Goals 2019</title>
+			<link>https://sobamchan.github.io/posts/goals-2019/</link>
+			<pubDate>Tue, 01 Jan 2019 23:37:29 +0900</pubDate>
+			
+			<guid>https://sobamchan.github.io/posts/goals-2019/</guid>
+			<description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;自分はいろんなことに対してすぐに脱線しがちなので、年始にまとめておくことで そのリスクをできるだけ軽減できることを期待している。 今年は大学院終了後のキャリアについても、多くの選択をしなければならないので アドホックな作業が多くなり予想通りに行かないと思うが、終了したときの満足感ができるだけ大きくしたい。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Review 2018</title>
-      <link>https://sobamchan.github.io/posts/review-2018/</link>
-      <pubDate>Mon, 31 Dec 2018 23:36:13 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/posts/review-2018/</guid>
-      <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
+			<content type="html"><![CDATA[<h1 id="目的">目的</h1>
+<p>自分はいろんなことに対してすぐに脱線しがちなので、年始にまとめておくことで そのリスクをできるだけ軽減できることを期待している。 今年は大学院終了後のキャリアについても、多くの選択をしなければならないので アドホックな作業が多くなり予想通りに行かないと思うが、終了したときの満足感ができるだけ大きくしたい。</p>
+<h1 id="goals-in-2019">Goals in 2019</h1>
+<h2 id="キャリア">キャリア</h2>
+<h3 id="進路の決定">進路の決定</h3>
+<p>これが何よりも大事な目標。<br>
+博士課程へ進学したいこと自体は、自分の中では昨年に心ぎめしてぼちぼち研究室探しとかをしてはいた。 今年は、とにかくプロセスを早いペースで進めていきたい。 先生方にアポをもらい話を聞いて、年の前半に何かしら安心できる結果がほしい。</p>
+<h2 id="研究">研究</h2>
+<h3 id="国際会議に出せる論文を書く">国際会議に出せる論文を書く</h3>
+<p>これは、結局去年は達成できなかった。<br>
+今年はもっと効率良く手を動かして、なんとしてもこぎつけたい。</p>
+<h3 id="ライブラリ開発">ライブラリ開発</h3>
+<p>昨年末から少しずつ、pytorchベースでseq2seqを統一されたインターフェイスで色々実験できるような ものを実装してきたので、今年はこれをある程度自信を持って人に見せれるくらいのクオリティーにしていきたい。</p>
+<h3 id="その他">その他</h3>
+<ul>
+<li>本<br>
+先月から開始しているが、月2,3冊ペースで小説以外の本を読んでいきたい。</li>
+<li>料理<br>
+いろんなものに挑戦して行きたい。凝ったものまで</li>
+<li>ビール<br>
+いろんな新しい人と、飲んだことないビールを飲んでいきたい。</li>
+<li>競プロ<br>
+というよりも、データ構造とアルゴリズムをちゃんと学習し直したい。（そして競プロを趣味にしたい。）</li>
+<li>Apple製品 無しの生活にしていきたい。（macbook, iphone高すぎるのでもう買いたくない）</li>
+</ul>]]></content>
+		</item>
+		
+		<item>
+			<title>Review 2018</title>
+			<link>https://sobamchan.github.io/posts/review-2018/</link>
+			<pubDate>Mon, 31 Dec 2018 23:36:13 +0900</pubDate>
+			
+			<guid>https://sobamchan.github.io/posts/review-2018/</guid>
+			<description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;本当は月単位とかで自分をレビューして、それを年単位でまとめ振り返るってのが 本当の粒度としては正しい気がするんだけど、なかなかできなかった。 ここでは、数十年後自分で見て楽しむために一年間なにをしてきたか、を書いておこうと思う。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Backtranslation Papers</title>
-      <link>https://sobamchan.github.io/posts/backtranslation-papers/</link>
-      <pubDate>Tue, 02 Jan 2018 23:38:56 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/posts/backtranslation-papers/</guid>
-      <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
+			<content type="html"><![CDATA[<h1 id="目的">目的</h1>
+<p>本当は月単位とかで自分をレビューして、それを年単位でまとめ振り返るってのが 本当の粒度としては正しい気がするんだけど、なかなかできなかった。 ここでは、数十年後自分で見て楽しむために一年間なにをしてきたか、を書いておこうと思う。</p>
+<h1 id="review-of-2018">Review of 2018</h1>
+<h2 id="さきに全体感">さきに全体感</h2>
+<p>この年は、一ヶ月単位で実行される大きめのイベントが2つあり（NTT研究所インターンとブラジル研究留学）、 年の最初に考えていたほど、自分の研究や学習をすすめることができなかったのが反省としてある。 ただ、どちらのイベントからも大きく自分の考え方を変える経験を得ることができたので公開は全くしていない。</p>
+<h2 id="ntt研究所インターンシップ">NTT研究所インターンシップ</h2>
+<h3 id="なぜいったか">なぜいったか</h3>
+<p>これのことを知った直後は、自分の研究の時間が減ることを恐れて興味はあまりなかったが、 少ししてから研究テーマの選定で行き詰まり、参加することで新しい視点が得られることを期待したのが 一番大きい理由。 それに加えて、参加した際にメンターとしてついてくれる人が分野で知られている人だったのでそれも大きかった。</p>
+<h3 id="何をしたのか">何をしたのか</h3>
+<p>大きな枠組みとしては、大学での研究生活とあまり変わりなく、研究分野での問題があり、関連論文を読んで アプローチを考え実装・評価をしていた。 具体的なテーマとしては対話システム関連で、結構抽象度が高く問題設定レベルから難しいテーマだった。</p>
+<h3 id="何を学んだか">何を学んだか</h3>
+<p>インターンとして一ヶ月で問題の理解から成果の発表までする必要があったので、 スケジュールをある程度組んで、テンポ良く進めていく必要があったというのが一番普段の研究生活との違いだった。<br>
+最初は自然言語処理という分野での知識はあったが、今回の対話ってことに関しては 知識があまりなかったので無理かと思ったが、やってみると 各フェーズでの目的をちゃんと設定してから行動してみると、文献の収集から実装の優先順位付けから、なんだかんだで やりきることができたので体験として今後の参考になった。</p>
+<h3 id="経験後の自分の変化">経験後の自分の変化</h3>
+<p>研究においての自分が現在何をしているのかを明確に理解しながら作業することを以前より強く意識するようになった。 これはまだまだ上手く路線に乗っていないので継続して意識していこうと思う。</p>
+<h2 id="ブラジル留学">ブラジル留学</h2>
+<h3 id="なぜいったか-1">なぜいったか</h3>
+<p>大学に以前ブラジルから留学生が来ていて、彼らと仲良くしていたので もともとブラジルに機会があれば迷わず行こうと思っていたのが一番の理由だった。 サブの理由としては、長いスパンで抱えている自分の課題として、自分の住むところをガンガン探索する ってのがあるので時間が許す限り海外へはどんどん行く必要があったから。</p>
+<h3 id="何をしたのか-1">何をしたのか</h3>
+<p>形式としては、研究インターンシップみたいな形で行ったので、平日の日中はロボティクス系の研究室にてコンピュータービジョンのコードを書いてた。 週末とか夜は、20人くらい住んでいるシェアハウスに住んでいたこともあって彼らと遊んでいた。（破壊的に楽しかった。）</p>
+<h3 id="何を学んだか-1">何を学んだか</h3>
+<p>一番大きい学び（再確認）は、結局どれだけ良い人間関係を人生を通して築けるかってのが、 満足感を高める一番の方法ってことだった。 どれだけ信頼できて、楽しく一緒に時間を過ごせる人を家族を含めて作っていくことの大事を再実感した。 研究とか仕事も自分は今の所楽しみ過ぎで、忘れがちになるが気をつけたい。</p>
+<h3 id="経験後の自分の変化-1">経験後の自分の変化</h3>
+<p>自分から人を誘って飲みに行ったり、時間を取って料理を自分でしたりするようになった。 あと、新しい人と合う機会を逃さないようにしたいって気持ちが大きくなった。</p>
+<h2 id="その他起きたこととかやったこと">その他起きたこととか、やったこと</h2>
+<ul>
+<li>YANS<br>
+結果として微妙な成果を持っていくことになってしまったが、多くの有用な意見とモチベーションをもらえた。</li>
+<li>ジム<br>
+体力が低下しているのを体感するようになってきてしまったので、週２，３で短時間でもできるだけ行くようになった。</li>
+<li>大学院<br>
+まあ学部と特に変化なし。</li>
+</ul>]]></content>
+		</item>
+		
+		<item>
+			<title>Backtranslation Papers</title>
+			<link>https://sobamchan.github.io/posts/backtranslation-papers/</link>
+			<pubDate>Tue, 02 Jan 2018 23:38:56 +0900</pubDate>
+			
+			<guid>https://sobamchan.github.io/posts/backtranslation-papers/</guid>
+			<description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;最近、教師なし翻訳とかでよく使用されているback-translationだが、 直接翻訳に使用する以外ではどんな感じの研究があるかを知りたかったので、 あまり見つからなかったが論文いくつか読んだのでここにまとめておく。（随時更新）&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>How I Read Papers 2018</title>
-      <link>https://sobamchan.github.io/posts/how-i-read-papers-2018/</link>
-      <pubDate>Mon, 01 Jan 2018 23:25:54 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/posts/how-i-read-papers-2018/</guid>
-      <description>&lt;p&gt;研究室に所属してから一年経って、自分の論文の「速読」スタイルが少し固まったので記録しておく。（多くの人が似たことをしていると思うが）
+			<content type="html"><![CDATA[<h1 id="目的">目的</h1>
+<p>最近、教師なし翻訳とかでよく使用されているback-translationだが、 直接翻訳に使用する以外ではどんな感じの研究があるかを知りたかったので、 あまり見つからなかったが論文いくつか読んだのでここにまとめておく。（随時更新）</p>
+<h1 id="全体感">全体感</h1>
+<p>back-translateした結果をsource sentenceのparaphraseとして、paraphrase detectionとかgeneration に使用されるのが多かった。</p>
+<h1 id="論文s">論文s</h1>
+<h2 id="iterative-back-translation-for-neural-machine-translationhttpsaclanthologycoliuni-saarlanddepapersw18-2703w18-2703"><a href="https://aclanthology.coli.uni-saarland.de/papers/W18-2703/w18-2703">Iterative Back-Translation for Neural Machine Translation</a></h2>
+<p>source to targetの機械翻訳機を学習するのだけど、まず先に手持ちのparallel corpusでtarget to sourceを学習し それを用いて、monolingual corpus (in source language)からparallel corpusを生成してparallel corpusを カサ増ししてデータセットに加えてしまおうというもの。</p>
+<h2 id="style-transfer-through-back-translationhttpsaclanthologycoliuni-saarlanddepapersp18-1080p18-1080"><a href="https://aclanthology.coli.uni-saarland.de/papers/P18-1080/p18-1080">Style Transfer Through Back-Translation</a></h2>
+<p>Style Transferを行う文生成器を学習するんだけど、生成器 (decoder)への入力をいきなり、文をそのまま入れるのではなくて 別学習のNMT modelを使用してsource -&gt; target -&gt; sourceと一度back-translateし、そのsourceをencodeしたものを 入れることで、意味情報を濃く、style情報が削られた状態にしている。 こうすることでstyleを変換しやすくしているらしい。</p>
+<h2 id="learning-paraphrastic-sentence-embeddings-from-back-translated-bitexthttpsaclanthologycoliuni-saarlanddepapersd17-1026d17-1026"><a href="https://aclanthology.coli.uni-saarland.de/papers/D17-1026/d17-1026">Learning Paraphrastic Sentence Embeddings from Back-Translated Bitext</a></h2>
+<p>paraphrase sentenceの生成をback-translationすることで生成する。</p>
+<h2 id="paraphrasing-revisited-with-neural-machine-translationhttpaclweborganthologye17-1083"><a href="http://aclweb.org/anthology/E17-1083">Paraphrasing Revisited with Neural Machine Translation</a></h2>
+<p>paraphraseを生成するモデルをNMTのframeworkでやっているのだが、 back-translationで生成すると翻訳例がone-to-oneでmappingすることはできない理由で、必ずしも意味を完全に捉えたparaphraseを生成することはできない。 なので、target sentenceを生成する際に一つではなく複数生成したり、target languageを複数用意することで、source sentenceのaspectをできるだけ捉えてから生成するようにしている。</p>]]></content>
+		</item>
+		
+		<item>
+			<title>How I Read Papers 2018</title>
+			<link>https://sobamchan.github.io/posts/how-i-read-papers-2018/</link>
+			<pubDate>Mon, 01 Jan 2018 23:25:54 +0900</pubDate>
+			
+			<guid>https://sobamchan.github.io/posts/how-i-read-papers-2018/</guid>
+			<description>&lt;p&gt;研究室に所属してから一年経って、自分の論文の「速読」スタイルが少し固まったので記録しておく。（多くの人が似たことをしていると思うが）
 随時、読み方に変更が出たら更新していく。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>scikit-learnのTfidfVectorizerを日本語に使うときの注意</title>
-      <link>https://sobamchan.github.io/posts/sklearn-tfidf-ja/</link>
-      <pubDate>Mon, 01 Jan 2018 21:51:46 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/posts/sklearn-tfidf-ja/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html&#34;&gt;scikit-learnのTfidfVectorizer&lt;/a&gt;&lt;/p&gt;
+			<content type="html"><![CDATA[<p>研究室に所属してから一年経って、自分の論文の「速読」スタイルが少し固まったので記録しておく。（多くの人が似たことをしていると思うが）
+随時、読み方に変更が出たら更新していく。</p>
+<h1 id="背景">背景</h1>
+<ul>
+<li>自然言語処理系の研究をしているM1で、深層強化学習をSeq2Seqに応用する系の研究をしたいと思っている。</li>
+<li>分野に関する知見は少なく手探り感が強いため、とにかくたくさん論文を読む必要がある。</li>
+</ul>
+<h1 id="要件">要件</h1>
+<ul>
+<li>具体的な研究テーマも決まっていないので、手広く見てテーマ決めに対する知識が欲しい。</li>
+</ul>
+<h1 id="読み方">読み方</h1>
+<h2 id="論文収集リソース">論文収集リソース</h2>
+<ul>
+<li><a href="https://qiita.com/mhangyo/items/4eb5add038d6d4e76c79">この辺の会議のaccepted paper</a></li>
+<li><a href="https://aclanthology.coli.uni-saarland.de/">自分の興味のある単語をacl anthologyで検索して引っかかったものたち</a></li>
+</ul>
+<h2 id="論文選択">論文選択</h2>
+<p>上のソースで得られた論文のリストを以下の順番でフィルタリングしていていく。 1. titleだけ見て少しでも面白そうと思うもの 2. abstractだけ読んでまあ面白そうと思うもの</p>
+<h2 id="論文管理">論文管理</h2>
+<p>上のフィルタリングで残ったのみをabstractのメモとともにTrelloにソースごとにListにしていく。
+結果として会議とか検索ワードごとに積読される。</p>
+<h2 id="読み">読み</h2>
+<p>読む論文をTrelloから選択したら、論文をMendeleyにインポートしてからIpad miniで読む。
+速読する際には基本的に論文中の以下の点のみ読む。</p>
+<ul>
+<li>Abstract</li>
+<li>Introductionの最後</li>
+<li>Related worksの最後</li>
+<li>手法の概要（methodみたいな章の最初に書いてあることが多い？）</li>
+<li>Conclusion</li>
+</ul>
+<p>自分が知っていることが多い分野の論文だと、これだけで概要はつかめる。 けど、知らない手法とかをベースに成り立っている論文とかだと、これだけじゃわからないことがあるので、 method等の章をもう少しちゃんと読む必要が出てくる。</p>
+<h2 id="読んだ後">読んだ後</h2>
+<p>このテンプレートに従って簡単にまとめを書き、Trelloのカードをdid readに移動し、 まとめサイトを更新し、終える。
+（このテンプレートは、なんか変える必要がある気がしている）</p>]]></content>
+		</item>
+		
+		<item>
+			<title>scikit-learnのTfidfVectorizerを日本語に使うときの注意</title>
+			<link>https://sobamchan.github.io/posts/sklearn-tfidf-ja/</link>
+			<pubDate>Mon, 01 Jan 2018 21:51:46 +0900</pubDate>
+			
+			<guid>https://sobamchan.github.io/posts/sklearn-tfidf-ja/</guid>
+			<description>&lt;p&gt;&lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html&#34;&gt;scikit-learnのTfidfVectorizer&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;はものすごく便利で、分類とか類似度計算とかを数行で実装することができる。&lt;br&gt;
 インターフェイスもシンプルなので、これまでもいくつかのプロジェクトで使用してきたが、結構大きな罠が日本語に対して適応するときにあるのにこの前気づいた。&lt;br&gt;
 何も考えずに使用するとこんな感じで書ける。&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
+			<content type="html"><![CDATA[<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html">scikit-learnのTfidfVectorizer</a></p>
+<p>はものすごく便利で、分類とか類似度計算とかを数行で実装することができる。<br>
+インターフェイスもシンプルなので、これまでもいくつかのプロジェクトで使用してきたが、結構大きな罠が日本語に対して適応するときにあるのにこの前気づいた。<br>
+何も考えずに使用するとこんな感じで書ける。</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I like a dog .&#39;</span><span class="p">,</span> <span class="s1">&#39;I am a dog .&#39;</span><span class="p">,</span> <span class="s1">&#39;She was a cat before .&#39;</span><span class="p">]</span>
+
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">vectorizer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+</code></pre></div><p>ただここで、文章をベクトル化する際に変換の対象になっているvectorizerのattributeであるvocabulary_を確認すると、</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span><span class="nt">&#34;am&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&#34;cat&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nt">&#34;dog&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nt">&#34;like&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nt">&#34;she&#34;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nt">&#34;was&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+</code></pre></div><p>がとなっていて、&lsquo;I'や&rsquo;a'は特徴として使用されないことがわかる。</p>
+<p>最初これに遭遇したときに、TfidfVectorizerの引数であるmax_df等のせいかと思ったがdefaultで1.0なのでそんなこともなくて、 何でだろうかと思っていた。</p>
+<p>するとTfidfVectorizerにはtoken_patternという引数もあり、それにはdefaultで<code>’(?u)\b\w\w+\b’</code>が渡されている。 Vectorizerがtokenとして認識する文字列の正規表現を指定しているのだが、このままだと文字数が2以上じゃないと認識されない。</p>
+<p>なのでこれを<code>'(?u)\\b\\w+\\b'</code>にしてあげる必要がある。</p>
+<p>つまりこう</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I like a dog .&#39;</span><span class="p">,</span> <span class="s1">&#39;I am a dog .&#39;</span><span class="p">,</span> <span class="s1">&#39;She was a cat before .&#39;</span><span class="p">]</span>
+
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">token_pattern</span><span class="o">=</span><span class="s1">&#39;(?u)</span><span class="se">\\</span><span class="s1">b</span><span class="se">\\</span><span class="s1">w+</span><span class="se">\\</span><span class="s1">b&#39;</span><span class="p">)</span>
+<span class="n">vectorizer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+</code></pre></div><p>こうするとvocabulary_が</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span><span class="nt">&#34;a&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&#34;am&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nt">&#34;cat&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nt">&#34;dog&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nt">&#34;I&#34;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nt">&#34;like&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nt">&#34;she&#34;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nt">&#34;was&#34;</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+</code></pre></div><p>になる。</p>
+<p>英語を扱っている場合は、一文字の単語は意味のあまりないものが多いが、日本語の場合は漢字があるので結構危ない。 (象、 猿とか)</p>]]></content>
+		</item>
+		
+	</channel>
 </rss>
