@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gorm on Tofu Blog</title>
+    <link>https://sobamchan.github.io/tags/gorm/</link>
+    <description>Recent content in gorm on Tofu Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 18 Mar 2020 08:02:05 +0900</lastBuildDate>
+    
+	<atom:link href="https://sobamchan.github.io/tags/gorm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>gorm.Modelを自分好みの定義にする．</title>
+      <link>https://sobamchan.github.io/posts/gorm-base-model-original/</link>
+      <pubDate>Wed, 18 Mar 2020 08:02:05 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/posts/gorm-base-model-original/</guid>
+      <description>tl;dr gorm殻提供されている基本モデルを自分の好みに書き直す． 概要 最近，golangを使って簡単なWebアプリを作ろうとしており，横着して実装</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,27 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://sobamchan.github.io/tags/golang/</loc>
+    <lastmod>2020-03-18T08:02:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/tags/gorm/</loc>
+    <lastmod>2020-03-18T08:02:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/posts/gorm-base-model-original/</loc>
+    <lastmod>2020-03-18T08:02:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/posts/</loc>
+    <lastmod>2020-03-18T08:02:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/tags/</loc>
+    <lastmod>2020-03-18T08:02:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/</loc>
+    <lastmod>2020-03-18T08:02:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/tags/web/</loc>
+    <lastmod>2020-03-18T08:02:05+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sobamchan.github.io/posts/kewpie-intro/</loc>
     <lastmod>2020-03-17T09:08:29+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://sobamchan.github.io/tags/nlp/</loc>
-    <lastmod>2020-03-17T09:08:29+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sobamchan.github.io/posts/</loc>
-    <lastmod>2020-03-17T09:08:29+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sobamchan.github.io/tags/</loc>
-    <lastmod>2020-03-17T09:08:29+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sobamchan.github.io/</loc>
     <lastmod>2020-03-17T09:08:29+09:00</lastmod>
   </url>
   

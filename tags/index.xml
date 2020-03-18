@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 17 Mar 2020 09:08:29 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2020 08:02:05 +0900</lastBuildDate>
     
 	<atom:link href="https://sobamchan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>golang</title>
+      <link>https://sobamchan.github.io/tags/golang/</link>
+      <pubDate>Wed, 18 Mar 2020 08:02:05 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gorm</title>
+      <link>https://sobamchan.github.io/tags/gorm/</link>
+      <pubDate>Wed, 18 Mar 2020 08:02:05 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/tags/gorm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://sobamchan.github.io/tags/web/</link>
+      <pubDate>Wed, 18 Mar 2020 08:02:05 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/tags/web/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>nlp</title>

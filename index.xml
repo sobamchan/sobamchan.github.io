@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 17 Mar 2020 09:08:29 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2020 08:02:05 +0900</lastBuildDate>
     
 	<atom:link href="https://sobamchan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gorm.Modelを自分好みの定義にする．</title>
+      <link>https://sobamchan.github.io/posts/gorm-base-model-original/</link>
+      <pubDate>Wed, 18 Mar 2020 08:02:05 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/posts/gorm-base-model-original/</guid>
+      <description>tl;dr gorm殻提供されている基本モデルを自分の好みに書き直す． 概要 最近，golangを使って簡単なWebアプリを作ろうとしており，横着して実装</description>
+    </item>
     
     <item>
       <title>kewpie: KEyWord PIckEr with tf-idf</title>
