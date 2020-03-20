@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>nlp on Tofu Blog</title>
-    <link>https://sobamchan.github.io/tags/nlp/</link>
-    <description>Recent content in nlp on Tofu Blog</description>
+    <title>word-embedding on Tofu Blog</title>
+    <link>https://sobamchan.github.io/tags/word-embedding/</link>
+    <description>Recent content in word-embedding on Tofu Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Fri, 20 Mar 2020 09:03:34 +0900</lastBuildDate>
     
-	<atom:link href="https://sobamchan.github.io/tags/nlp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sobamchan.github.io/tags/word-embedding/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,24 +19,6 @@
       
       <guid>https://sobamchan.github.io/posts/sister-intro/</guid>
       <description>tl;dr 文埋め込みを簡単に作れるpythonライブラリの紹介 概要 推薦システムをはじめとして，アプリケーションへのデータ利用が盛んになってきた今，自</description>
-    </item>
-    
-    <item>
-      <title>kewpie: KEyWord PIckEr with tf-idf</title>
-      <link>https://sobamchan.github.io/posts/kewpie-intro/</link>
-      <pubDate>Tue, 17 Mar 2020 09:08:29 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/posts/kewpie-intro/</guid>
-      <description>&lt;figure&gt;
-    &lt;img src=&#34;https://sobamchan.github.io/imgs/kewpie-intro-header.jpg&#34;
-         alt=&#34;image&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h2 id=&#34;tldr&#34;&gt;tl;dr&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;tf-idfをscikit-learnから利用&lt;/li&gt;
-&lt;li&gt;それをさらに抽象化しまくった&lt;a href=&#34;https://github.com/tofunlp/kewpie&#34;&gt;kewpie&lt;/a&gt;の紹介&lt;/li&gt;
-&lt;/ul&gt;</description>
     </item>
     
   </channel>

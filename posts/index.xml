@@ -6,8 +6,93 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Wed, 18 Mar 2020 08:02:05 +0900</lastBuildDate>
+		<lastBuildDate>Fri, 20 Mar 2020 09:03:34 +0900</lastBuildDate>
 		<atom:link href="https://sobamchan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>自然言語処理ライブラリ sister を使った，簡単な文ベクトルの作成方法 </title>
+			<link>https://sobamchan.github.io/posts/sister-intro/</link>
+			<pubDate>Fri, 20 Mar 2020 09:03:34 +0900</pubDate>
+			
+			<guid>https://sobamchan.github.io/posts/sister-intro/</guid>
+			<description>tl;dr 文埋め込みを簡単に作れるpythonライブラリの紹介 概要 推薦システムをはじめとして，アプリケーションへのデータ利用が盛んになってきた今，自</description>
+			<content type="html"><![CDATA[<figure>
+    <img src="/imgs/sister-intro-header.jpg"
+         alt="image"/> 
+</figure>
+
+<h2 id="tldr">tl;dr</h2>
+<ul>
+<li>文埋め込みを簡単に作れる<a href="https://github.com/tofunlp/sister">pythonライブラリ</a>の紹介</li>
+</ul>
+<h2 id="概要">概要</h2>
+<p>推薦システムをはじめとして，アプリケーションへのデータ利用が盛んになってきた今，自然言語処理技術をアプリケーションに組み込みたいことは多々あります．</p>
+<ul>
+<li>Webメディアに「この記事に類似した他の記事」推薦機能</li>
+<li>基本の文字列検索よりも，少し「賢い」検索機能</li>
+<li>ユーザーの投稿を見て，類似しているユーザーの列挙</li>
+</ul>
+<p>少し考えただけでたくさん出てきます．</p>
+<p>一般に，このような仕組みを構築するには，自然言語データを計算機で扱いやすくするために数値表現に変換する必要があります．</p>
+<p>この自然言語の数値表現方法は，現在たくさんの方法が提案されています．
+その中でもMikolov大先生が2013年に提案したのを皮切りに激しく発展した， <strong>単語ベクトル</strong> (or 単語埋め込み) をベースにした方法は，
+多くのアプリケーションで稼働していることだと思います．</p>
+<p>僕自身も多くの場面で，単語ベクトルを使って自然言語文の数値表現を獲得したいことが多々あるのですが，
+公開されているモデルをダウンロードしてきて，さらにそのモデルをpythonに読み込むライブラリをインストールして，
+文中の単語をそれぞれベクトルかして，最後に文の表現を作るためにさらに変換する．<br>
+と小さなことですが，多くのステップを文の表現を獲得するまでに踏まなくてはいけません．</p>
+<p>これを簡潔にするために，今回<code>pip</code>でインストールできて，数行のpythonコードで上記のステップを行ってくれるライブラリを書きましたので，それの紹介をしようと思います．</p>
+<h2 id="sisterhttpsgithubcomtofunlpsister-使い方"><a href="https://github.com/tofunlp/sister">sister</a> 使い方</h2>
+<p>まずコードを載せちゃいます．
+<code>pip install sister</code>でインストールしてから</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sister</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sentence_embedding</span> <span class="o">=</span> <span class="n">sister</span><span class="o">.</span><span class="n">MeanEmbedding</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="s2">&#34;ja&#34;</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sentence</span> <span class="o">=</span> <span class="s2">&#34;私はパリコレに出たことはありません．&#34;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">vector</span> <span class="o">=</span> <span class="n">sentence_embedding</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">vector</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="o">...</span> <span class="p">(</span><span class="mi">300</span><span class="p">,)</span>
+</code></pre></div><p>実際のコードとしては4行で済んでいますね．</p>
+<p>一行ずつ説明していきます．</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">senten_embedding</span> <span class="o">=</span> <span class="n">sister</span><span class="o">.</span><span class="n">MeanEmbedding</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="s2">&#34;ja&#34;</span><span class="p">)</span>
+</code></pre></div><p>この行では，</p>
+<ol>
+<li>初回実行時の場合にはモデルのダウンロード (デフォルトでは<a href="https://github.com/facebookresearch/fastText/">fastText</a>です)</li>
+<li>バイナリファイルをロード
+をしています．</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">sentence</span> <span class="o">=</span> <span class="s2">&#34;私はパリコレに出たことはありません．&#34;</span>  <span class="c1"># サンプルの文を定義しているだけ</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">vector</span> <span class="o">=</span> <span class="n">sentence_embedding</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+</code></pre></div><p>ここでは，</p>
+<ol>
+<li>文を形態素解析して，単語ごとに分割 (<a href="https://mocobeta.github.io/janome/">Janome</a>)</li>
+<li>各単語の単語ベクトルを取得</li>
+<li>単語ベクトルのリストを使って，文のベクトルを作成する．(単語ベクトルの各要素の平均をとる．)</li>
+</ol>
+<figure class="small">
+    <img src="/imgs/sister-intro-swem-mean.png"
+         alt="image"/> <figcaption>
+            <p>単語ベクトルから文ベクトルへ変換</p>
+        </figcaption>
+</figure>
+
+<p>3.の単語ベクトルの羅列から文ベクトルを構成する方法は，
+<a href="https://arxiv.org/abs/1805.09843">Baseline Needs More Love: On Simple Word-Embedding-Based Models and Associated Pooling Mechanisms</a>を参考にした非常にシンプルな方法が実装されています．</p>
+<p>本ライブラリ, <a href="https://github.com/tofunlp/sister">sister</a>を使えば，単語ベクトルの取得，日本語の場合は分かち書きから，文への変換まで，
+数行のコードで書くことができます．
+次の記事では，このライブラリを利用して，実際に何かしらの機械学習を行ってみたいとおもっています．(本当にやるかはわからない．)</p>
+<hr>
+<h3 id="参考文献">参考文献</h3>
+<ul>
+<li><a href="https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">Distributed Representations of Words and Phrases and their Compositionality</a></li>
+<li><a href="https://arxiv.org/pdf/1301.3781.pdf">Efficient Estimation of Word Representations in Vector Space</a></li>
+</ul>
+<hr>
+<h3 id="関連記事">関連記事</h3>
+]]></content>
+		</item>
 		
 		<item>
 			<title>gorm.Modelを自分好みの定義にする．</title>

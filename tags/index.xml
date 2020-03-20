@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 18 Mar 2020 08:02:05 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 09:03:34 +0900</lastBuildDate>
     
 	<atom:link href="https://sobamchan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>nlp</title>
+      <link>https://sobamchan.github.io/tags/nlp/</link>
+      <pubDate>Fri, 20 Mar 2020 09:03:34 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/tags/nlp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sister</title>
+      <link>https://sobamchan.github.io/tags/sister/</link>
+      <pubDate>Fri, 20 Mar 2020 09:03:34 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/tags/sister/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>word-embedding</title>
+      <link>https://sobamchan.github.io/tags/word-embedding/</link>
+      <pubDate>Fri, 20 Mar 2020 09:03:34 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/tags/word-embedding/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>golang</title>
@@ -36,15 +63,6 @@
       <pubDate>Wed, 18 Mar 2020 08:02:05 +0900</pubDate>
       
       <guid>https://sobamchan.github.io/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nlp</title>
-      <link>https://sobamchan.github.io/tags/nlp/</link>
-      <pubDate>Tue, 17 Mar 2020 09:08:29 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/tags/nlp/</guid>
       <description></description>
     </item>
     

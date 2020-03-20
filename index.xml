@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 18 Mar 2020 08:02:05 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 09:03:34 +0900</lastBuildDate>
     
 	<atom:link href="https://sobamchan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>自然言語処理ライブラリ sister を使った，簡単な文ベクトルの作成方法 </title>
+      <link>https://sobamchan.github.io/posts/sister-intro/</link>
+      <pubDate>Fri, 20 Mar 2020 09:03:34 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/posts/sister-intro/</guid>
+      <description>tl;dr 文埋め込みを簡単に作れるpythonライブラリの紹介 概要 推薦システムをはじめとして，アプリケーションへのデータ利用が盛んになってきた今，自</description>
+    </item>
     
     <item>
       <title>gorm.Modelを自分好みの定義にする．</title>
