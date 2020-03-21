@@ -23,11 +23,6 @@
   </url>
   
   <url>
-    <loc>https://sobamchan.github.io/posts/sister-ja-text-classification/</loc>
-    <lastmod>2020-03-21T08:20:15+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://sobamchan.github.io/tags/</loc>
     <lastmod>2020-03-21T08:20:15+09:00</lastmod>
   </url>
@@ -39,6 +34,11 @@
   
   <url>
     <loc>https://sobamchan.github.io/tags/word-embedding/</loc>
+    <lastmod>2020-03-21T08:20:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/posts/sister-ja-text-classification/</loc>
     <lastmod>2020-03-21T08:20:15+09:00</lastmod>
   </url>
   
