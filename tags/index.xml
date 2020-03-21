@@ -7,15 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 20 Mar 2020 09:03:34 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2020 08:20:15 +0900</lastBuildDate>
     
 	<atom:link href="https://sobamchan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>classification</title>
+      <link>https://sobamchan.github.io/tags/classification/</link>
+      <pubDate>Sat, 21 Mar 2020 08:20:15 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/tags/classification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>nlp</title>
       <link>https://sobamchan.github.io/tags/nlp/</link>
-      <pubDate>Fri, 20 Mar 2020 09:03:34 +0900</pubDate>
+      <pubDate>Sat, 21 Mar 2020 08:20:15 +0900</pubDate>
       
       <guid>https://sobamchan.github.io/tags/nlp/</guid>
       <description></description>
@@ -24,7 +33,7 @@
     <item>
       <title>sister</title>
       <link>https://sobamchan.github.io/tags/sister/</link>
-      <pubDate>Fri, 20 Mar 2020 09:03:34 +0900</pubDate>
+      <pubDate>Sat, 21 Mar 2020 08:20:15 +0900</pubDate>
       
       <guid>https://sobamchan.github.io/tags/sister/</guid>
       <description></description>
@@ -33,7 +42,7 @@
     <item>
       <title>word-embedding</title>
       <link>https://sobamchan.github.io/tags/word-embedding/</link>
-      <pubDate>Fri, 20 Mar 2020 09:03:34 +0900</pubDate>
+      <pubDate>Sat, 21 Mar 2020 08:20:15 +0900</pubDate>
       
       <guid>https://sobamchan.github.io/tags/word-embedding/</guid>
       <description></description>

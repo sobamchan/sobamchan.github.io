@@ -6,8 +6,83 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Fri, 20 Mar 2020 09:03:34 +0900</lastBuildDate>
+		<lastBuildDate>Sat, 21 Mar 2020 08:20:15 +0900</lastBuildDate>
 		<atom:link href="https://sobamchan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Sister Ja Text Classification</title>
+			<link>https://sobamchan.github.io/posts/sister-ja-text-classification/</link>
+			<pubDate>Sat, 21 Mar 2020 08:20:15 +0900</pubDate>
+			
+			<guid>https://sobamchan.github.io/posts/sister-ja-text-classification/</guid>
+			<description>tl;dr 文ベクトルを使って簡単に日本語テキスト分類 Web記事のタイトルを2値分類 -&amp;gt; 正答率90% 概要 前回の記事では，文を入力したら，単語ベクトルを利</description>
+			<content type="html"><![CDATA[<figure>
+    <img src="/imgs/sister-ja-text-classification-header.jpg"
+         alt="image"/> 
+</figure>
+
+<h2 id="tldr">tl;dr</h2>
+<ul>
+<li>文ベクトルを使って簡単に日本語テキスト分類</li>
+<li>Web記事のタイトルを2値分類 -&gt; 正答率90%</li>
+</ul>
+<h2 id="概要">概要</h2>
+<p><a href="https://sobamchan.github.io/posts/sister-intro/">前回の記事</a>では，文を入力したら，単語ベクトルを利用して文の数値表現を作成してくれるライブラリの紹介をしました．
+実質4行くらいのpythonで文ベクトルを得ることができました．</p>
+<p>文ベクトルを使ってできることはたくさんあるのですが，本記事ではその中でも特に一般的な，テキスト分類を行ってみようと思います．</p>
+<h2 id="データセットの用意">データセットの用意</h2>
+<p>今回は，<a href="https://www.rondhuit.com/download.html">livedoor ニュースコーパス</a>を利用させてもらいます．
+このデータセットは，複数メディアから収集された記事がたくさん格納されているのですが，今回は，その中でも二つ (「ITライフハック」，「独女通信」) に絞り，
+さらに記事全体ではなく，タイトルだけを利用しようと思います．</p>
+<p>つまり，今回行いたいのは，あるネット記事のタイトルが入力された時に，それが「ITライフハック」と「独女通信」のどちらに属するか判定するモデルを構築します．</p>
+<p><a href="https://gist.github.com/sobamchan/1bb50c23de0e9b72eadfe60a9ae520a8#file-sister-ja-text-classification-build-dataset-py">GitHub Gist</a>にデータセットのダウンロードから，
+今回のフォーマットに変換してcsv形式で保存するpython scriptをおいておきましたので，実際に実行したい方は参照してください．
+これを実行すると，<code>text</code>と<code>label</code>をカラムとして持つcsvファイルが作成されます．</p>
+<pre><code class="language-csv" data-lang="csv">text,label
+Ultrabookをパワーアップ！　mSATA対応の小型SSDがマイクロンより登場,0
+コレでたばこを辞めました。独女の禁煙ヒストリー,1
+</code></pre><p>データセットの一部を見てみると，こんな感じになっています．(label 0 -&gt; ITライフハック，label 1 -&gt; 独女通信)</p>
+<h2 id="分類器の作成">分類器の作成</h2>
+<p>ここから，実際の分類器の作成に入っていきます．まず全体を下に貼り付けました．改行含んでも30行以下に収まります．</p>
+<script type="application/javascript" src="https://gist.github.com/sobamchan/1bb50c23de0e9b72eadfe60a9ae520a8.js?file=sister-ja-text-classification-main.py"></script>
+
+<p>各ブロックごとに解説していきます．</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+
+<span class="kn">import</span> <span class="nn">sister</span>
+</code></pre></div><p>まず，今回使うライブラリをインポートします．<code>numpy</code>と<code>pandas</code>はデータ読み出し関連で使っています．
+モデルには，今回，<a href="https://scikit-learn.org/">scikit-learn</a>に実装されている<a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC">SVC</a>を利用します．
+ここではモデルの詳細は飛ばしますが，分類タスクに強いモデルです．
+最後に，文をベクトルに変換してくれる<a href="https://github.com/tofunlp/sister"><code>sister</code></a>を読み込みます．</p>
+<p>次に，<code>main</code>関数の中を見ていきます．</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;./dataset.csv&#34;</span><span class="p">)</span>
+<span class="n">texts</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">dataset</span><span class="p">[[</span><span class="s2">&#34;text&#34;</span><span class="p">,</span> <span class="s2">&#34;label&#34;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+
+<span class="n">train_texts</span><span class="p">,</span> <span class="n">test_texts</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">,</span> <span class="n">test_labels</span> <span class="o">=</span>\
+    <span class="n">train_test_split</span><span class="p">(</span><span class="n">texts</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+</code></pre></div><p>関数内，最初のブロックは，先ほど作成したデータセットを読み込んで， 訓練用と評価用に分割しています．</p>
+<p>で，非常に短いですが，本丸です．</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">train_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">sentence_embedding</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">train_texts</span><span class="p">])</span>
+<span class="n">test_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">sentence_embedding</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">test_texts</span><span class="p">])</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s2">&#34;linear&#34;</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_x</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">)</span>
+</code></pre></div><p>最初の二行で，sisterを利用して文を一つずつベクトルに変換しています．
+ここの詳しい説明は，<a href="https://sobamchan.github.io/posts/sister-intro/">前回の投稿</a>を参照してください．
+そして，訓練用，評価用の文らのベクトルを獲得してからは，scikit-learnのSVCモデルを訓練しています ．</p>
+<p>で，最後に評価用データで正答率を求めています，</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">test_x</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">))</span>
+</code></pre></div><p>データの分割の際に乱数の固定をしていないので，結果は実行のたびに変わりますが，90%は超えてくれると思います．</p>
+<h3 id="参考文献">参考文献</h3>
+<ul>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC">sklearn.svm.SVC</a></li>
+</ul>
+<h3 id="関連記事">関連記事</h3>
+]]></content>
+		</item>
 		
 		<item>
 			<title>自然言語処理ライブラリ sister を使った，簡単な文ベクトルの作成方法 </title>

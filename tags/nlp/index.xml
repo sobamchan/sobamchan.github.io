@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 20 Mar 2020 09:03:34 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2020 08:20:15 +0900</lastBuildDate>
     
 	<atom:link href="https://sobamchan.github.io/tags/nlp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sister Ja Text Classification</title>
+      <link>https://sobamchan.github.io/posts/sister-ja-text-classification/</link>
+      <pubDate>Sat, 21 Mar 2020 08:20:15 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/posts/sister-ja-text-classification/</guid>
+      <description>tl;dr 文ベクトルを使って簡単に日本語テキスト分類 Web記事のタイトルを2値分類 -&amp;gt; 正答率90% 概要 前回の記事では，文を入力したら，単語ベクトルを利</description>
+    </item>
     
     <item>
       <title>自然言語処理ライブラリ sister を使った，簡単な文ベクトルの作成方法 </title>

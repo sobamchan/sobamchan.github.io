@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sister on Tofu Blog</title>
-    <link>https://sobamchan.github.io/tags/sister/</link>
-    <description>Recent content in sister on Tofu Blog</description>
+    <title>classification on Tofu Blog</title>
+    <link>https://sobamchan.github.io/tags/classification/</link>
+    <description>Recent content in classification on Tofu Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Sat, 21 Mar 2020 08:20:15 +0900</lastBuildDate>
     
-	<atom:link href="https://sobamchan.github.io/tags/sister/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sobamchan.github.io/tags/classification/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>https://sobamchan.github.io/posts/sister-ja-text-classification/</guid>
       <description>tl;dr 文ベクトルを使って簡単に日本語テキスト分類 Web記事のタイトルを2値分類 -&amp;gt; 正答率90% 概要 前回の記事では，文を入力したら，単語ベクトルを利</description>
-    </item>
-    
-    <item>
-      <title>自然言語処理ライブラリ sister を使った，簡単な文ベクトルの作成方法 </title>
-      <link>https://sobamchan.github.io/posts/sister-intro/</link>
-      <pubDate>Fri, 20 Mar 2020 09:03:34 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/posts/sister-intro/</guid>
-      <description>tl;dr 文埋め込みを簡単に作れるpythonライブラリの紹介 概要 推薦システムをはじめとして，アプリケーションへのデータ利用が盛んになってきた今，自</description>
     </item>
     
   </channel>
