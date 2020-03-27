@@ -613,6 +613,89 @@ fast.ai inspiredな実装になっているらしい。Transformerもある。Do
 		</item>
 		
 		<item>
+			<title>洋楽ラッパーの歌詞の分類問題をchainer使ってやってみる</title>
+			<link>https://sobamchan.github.io/posts/eminem-snoop-chainer/</link>
+			<pubDate>Sat, 04 Feb 2017 09:27:28 +0900</pubDate>
+			
+			<guid>https://sobamchan.github.io/posts/eminem-snoop-chainer/</guid>
+			<description>[Qiitaのアカウント削除のために，移動してきました．] ソースコードはここにあります。 以前同様の分類をscikit-learnを使用してや</description>
+			<content type="html"><![CDATA[<p>[Qiitaのアカウント削除のために，移動してきました．]</p>
+<p>ソースコードは<a href="https://github.com/sobamchan/eminem_snoop_chainer">ここ</a>にあります。
+<a href="http://qiita.com/sobamchan/items/24c3616aac81aa86f74d">以前</a>同様の分類をscikit-learnを使用してやってみたことがあったので、今回はディープラーニングのフレームワークであるchainerを使用して、簡単なプログラムを書いて分類してみました。</p>
+<p>(*) 今回はプログラムの正確さにあまり自信がないため、もし間違い等がありましたら、是非コメント等で教えていただけたらと思います。</p>
+<p>使用するデータは前回と同様、<a href="https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%9F%E3%83%8D%E3%83%A0">eminem</a>さんと<a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8C%E3%83%BC%E3%83%97%E3%83%BB%E3%83%89%E3%83%83%E3%82%B0">snoop dogg</a>さんの歌詞を使用させてもらいました。</p>
+<h2 id="手順">手順</h2>
+<ol>
+<li>歌詞を数え上げにより作成された、出現回数のベクトルに変換する</li>
+<li>データセットを訓練用と、テスト用に分割する</li>
+<li>chainerで必要なものを初期化し</li>
+<li>学習サイクルを回して</li>
+</ol>
+<h2 id="1-歌詞を数え上げにより作成された出現回数のベクトルに変換する">1. 歌詞を数え上げにより作成された、出現回数のベクトルに変換する</h2>
+<p>この作業は前回にTfidfのベクトルをscikit-learnを使用して作成したのと同様に、scikit-learnに頼ってベクトル化します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-py3" data-lang="py3"><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <span class="n">CountVectorizer</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">lyrics</span><span class="p">)</span>
+</code></pre></div><p>これだけです！
+lyricsには一つの歌詞を一つの要素としている配列が代入されています。
+このvectorizerは後で使用します。</p>
+<h2 id="2-データセットを訓練用とテスト用に分割する">2. データセットを訓練用と、テスト用に分割する</h2>
+<p>ここでは以下の四つのデータを用意します</p>
+<ul>
+<li>x_train (学習に使用するデータ, 歌詞)</li>
+<li>t_train (学習データに対応する正解ラベル, eminem(0) か snoop(1)か)</li>
+<li>y_test (テスト時に使用するデータ, 歌詞)</li>
+<li>t_test (テスト時に使用するデータに対応する正解ラベル)</li>
+</ul>
+<p>実際には以下のようにしています（効率が悪そうなやり方ですが、、、）</p>
+<div class="highlight"><pre class="chroma"><code class="language-py3" data-lang="py3"><span class="n">x_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">eminem_lyrics</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">eminem_lyrics</span><span class="p">)</span><span class="o">*</span><span class="mf">0.8</span><span class="p">)]</span> <span class="o">+</span> <span class="n">snoop_lyrics</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">snoop_lyrics</span><span class="p">)</span><span class="o">*</span><span class="mf">0.8</span><span class="p">)])</span>
+<span class="n">t_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">eminem_lyrics</span><span class="p">)</span><span class="o">*</span><span class="mf">0.8</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">snoop_lyrics</span><span class="p">)</span><span class="o">*</span><span class="mf">0.8</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="n">x_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">eminem_lyrics</span><span class="p">[</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">eminem_lyrics</span><span class="p">)</span><span class="o">*</span><span class="mf">0.2</span><span class="p">):]</span> <span class="o">+</span> <span class="n">snoop_lyrics</span><span class="p">[</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">snoop_lyrics</span><span class="p">)</span><span class="o">*</span><span class="mf">0.2</span><span class="p">):])</span>
+<span class="n">t_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">eminem_lyrics</span><span class="p">)</span><span class="o">*</span><span class="mf">0.2</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">snoop_lyrics</span><span class="p">)</span><span class="o">*</span><span class="mf">0.2</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+</code></pre></div><h2 id="3-chainerで必要なものを初期化">3. chainerで必要なものを初期化</h2>
+<p>chainerで定義したモデルと、chainer提供の最適化関数を初期化します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-py3" data-lang="py3"><span class="n">model</span> <span class="o">=</span> <span class="n">MyChain</span><span class="p">()</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optimizers</span><span class="o">.</span><span class="n">SGD</span><span class="p">()</span>
+<span class="n">optimizer</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</code></pre></div><h2 id="4-学習サイクルを回してみる">4. 学習サイクルを回してみる</h2>
+<div class="highlight"><pre class="chroma"><code class="language-py3" data-lang="py3"><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">epoch</span><span class="p">)):</span>
+    <span class="n">sfindx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">train_N</span><span class="p">)</span>
+    <span class="c1"># train</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">train_N</span><span class="p">,</span> <span class="n">bs</span><span class="p">):</span>
+        <span class="n">x_text</span> <span class="o">=</span> <span class="n">x_train</span><span class="p">[</span><span class="n">sfindx</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">bs</span><span class="p">]]</span>
+        <span class="n">x_vecs</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x_text</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+        <span class="n">x_vecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x_vecs</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">x_vecs</span><span class="p">)</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">t_train</span><span class="p">[</span><span class="n">sfindx</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">bs</span><span class="p">]])</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">cleargrads</span><span class="p">()</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</code></pre></div><p>やっていることはnumpyのrandom.permutation()で配列からランダムに要素を取り出すためのいんでっくすを作成し、
+先ほど定義しておいたvectorizerで歌詞をベクトルに変換した上で、
+chainer.Variable()でchainerが受け付けてくれる形に変換し、
+modelに渡してあげているだけです。</p>
+<p>そのモデルは以下のように定義されています。</p>
+<div class="highlight"><pre class="chroma"><code class="language-py3" data-lang="py3"><span class="k">class</span> <span class="nc">MyChain</span><span class="p">(</span><span class="n">Chain</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MyChain</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">l1</span><span class="o">=</span><span class="n">L</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">softmax_cross_entropy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fwd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="n">train</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">fwd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">l1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div><p>学習サイクルに関しては以上になります。詳しくはリポジトリの方を意味ていただきたいです。</p>
+<h2 id="結果">結果</h2>
+<pre><code>epoch = 15
+batch size = 10
+</code></pre><p>という、何も考えずに何となく設定して学習を回してみてテストデータで正答率を出してみたところ91.6%ほどになりました！</p>
+<h2 id="感想">感想</h2>
+<p>chainerが本当に扱いやすく、深層学習ちょびっとだけしか勉強したことがない僕でも、一応何かしらの学習は行うことができる感じでした。
+今回はとりあえずchainerで何かしらやってみたいってことで、何も考えずにとりあえずモデル等を定義しましたが、次回からはちゃんと目的を持ち、大きめのデータセットで学習をしてみたいなと思いました。</p>
+]]></content>
+		</item>
+		
+		<item>
 			<title>julia nlp入門 [1]</title>
 			<link>https://sobamchan.github.io/posts/julia-nlp-intro-1/</link>
 			<pubDate>Sun, 29 Jan 2017 09:26:13 +0900</pubDate>
@@ -775,6 +858,89 @@ Relationshipモデル内で<code>related_name</code>を定義していますが�
 <p>フォロー機能を追加するには様々な方法があると思うんですが、今回は自分が取れる一番シンプルそうな、方法を取ってみました。<br>
 他にもっといい方法が必ずあると思うんですが、まあdjangoのuserモデルを拡張する方法を調べれたので満足しています。
 これよりもいい感じの方法をご存知の方おられましたら是非教えていただきたいです。</p>
+<p><a href="https://twitter.com/sobamchan">twitter始めました</a></p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>洋楽ラッパーの歌詞の分類問題をscrapyとscikit-learnを使ってやってみる</title>
+			<link>https://sobamchan.github.io/posts/eminem-snoop-classification/</link>
+			<pubDate>Sun, 29 Jan 2017 09:22:28 +0900</pubDate>
+			
+			<guid>https://sobamchan.github.io/posts/eminem-snoop-classification/</guid>
+			<description>[Qiitaのアカウント削除のために，移動してきました．] ソースコードはここにあります。 先日機械学習ハンズオンでscikit-learnを用</description>
+			<content type="html"><![CDATA[<p>[Qiitaのアカウント削除のために，移動してきました．]</p>
+<p>ソースコードは<a href="https://bitbucket.org/Sotaro/emimem_vs_snoopdogg">ここ</a>にあります。</p>
+<p>先日機械学習ハンズオンでscikit-learnを用いた簡単なテキスト分類の手法を勉強したので、自分の好きなものに使ってみました。</p>
+<p>やりたいこと</p>
+<hr>
+<p>アメリカのラッパーで有名な<a href="https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%9F%E3%83%8D%E3%83%A0">EMINEM</a>と<a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8C%E3%83%BC%E3%83%97%E3%83%BB%E3%83%89%E3%83%83%E3%82%B0">SNOOP DOGG</a>の歌詞を判定するモデルをSVMを用いて作成したい。</p>
+<p>手順</p>
+<hr>
+<p>scrapyで歌詞サイトから各アーティストの歌詞データを取得する
+scikit-learnのTfidfVectorizerでベクトル化する
+scikit-learnのsvmで学習
+評価</p>
+<hr>
+<h3 id="1-scrapyで歌詞サイトから各アーティストの歌詞データを取得する">1) scrapyで歌詞サイトから各アーティストの歌詞データを取得する</h3>
+<p>今回は元データを<a href="http://www.metrolyrics.com">MetroLyrics</a>の方から取得しました。</p>
+<p>Qiitaの<a href="http://qiita.com/checkpoint/items/038b59b29df8e1e384a2">この投稿</a>を参考に<code>metro_spider.py</code>を作り、<code>scrapy runspider metro_spider.py -o snoop_dogg.json</code>としてSNOOP DOGGの歌詞を全て持ってきました。</p>
+<p>spiderクラスの実装でscrapyが便利だなと感じたのが、</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;.songs-table tbody tr td &gt; a::attr(href)&#39;</span><span class="p">)</span>
+</code></pre></div><p>とするだけで、html内のタグを指定でき、クロール対象となるリンクを取得できました。</p>
+<p>クロール対象内では、</p>
+<div class="highlight"><pre class="chroma"><code class="language-py3" data-lang="py3">
+<span class="n">lyrics</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">lyric</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//p[@class=&#34;verse&#34;]/text()&#39;</span><span class="p">):</span>
+
+<span class="n">lyrics</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lyric</span><span class="o">.</span><span class="n">extract</span><span class="p">())</span>
+
+</code></pre></div><p>とすることで複数のpタグにまたがっている歌詞データをまとめてから保存することができました。</p>
+<h3 id="2-scikit-learnのtfidfvectorizerでベクトル化する">2) scikit-learnのTfidfVectorizerでベクトル化する</h3>
+<p>次に先ほど生成されたeminem.jsonとsnoop_dogg.jsonのデータをscikit-learnのTfidfVectorizerでベクトル化していきます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-py3" data-lang="py3">
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;eminem.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">json_data_eminem</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+</code></pre></div><p>でjsonを読み込んで、eminemの歌詞とsnoop doggの歌詞を一つのリスト(doc_list)に入れます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-py3" data-lang="py3">
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">min_df</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_df</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">doc_list</span><span class="p">)</span>
+
+</code></pre></div><p>一行目でTfidVectorizerを用いたベクトル化のオブジェクトを作り、二行目で歌詞のリストをベクトル化してXに代入しています。</p>
+<div class="highlight"><pre class="chroma"><code class="language-py3" data-lang="py3">
+<span class="n">perm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">train_index</span> <span class="o">=</span> <span class="n">perm</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">80</span><span class="p">]</span>
+<span class="n">test_index</span> <span class="o">=</span> <span class="n">perm</span><span class="p">[</span><span class="mi">80</span><span class="p">:]</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">train_index</span><span class="p">,:]</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">train_index</span><span class="p">]</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">test_index</span><span class="p">,:]</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
+
+</code></pre></div><p><code>np.random.permutation(X.shape[0])</code>は先ほど作成したXデータは前半の90データがeminem、後半の90データがsnoop doggとデータの順序が偏っているので、シャッフルしています。
+それを8:1の割合で学習データとテストデータに分割しています。</p>
+<h3 id="3-scikit-learnのsvmで学習">3) scikit-learnのsvmで学習</h3>
+<div class="highlight"><pre class="chroma"><code class="language-py3" data-lang="py3">
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">svm</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">LinearSVC</span><span class="p">()</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+</code></pre></div><p><a href="http://scikit-learn.org/stable/">scikit-learn</a>を使うと学習はこれだけみたいでした。便利。</p>
+<h3 id="4-評価">4) 評価</h3>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py">
+<span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+
+</code></pre></div><p>評価<code>score</code>関数を用いることで数値として見ることができました。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
+$ python scikit.py
+0.8708
+
+</code></pre></div><p>今回は9割程度の結果になりました。</p>
 <p><a href="https://twitter.com/sobamchan">twitter始めました</a></p>
 ]]></content>
 		</item>

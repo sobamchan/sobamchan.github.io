@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on Tofu Blog</title>
-    <link>https://sobamchan.github.io/tags/python/</link>
-    <description>Recent content in python on Tofu Blog</description>
+    <title>scrapy on Tofu Blog</title>
+    <link>https://sobamchan.github.io/tags/scrapy/</link>
+    <description>Recent content in scrapy on Tofu Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 29 Jan 2017 09:24:24 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jan 2017 09:22:28 +0900</lastBuildDate>
     
-	<atom:link href="https://sobamchan.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sobamchan.github.io/tags/scrapy/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Djangoで簡単なフォロー機能を実装してみる</title>
-      <link>https://sobamchan.github.io/posts/django-simple-following/</link>
-      <pubDate>Sun, 29 Jan 2017 09:24:24 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/posts/django-simple-following/</guid>
-      <description>[Qiitaのアカウント削除のために，移動してきました．] 経緯 Djangoでユーザー間のフォロー機能を作成しそうなものがあるので、 どのように</description>
-    </item>
     
     <item>
       <title>洋楽ラッパーの歌詞の分類問題をscrapyとscikit-learnを使ってやってみる</title>

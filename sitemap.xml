@@ -108,6 +108,21 @@
   </url>
   
   <url>
+    <loc>https://sobamchan.github.io/tags/chainer/</loc>
+    <lastmod>2017-02-04T09:27:28+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/tags/ml/</loc>
+    <lastmod>2017-02-04T09:27:28+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/posts/eminem-snoop-chainer/</loc>
+    <lastmod>2017-02-04T09:27:28+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sobamchan.github.io/tags/julia/</loc>
     <lastmod>2017-01-29T09:26:13+09:00</lastmod>
   </url>
@@ -130,6 +145,21 @@
   <url>
     <loc>https://sobamchan.github.io/tags/python/</loc>
     <lastmod>2017-01-29T09:24:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/tags/scikit-learn/</loc>
+    <lastmod>2017-01-29T09:22:28+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/tags/scrapy/</loc>
+    <lastmod>2017-01-29T09:22:28+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/posts/eminem-snoop-classification/</loc>
+    <lastmod>2017-01-29T09:22:28+09:00</lastmod>
   </url>
   
 </urlset>
