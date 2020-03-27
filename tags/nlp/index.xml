@@ -48,5 +48,14 @@
 &lt;/ul&gt;</description>
     </item>
     
+    <item>
+      <title>julia nlp入門 [1]</title>
+      <link>https://sobamchan.github.io/posts/julia-nlp-intro-1/</link>
+      <pubDate>Sun, 29 Jan 2017 09:26:13 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/posts/julia-nlp-intro-1/</guid>
+      <description>[Qiitaのアカウント削除のために，移動してきました．] 経緯 数値計算や機械学習に強い言語として最近julia langがよく出てくるので入門</description>
+    </item>
+    
   </channel>
 </rss>
