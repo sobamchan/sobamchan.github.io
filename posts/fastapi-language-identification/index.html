@@ -11,7 +11,7 @@
 <meta itemprop="description" content="tl;dr facebook research から提供されている学習済み言語判定モデルを利用 新しめの軽量 python web application framework の FastAPI を利用してAPIとして公開 GitHub repo 背景 現在，暇つぶしで Pocket 的なブックマ">
 <meta itemprop="datePublished" content="2020-04-25T18:06:49&#43;09:00" />
 <meta itemprop="dateModified" content="2020-04-25T18:06:49&#43;09:00" />
-<meta itemprop="wordCount" content="1544">
+<meta itemprop="wordCount" content="1523">
 
 
 
@@ -87,13 +87,13 @@
 <h2 id="背景">背景<a href="#背景" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <p>現在，暇つぶしで <a href="https://getpocket.com/">Pocket</a> 的なブックマークウェブアプリを開発しています．
 今，ブックマークとして最低限必要な機能 (保存，アーカイブ，タグ) の実装は完了しており，
-これから自然言語処理技術を用いて，少し賢い機能を追加していこうと思っています．
+これから NLP を用いて，少し賢い機能を追加していこうと思っています．
 考えている例としては，保存した記事の要約を出してみたり，タグの自動付与があります．</p>
 <p>自分の快適な記事漁りのために，このアプリを開発しているので，自分のユースケースを考えるのは重要です．
-多くのエンジニアがそうであるように，日常的に日本語で書かれた記事はもちろんですが，英語で書かれたものもたくさん読みます．
-なので，今実際に自分で作ったアプリに記事をブックマークしているところ，英語と日本語の記事が半々くらいになってます．</p>
+多くのエンジニアがそうであるように，自分もまた，日常的に日本語で書かれた記事はもちろんですが，英語で書かれたものもたくさん読みます．
+なので，今実際に自分で作ったアプリに記事をブックマークしているところ，英語と日本語の記事が半々くらいたまっています．</p>
 <p>ここで，先ほどあげた便利機能を実装しようとすると問題が起きます．
-自然言語処理を行う機械学習の多くの方法では，言語ごとにモデルを用意する必要があり，
+NLP を行う機械学習の多くの方法では，言語ごとにモデルを用意する必要があり，
 処理対象としている記事が何語で書かれているか判定するロジックを入れなくてはいけません．</p>
 <p>今回は，この問題を解決するために <a href="https://fasttext.cc/docs/en/language-identification.html">fasttext の言語判定モデル</a>
 を利用し，
@@ -102,7 +102,7 @@
 <hr>
 <h2 id="言語判定モデル">言語判定モデル<a href="#言語判定モデル" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <p>まず，言語判定モデルの導入をしていきます．
-言語判定研究は多く行われており，たくさんの手法が提案されていますが，今回は Facebook Research から提案された <a href="https://fasttext.cc/">fastText</a> を用いたものを利用します．
+言語判定研究は活発で，いくつかの手法が提案されていますが，今回は Facebook Research から提案された <a href="https://fasttext.cc/">fastText</a> を利用します．
 この選択の理由としては，</p>
 <ul>
 <li>Python から簡単に利用可能</li>
@@ -131,7 +131,7 @@
     <span class="k">return</span> <span class="n">LANGS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># もし，ja, en, es 以外がきたら ja を返しちゃう</span>
 </code></pre></div><hr>
 <h2 id="web-api">Web API<a href="#web-api" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>Python には Web API を作成するためのライブラリがたくさんあり，これまで自分は Flask をこのような機械学習モデルをデプロイするためによく利用してきました．
+<p>Python には Web API を作成するためのライブラリがたくさんあり，これまで自分は Flask を機械学習モデルをデプロイするためによく利用してきました．
 が，同じものばかり使っていてはつまらないし，早いという噂を聞いていたので，今回は <a href="https://fastapi.tiangolo.com/">FastAPI</a> を利用していきます．
 なお，本記事では API ライブラリのベンチマーキングは行いませんが，<a href="https://www.techempower.com/benchmarks/#section=test&amp;runid=7464e520-0dc2-473d-bd34-dbdfd7e85911&amp;hw=ph&amp;test=query&amp;l=zijzen-7">ここ</a> にまとめられています．(よく分からんが FastAPI 早そうな感じある)</p>
 <h3 id="インストール">インストール<a href="#インストール" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
