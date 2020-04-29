@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 21 Mar 2020 08:20:15 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2020 18:06:49 +0900</lastBuildDate>
     
 	<atom:link href="https://sobamchan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>fastapi と fasttext で fast に作る，言語判定 API</title>
+      <link>https://sobamchan.github.io/posts/fastapi-language-identification/</link>
+      <pubDate>Sat, 25 Apr 2020 18:06:49 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/posts/fastapi-language-identification/</guid>
+      <description>tl;dr facebook research から提供されている学習済み言語判定モデルを利用 新しめの軽量 python web application framework の FastAPI を利用してAPIとして公開 GitHub repo 背景 現在，暇つぶしで Pocket 的なブックマ</description>
+    </item>
     
     <item>
       <title>文ベクトル作成ライブラリsisterを使った，簡単な日本語テキスト分類</title>
@@ -108,16 +117,6 @@ OpenNMTとか、allennlpは完成度は非常に高くていいのだが、こ�
       <guid>https://sobamchan.github.io/posts/backtranslation-papers/</guid>
       <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;最近、教師なし翻訳とかでよく使用されているback-translationだが、 直接翻訳に使用する以外ではどんな感じの研究があるかを知りたかったので、 あまり見つからなかったが論文いくつか読んだのでここにまとめておく。（随時更新）&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>How I Read Papers 2018</title>
-      <link>https://sobamchan.github.io/posts/how-i-read-papers-2018/</link>
-      <pubDate>Mon, 01 Jan 2018 23:25:54 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/posts/how-i-read-papers-2018/</guid>
-      <description>&lt;p&gt;研究室に所属してから一年経って、自分の論文の「速読」スタイルが少し固まったので記録しておく。（多くの人が似たことをしていると思うが）
-随時、読み方に変更が出たら更新していく。&lt;/p&gt;</description>
     </item>
     
   </channel>

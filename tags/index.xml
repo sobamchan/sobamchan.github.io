@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 21 Mar 2020 08:20:15 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2020 18:06:49 +0900</lastBuildDate>
     
 	<atom:link href="https://sobamchan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>api</title>
+      <link>https://sobamchan.github.io/tags/api/</link>
+      <pubDate>Sat, 25 Apr 2020 18:06:49 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ml</title>
+      <link>https://sobamchan.github.io/tags/ml/</link>
+      <pubDate>Sat, 25 Apr 2020 18:06:49 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/tags/ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nlp</title>
+      <link>https://sobamchan.github.io/tags/nlp/</link>
+      <pubDate>Sat, 25 Apr 2020 18:06:49 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/tags/nlp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://sobamchan.github.io/tags/web/</link>
+      <pubDate>Sat, 25 Apr 2020 18:06:49 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/tags/web/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>classification</title>
@@ -18,15 +54,6 @@
       <pubDate>Sat, 21 Mar 2020 08:20:15 +0900</pubDate>
       
       <guid>https://sobamchan.github.io/tags/classification/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nlp</title>
-      <link>https://sobamchan.github.io/tags/nlp/</link>
-      <pubDate>Sat, 21 Mar 2020 08:20:15 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/tags/nlp/</guid>
       <description></description>
     </item>
     
@@ -67,38 +94,11 @@
     </item>
     
     <item>
-      <title>web</title>
-      <link>https://sobamchan.github.io/tags/web/</link>
-      <pubDate>Wed, 18 Mar 2020 08:02:05 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>chainer</title>
       <link>https://sobamchan.github.io/tags/chainer/</link>
       <pubDate>Sat, 04 Feb 2017 09:27:28 +0900</pubDate>
       
       <guid>https://sobamchan.github.io/tags/chainer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ml</title>
-      <link>https://sobamchan.github.io/tags/ml/</link>
-      <pubDate>Sat, 04 Feb 2017 09:27:28 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/tags/ml/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>julia</title>
-      <link>https://sobamchan.github.io/tags/julia/</link>
-      <pubDate>Sun, 29 Jan 2017 09:26:13 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/tags/julia/</guid>
       <description></description>
     </item>
     

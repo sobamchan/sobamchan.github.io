@@ -6,8 +6,121 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Sat, 21 Mar 2020 08:20:15 +0900</lastBuildDate>
+		<lastBuildDate>Sat, 25 Apr 2020 18:06:49 +0900</lastBuildDate>
 		<atom:link href="https://sobamchan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>fastapi と fasttext で fast に作る，言語判定 API</title>
+			<link>https://sobamchan.github.io/posts/fastapi-language-identification/</link>
+			<pubDate>Sat, 25 Apr 2020 18:06:49 +0900</pubDate>
+			
+			<guid>https://sobamchan.github.io/posts/fastapi-language-identification/</guid>
+			<description>tl;dr facebook research から提供されている学習済み言語判定モデルを利用 新しめの軽量 python web application framework の FastAPI を利用してAPIとして公開 GitHub repo 背景 現在，暇つぶしで Pocket 的なブックマ</description>
+			<content type="html"><![CDATA[<figure>
+    <img src="/imgs/fastapi-language-identification.jpg"
+         alt="image"/> 
+</figure>
+
+<h2 id="tldr">tl;dr</h2>
+<ul>
+<li>facebook research から提供されている学習済み言語判定モデルを利用</li>
+<li>新しめの軽量 python web application framework の FastAPI を利用してAPIとして公開</li>
+<li><a href="https://github.com/sobamchan/lang-identify-api">GitHub repo</a></li>
+</ul>
+<hr>
+<h2 id="背景">背景</h2>
+<p>現在，暇つぶしで <a href="https://getpocket.com/">Pocket</a> 的なブックマークウェブアプリを開発しています．
+今，ブックマークとして最低限必要な機能 (保存，アーカイブ，タグ) の実装は完了しており，
+これから自然言語処理技術を用いて，少し賢い機能を追加していこうと思っています．
+考えている例としては，保存した記事の要約を出してみたり，タグの自動付与があります．</p>
+<p>自分の快適な記事漁りのために，このアプリを開発しているので，自分のユースケースを考えるのは重要です．
+多くのエンジニアがそうであるように，日常的に日本語で書かれた記事はもちろんですが，英語で書かれたものもたくさん読みます．
+なので，今実際に自分で作ったアプリに記事をブックマークしているところ，英語と日本語の記事が半々くらいになってます．</p>
+<p>ここで，先ほどあげた便利機能を実装しようとすると問題が起きます．
+自然言語処理を行う機械学習の多くの方法では，言語ごとにモデルを用意する必要があり，
+処理対象としている記事が何語で書かれているか判定するロジックを入れなくてはいけません．</p>
+<p>今回は，この問題を解決するために <a href="https://fasttext.cc/docs/en/language-identification.html">fasttext の言語判定モデル</a>
+を利用し，
+ウェブアプリケーションフレームワークの一つである，<a href="https://fastapi.tiangolo.com/">FastAPI</a> で HTTP からアクセスできる Web API として
+公開するところまでやってみようと思います．</p>
+<hr>
+<h2 id="言語判定モデル">言語判定モデル</h2>
+<p>まず，言語判定モデルの導入をしていきます．
+言語判定研究は多く行われており，たくさんの手法が提案されていますが，今回は Facebook Research から提案された <a href="https://fasttext.cc/">fastText</a> を用いたものを利用します．
+この選択の理由としては，</p>
+<ul>
+<li>Python から簡単に利用可能</li>
+<li>判定に必要なモデルファイルが比較的軽量 (917kB)</li>
+</ul>
+<p>があります．</p>
+<p>利用方法は非常に簡単で， まず，
+<code>pip install fasttext</code> でライブラリをインストールし，<a href="https://fasttext.cc/docs/en/language-identification.html">ここ</a>に置いてあるリンクから
+学習済みモデルをダウンロードしておきます．</p>
+<p>あとは，Python から</p>
+<div class="highlight"><pre class="chroma"><code class="language-python3" data-lang="python3"><span class="kn">from</span> <span class="nn">fasttext</span> <span class="k">import</span> <span class="n">load_model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&#34;./lid.176.ftz&#34;</span><span class="p">)</span>  <span class="c1"># ダウンロードしてきたモデルへのパスを指定．</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&#34;こんにちは，世界！&#34;</span><span class="p">)</span>  <span class="c1"># -&gt; ((&#39;__label__ja&#39;,), array([0.81698149]))</span>
+</code></pre></div><p>てな感じで簡単に，言語の判定をすることができます．</p>
+<p>以降，このロジックの呼び出しを簡単にするために，関数にしておきます．</p>
+<div class="highlight"><pre class="chroma"><code class="language-python3" data-lang="python3"><span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&#34;./lid.176.ftz&#34;</span><span class="p">)</span>
+<span class="n">LANGS</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&#34;ja&#34;</span><span class="p">,</span> <span class="s2">&#34;en&#34;</span><span class="p">,</span> <span class="s2">&#34;es&#34;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">predict_lang</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">pred_langs</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;__label__&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">preds</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="k">for</span> <span class="n">lang</span> <span class="ow">in</span> <span class="n">pred_langs</span><span class="p">:</span>  <span class="c1"># LANGS 中の言語を優先的に選ばせたい．</span>
+        <span class="k">if</span> <span class="n">lang</span> <span class="ow">in</span> <span class="n">LANGS</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">lang</span>
+    <span class="k">return</span> <span class="n">LANGS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># もし，ja, en, es 以外がきたら ja を返しちゃう</span>
+</code></pre></div><hr>
+<h2 id="web-api">Web API</h2>
+<p>Python には Web API を作成するためのライブラリがたくさんあり，これまで自分は Flask をこのような機械学習モデルをデプロイするためによく利用してきました．
+が，同じものばかり使っていてはつまらないし，早いという噂を聞いていたので，今回は <a href="https://fastapi.tiangolo.com/">FastAPI</a> を利用していきます．
+なお，本記事では API ライブラリのベンチマーキングは行いませんが，<a href="https://www.techempower.com/benchmarks/#section=test&amp;runid=7464e520-0dc2-473d-bd34-dbdfd7e85911&amp;hw=ph&amp;test=query&amp;l=zijzen-7">ここ</a> にまとめられています．(よく分からんが FastAPI 早そうな感じある)</p>
+<h3 id="インストール">インストール</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">pip install fastapi uvicorn
+</code></pre></div><h3 id="実装">実装</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python3" data-lang="python3"><span class="kn">from</span> <span class="nn">fastapi</span> <span class="k">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">Body</span><span class="p">,</span> <span class="n">Header</span><span class="p">,</span> <span class="n">HTTPException</span>
+
+<span class="c1"># ...</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>  <span class="c1"># アプリのインスタンスを初期化</span>
+<span class="n">AUTH_KEY</span> <span class="o">=</span> <span class="s2">&#34;SECRET_KEY&#34;</span>  <span class="c1"># 雑に認証トークンを用意</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&#34;/identify&#34;</span><span class="p">)</span>  <span class="c1"># Routing</span>
+<span class="k">def</span> <span class="nf">identify</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Body</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">embed</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">Authorization</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Header</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># Body, Header を受け取る</span>
+        <span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">Authorization</span> <span class="o">!=</span> <span class="n">AUTH_KEY</span><span class="p">:</span>  <span class="c1"># 認証トークンが正しいかチェック</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">401</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&#34;wrong authorization key&#34;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&#34;lang&#34;</span><span class="p">:</span> <span class="n">predict_lang</span><span class="p">(</span><span class="n">text</span><span class="p">)}</span>  <span class="c1"># 言語判定結果を返す</span>
+</code></pre></div><h3 id="検証">検証</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">pipenv run uvicorn main:app --reload --port <span class="m">8003</span> 
+</code></pre></div><p>と，アプリを起動してから，</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">curl --location --request POST <span class="s1">&#39;http://127.0.0.1:8003/identify&#39;</span> <span class="se">\
+</span><span class="se"></span>--header <span class="s1">&#39;Authorization: secret&#39;</span> <span class="se">\
+</span><span class="se"></span>--header <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\
+</span><span class="se"></span>--data-raw <span class="s1">&#39;{ &#34;text&#34;: &#34;ウェーイ&#34; }&#39;</span>
+</code></pre></div><p>のように API を叩いてみると，，，</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span><span class="nt">&#34;lang&#34;</span><span class="p">:</span><span class="s2">&#34;ja&#34;</span><span class="p">}</span>
+</code></pre></div><p>と正しい判定結果が返ってくることがわかります．</p>
+<hr>
+<h2 id="まとめ">まとめ</h2>
+<p>fastText と FastAPI を使って，fast に言語判定 API を簡単に作成してみました．
+<a href="https://github.com/sobamchan/lang-identify-api">sobamchan/lang-identify-api</a> に，コードの全体を置いておきました．</p>
+<p>言語判定が完了して，実際に記事を分類したり，要約したりすることができるので，それらの機能の実装にこれから入っていこうと思います．
+できれば，その辺の機能のことも記事にしたい．</p>
+<hr>
+<h3 id="参考文献">参考文献</h3>
+<ul>
+<li><a href="https://fastapi.tiangolo.com/">https://fastapi.tiangolo.com/</a></li>
+<li><a href="https://fasttext.cc/docs/en/language-identification.html">https://fasttext.cc/docs/en/language-identification.html</a></li>
+</ul>
+]]></content>
+		</item>
 		
 		<item>
 			<title>文ベクトル作成ライブラリsisterを使った，簡単な日本語テキスト分類</title>
