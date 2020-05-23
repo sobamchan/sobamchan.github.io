@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 25 Apr 2020 18:06:49 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2020 23:16:14 +0900</lastBuildDate>
     
 	<atom:link href="https://sobamchan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -78,6 +78,16 @@
     </item>
     
     <item>
+      <title>About</title>
+      <link>https://sobamchan.github.io/about-hugo/</link>
+      <pubDate>Mon, 16 Mar 2020 23:16:14 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/about-hugo/</guid>
+      <description>Hello, I am Sotaro Takeshita. A student who studies natural language processing (NLP). My main research interests are following.
+ Unsupervised Machine Learning Text Generation models Narrative Modeling Computer Comprehension contact: oh.sore.sore.soutarou@gmail.com natural language  Japanese, native English, fluent [WIP] Spanish [WIP] Portuguese   computer language  Python (machine learning, web applications) SQL PHP, Ruby, Javascript Swift Golang   other tools  MaxOS, ubuntu, vim    Education  Apr.</description>
+    </item>
+    
+    <item>
       <title>Pytorch S2s Projects</title>
       <link>https://sobamchan.github.io/posts/pytorch-s2s-projects/</link>
       <pubDate>Tue, 22 Jan 2019 23:39:57 +0900</pubDate>
@@ -107,16 +117,6 @@ OpenNMTとか、allennlpは完成度は非常に高くていいのだが、こ�
       <guid>https://sobamchan.github.io/posts/review-2018/</guid>
       <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;本当は月単位とかで自分をレビューして、それを年単位でまとめ振り返るってのが 本当の粒度としては正しい気がするんだけど、なかなかできなかった。 ここでは、数十年後自分で見て楽しむために一年間なにをしてきたか、を書いておこうと思う。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Backtranslation Papers</title>
-      <link>https://sobamchan.github.io/posts/backtranslation-papers/</link>
-      <pubDate>Tue, 02 Jan 2018 23:38:56 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/posts/backtranslation-papers/</guid>
-      <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
-&lt;p&gt;最近、教師なし翻訳とかでよく使用されているback-translationだが、 直接翻訳に使用する以外ではどんな感じの研究があるかを知りたかったので、 あまり見つからなかったが論文いくつか読んだのでここにまとめておく。（随時更新）&lt;/p&gt;</description>
     </item>
     
   </channel>
