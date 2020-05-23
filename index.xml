@@ -79,10 +79,10 @@
     
     <item>
       <title>About</title>
-      <link>https://sobamchan.github.io/about-hugo/</link>
+      <link>https://sobamchan.github.io/about/</link>
       <pubDate>Mon, 16 Mar 2020 23:16:14 +0900</pubDate>
       
-      <guid>https://sobamchan.github.io/about-hugo/</guid>
+      <guid>https://sobamchan.github.io/about/</guid>
       <description>Hello, I am Sotaro Takeshita. A student who studies natural language processing (NLP). My main research interests are following.
  Unsupervised Machine Learning Text Generation models Narrative Modeling Computer Comprehension contact: oh.sore.sore.soutarou@gmail.com natural language  Japanese, native English, fluent [WIP] Spanish [WIP] Portuguese   computer language  Python (machine learning, web applications) SQL PHP, Ruby, Javascript Swift Golang   other tools  MaxOS, ubuntu, vim    Education  Apr.</description>
     </item>
