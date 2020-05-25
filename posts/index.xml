@@ -16,7 +16,12 @@
 			
 			<guid>https://sobamchan.github.io/posts/postgres-rank-function/</guid>
 			<description>tl;dr 各ユーザー最初の投稿を PostgreSQL の RANK function を使って抽出する 背景 アプリケーションのデータとして，このような構造を持つものは多いと思います． id user_id content created_at 1 1 hello</description>
-			<content type="html"><![CDATA[<h2 id="tldr">tl;dr</h2>
+			<content type="html"><![CDATA[<figure>
+    <img src="/imgs/postgres-rank-function.jpg"
+         alt="image"/> 
+</figure>
+
+<h2 id="tldr">tl;dr</h2>
 <ul>
 <li>各ユーザー最初の投稿を PostgreSQL の RANK function を使って抽出する</li>
 </ul>
