@@ -6,8 +6,235 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Sat, 25 Apr 2020 18:06:49 +0900</lastBuildDate>
+		<lastBuildDate>Mon, 25 May 2020 10:53:41 +0900</lastBuildDate>
 		<atom:link href="https://sobamchan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>PostgreSQL: Rank関数を使ってユーザーの最初の投稿を抽出する</title>
+			<link>https://sobamchan.github.io/posts/postgres-rank-function/</link>
+			<pubDate>Mon, 25 May 2020 10:53:41 +0900</pubDate>
+			
+			<guid>https://sobamchan.github.io/posts/postgres-rank-function/</guid>
+			<description>tl;dr 各ユーザー最初の投稿を PostgreSQL の RANK function を使って抽出する 背景 アプリケーションのデータとして，このような構造を持つものは多いと思います． id user_id content created_at 1 1 hello</description>
+			<content type="html"><![CDATA[<h2 id="tldr">tl;dr</h2>
+<ul>
+<li>各ユーザー最初の投稿を PostgreSQL の RANK function を使って抽出する</li>
+</ul>
+<h2 id="背景">背景</h2>
+<p>アプリケーションのデータとして，このような構造を持つものは多いと思います．</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>user_id</th>
+<th>content</th>
+<th>created_at</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>hello</td>
+<td>2020-01-01</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>world</td>
+<td>2020-01-02</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>hola</td>
+<td>2020-01-02</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>mundo</td>
+<td>2020-01-02</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>こんにちは</td>
+<td>2020-01-03</td>
+</tr>
+</tbody>
+</table>
+<p>ユーザーが投稿する系のサービスでは基本，こんな構造を持っているはずです．</p>
+<h2 id="問題設定">問題設定</h2>
+<p>このようなサービスの分析としてよくやりたい基本操作が，「各ユーザーの初回投稿がいつだったか調べる．」です．
+つまり，先ほどのテーブルから以下の情報を抽出する操作です．</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>user_id</th>
+<th>content</th>
+<th>created_at</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>hello</td>
+<td>2020-01-01</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>hola</td>
+<td>2020-01-02</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>こんにちは</td>
+<td>2020-01-03</td>
+</tr>
+</tbody>
+</table>
+<p>各ユーザーの初回投稿のみが得られています．</p>
+<p>このような情報抽出を行うと，以下のような分析を行うのに役立ちそうです．</p>
+<ul>
+<li>ユーザーが登録してから，初回投稿までの経過時間の調査．</li>
+<li>初回投稿に利用される単語の出現頻度．</li>
+</ul>
+<p>ユーザーに第一回目の行動を起こさせるか，というのはサービスの活性化に大きく貢献することが多いので，
+有用な情報になりそうですね．</p>
+<h2 id="実装">実装</h2>
+<p>これを実現するために必要な操作を簡単にまとめると，以下のようになります．</p>
+<ol>
+<li>各データを作成順にソートする (今回のデータの場合は，<code>id</code> を降順にソートすれば良い．)．</li>
+<li><code>user_id</code> ごとにグルーピングする．</li>
+<li>各グループから <code>id</code> が一番小さいものを抽出する．</li>
+</ol>
+<p>これを SQL で行うには，いくつか方法がありますが， PostgreSQL には <a href="https://www.postgresqltutorial.com/postgresql-rank-function/">RANK function</a> なる
+便利関数が実装してあり，これを利用すると簡単にできます．</p>
+<p>この関数は，テーブルに対して，グルーピングを行うカラムの指定と，並び替えの方法を指定すると，
+それに従って，グループ内の各データにランキングを数値で (1, 2, 3, &hellip;) 付与してくれます．</p>
+<p>RANK function は以下のようなシンタックスで利用できます．</p>
+<pre><code>RANK() OVER (
+    [PARTITION BY partition_expression, ... ]
+    ORDER BY sort_expression [ASC | DESC], ...
+)
+</code></pre><p>これをみて分かるように，<code>partition by</code> にグルーピングの単位， <code>order by</code> に並び替えの方法の指定を行います．</p>
+<p>今回の問題にこれを当てはめて使ってみると，</p>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span>
+  <span class="o">*</span><span class="p">,</span>
+  <span class="n">rank</span><span class="p">()</span> <span class="n">over</span> <span class="p">(</span><span class="n">partition</span> <span class="k">by</span> <span class="n">user_id</span> <span class="k">order</span> <span class="k">by</span> <span class="n">id</span><span class="p">)</span>
+<span class="k">from</span>
+  <span class="n">posts</span>
+</code></pre></div><p>以下のように書けます．これを実行すると．</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>user_id</th>
+<th>content</th>
+<th>created_at</th>
+<th>rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>hello</td>
+<td>2020-01-01</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>world</td>
+<td>2020-01-02</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>hola</td>
+<td>2020-01-02</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>mundo</td>
+<td>2020-01-02</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>こんにちは</td>
+<td>2020-01-03</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>このように，<code>rank</code> というカラムが作成され，その中に数字が入っているのがわかります．
+ここには，要件を満たすように，各ユーザーごとにそのカウントがリセットされており，
+<code>id</code> カラムに応じてランキングがされています．</p>
+<p>ここから先は単純です．</p>
+<p>先ほどの処理をネストさせて，<code>where</code>句で <code>rank = 1</code> だけを表示するようにすれば，
+最初に欲しかったデータのみを得ることができます．</p>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span>
+  <span class="o">*</span>
+<span class="k">from</span>
+<span class="p">(</span>
+  <span class="k">select</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">rank</span><span class="p">()</span> <span class="n">over</span> <span class="p">(</span><span class="n">partition</span> <span class="k">by</span> <span class="n">user_id</span> <span class="k">order</span> <span class="k">by</span> <span class="n">id</span><span class="p">)</span>
+  <span class="k">from</span>
+    <span class="n">posts</span>
+ <span class="p">)</span> <span class="k">as</span> <span class="n">tmp</span>
+ <span class="k">where</span>
+   <span class="n">rank</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div><table>
+<thead>
+<tr>
+<th>id</th>
+<th>user_id</th>
+<th>content</th>
+<th>created_at</th>
+<th>rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>hello</td>
+<td>2020-01-01</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>hola</td>
+<td>2020-01-02</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>こんにちは</td>
+<td>2020-01-03</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="まとめ">まとめ</h2>
+<p>RANK function を使うと，「最初の ** 」のような情報を簡単に抽出することができ，
+これを基本にして他の実際に有用な分析の起点とし，サービスに関しての多くの知見を引き出すことができます．</p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>fastapi と fasttext で fast に作る，言語判定 API</title>

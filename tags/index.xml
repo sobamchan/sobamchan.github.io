@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 25 Apr 2020 18:06:49 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2020 10:53:41 +0900</lastBuildDate>
     
 	<atom:link href="https://sobamchan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>postgresql</title>
+      <link>https://sobamchan.github.io/tags/postgresql/</link>
+      <pubDate>Mon, 25 May 2020 10:53:41 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sql</title>
+      <link>https://sobamchan.github.io/tags/sql/</link>
+      <pubDate>Mon, 25 May 2020 10:53:41 +0900</pubDate>
+      
+      <guid>https://sobamchan.github.io/tags/sql/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>api</title>
@@ -81,24 +99,6 @@
       <pubDate>Wed, 18 Mar 2020 08:02:05 +0900</pubDate>
       
       <guid>https://sobamchan.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gorm</title>
-      <link>https://sobamchan.github.io/tags/gorm/</link>
-      <pubDate>Wed, 18 Mar 2020 08:02:05 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/tags/gorm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>chainer</title>
-      <link>https://sobamchan.github.io/tags/chainer/</link>
-      <pubDate>Sat, 04 Feb 2017 09:27:28 +0900</pubDate>
-      
-      <guid>https://sobamchan.github.io/tags/chainer/</guid>
       <description></description>
     </item>
     

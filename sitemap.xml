@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://sobamchan.github.io/tags/postgresql/</loc>
+    <lastmod>2020-05-25T10:53:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/posts/postgres-rank-function/</loc>
+    <lastmod>2020-05-25T10:53:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/posts/</loc>
+    <lastmod>2020-05-25T10:53:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/tags/sql/</loc>
+    <lastmod>2020-05-25T10:53:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sobamchan.github.io/tags/</loc>
+    <lastmod>2020-05-25T10:53:41+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sobamchan.github.io/tags/api/</loc>
     <lastmod>2020-04-25T18:06:49+09:00</lastmod>
   </url>
@@ -19,16 +44,6 @@
   
   <url>
     <loc>https://sobamchan.github.io/tags/nlp/</loc>
-    <lastmod>2020-04-25T18:06:49+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sobamchan.github.io/posts/</loc>
-    <lastmod>2020-04-25T18:06:49+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sobamchan.github.io/tags/</loc>
     <lastmod>2020-04-25T18:06:49+09:00</lastmod>
   </url>
   
