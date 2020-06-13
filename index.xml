@@ -2,69 +2,69 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tofu Blog</title>
-    <link>https://sobamchan.github.io/</link>
+    <link>https://sotaro.io/</link>
     <description>Recent content on Tofu Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Mon, 16 Mar 2020 23:16:14 +0900</lastBuildDate>
     
-	<atom:link href="https://sobamchan.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sotaro.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PostgreSQL: Rank関数を使ってユーザーの最初の投稿を抽出する</title>
-      <link>https://sobamchan.github.io/posts/postgres-rank-function/</link>
+      <link>https://sotaro.io/posts/postgres-rank-function/</link>
       <pubDate>Mon, 25 May 2020 10:53:41 +0900</pubDate>
       
-      <guid>https://sobamchan.github.io/posts/postgres-rank-function/</guid>
+      <guid>https://sotaro.io/posts/postgres-rank-function/</guid>
       <description>tl;dr 各ユーザー最初の投稿を PostgreSQL の RANK function を使って抽出する 背景 アプリケーションのデータとして，このような構造を持つものは多いと思います． id user_id content created_at 1 1 hello</description>
     </item>
     
     <item>
       <title>fastapi と fasttext で fast に作る，言語判定 API</title>
-      <link>https://sobamchan.github.io/posts/fastapi-language-identification/</link>
+      <link>https://sotaro.io/posts/fastapi-language-identification/</link>
       <pubDate>Sat, 25 Apr 2020 18:06:49 +0900</pubDate>
       
-      <guid>https://sobamchan.github.io/posts/fastapi-language-identification/</guid>
+      <guid>https://sotaro.io/posts/fastapi-language-identification/</guid>
       <description>tl;dr facebook research から提供されている学習済み言語判定モデルを利用 新しめの軽量 python web application framework の FastAPI を利用してAPIとして公開 GitHub repo 背景 現在，暇つぶしで Pocket 的なブックマ</description>
     </item>
     
     <item>
       <title>文ベクトル作成ライブラリsisterを使った，簡単な日本語テキスト分類</title>
-      <link>https://sobamchan.github.io/posts/sister-ja-text-classification/</link>
+      <link>https://sotaro.io/posts/sister-ja-text-classification/</link>
       <pubDate>Sat, 21 Mar 2020 08:20:15 +0900</pubDate>
       
-      <guid>https://sobamchan.github.io/posts/sister-ja-text-classification/</guid>
+      <guid>https://sotaro.io/posts/sister-ja-text-classification/</guid>
       <description>tl;dr 文ベクトルを使って簡単に日本語テキスト分類 Web記事のタイトルを2値分類 -&amp;gt; 正答率90% 概要 前回の記事では，文を入力したら，単語ベクトルを利</description>
     </item>
     
     <item>
       <title>自然言語処理ライブラリ sister を使った，簡単な文ベクトルの作成方法 </title>
-      <link>https://sobamchan.github.io/posts/sister-intro/</link>
+      <link>https://sotaro.io/posts/sister-intro/</link>
       <pubDate>Fri, 20 Mar 2020 09:03:34 +0900</pubDate>
       
-      <guid>https://sobamchan.github.io/posts/sister-intro/</guid>
+      <guid>https://sotaro.io/posts/sister-intro/</guid>
       <description>tl;dr 文埋め込みを簡単に作れるpythonライブラリの紹介 概要 推薦システムをはじめとして，アプリケーションへのデータ利用が盛んになってきた今，自</description>
     </item>
     
     <item>
       <title>gorm.Modelを自分好みの定義にする．</title>
-      <link>https://sobamchan.github.io/posts/gorm-base-model-original/</link>
+      <link>https://sotaro.io/posts/gorm-base-model-original/</link>
       <pubDate>Wed, 18 Mar 2020 08:02:05 +0900</pubDate>
       
-      <guid>https://sobamchan.github.io/posts/gorm-base-model-original/</guid>
+      <guid>https://sotaro.io/posts/gorm-base-model-original/</guid>
       <description>tl;dr gorm殻提供されている基本モデルを自分の好みに書き直す． 概要 最近，golangを使って簡単なWebアプリを作ろうとしており，横着して実装</description>
     </item>
     
     <item>
       <title>kewpie: KEyWord PIckEr with tf-idf</title>
-      <link>https://sobamchan.github.io/posts/kewpie-intro/</link>
+      <link>https://sotaro.io/posts/kewpie-intro/</link>
       <pubDate>Tue, 17 Mar 2020 09:08:29 +0900</pubDate>
       
-      <guid>https://sobamchan.github.io/posts/kewpie-intro/</guid>
+      <guid>https://sotaro.io/posts/kewpie-intro/</guid>
       <description>&lt;figure&gt;
-    &lt;img src=&#34;https://sobamchan.github.io/imgs/kewpie-intro-header.jpg&#34;
+    &lt;img src=&#34;https://sotaro.io/imgs/kewpie-intro-header.jpg&#34;
          alt=&#34;image&#34;/&gt; 
 &lt;/figure&gt;
 
@@ -77,10 +77,10 @@
     
     <item>
       <title>Naacl 2018</title>
-      <link>https://sobamchan.github.io/posts/naacl-2018/</link>
+      <link>https://sotaro.io/posts/naacl-2018/</link>
       <pubDate>Mon, 16 Mar 2020 23:31:58 +0900</pubDate>
       
-      <guid>https://sobamchan.github.io/posts/naacl-2018/</guid>
+      <guid>https://sotaro.io/posts/naacl-2018/</guid>
       <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://aclanthology.coli.uni-saarland.de/events/naacl-2018&#34;&gt;NAACL 2018&lt;/a&gt;の論文で自分の興味沿っているやつリストを消化したので、 面白かったものを10本選択して、ここにまとめる。&lt;br&gt;
 基本的には&lt;a href=&#34;https://sobamchan.github.io/summaries/&#34;&gt;ここ&lt;/a&gt;に投稿しているものを選択して、 内容をコピーしただけ。&lt;/p&gt;</description>
@@ -88,20 +88,20 @@
     
     <item>
       <title>About</title>
-      <link>https://sobamchan.github.io/about/</link>
+      <link>https://sotaro.io/about/</link>
       <pubDate>Mon, 16 Mar 2020 23:16:14 +0900</pubDate>
       
-      <guid>https://sobamchan.github.io/about/</guid>
+      <guid>https://sotaro.io/about/</guid>
       <description>Hello, I am Sotaro Takeshita. A student who studies natural language processing (NLP). My main research interests are following.
  Unsupervised Machine Learning Text Generation models Narrative Modeling Computer Comprehension contact: oh.sore.sore.soutarou@gmail.com natural language  Japanese, native English, fluent [WIP] Spanish [WIP] Portuguese   computer language  Python (machine learning, web applications) SQL PHP, Ruby, Javascript Swift Golang   other tools  MaxOS, ubuntu, vim    Education  Apr.</description>
     </item>
     
     <item>
       <title>Pytorch S2s Projects</title>
-      <link>https://sobamchan.github.io/posts/pytorch-s2s-projects/</link>
+      <link>https://sotaro.io/posts/pytorch-s2s-projects/</link>
       <pubDate>Tue, 22 Jan 2019 23:39:57 +0900</pubDate>
       
-      <guid>https://sobamchan.github.io/posts/pytorch-s2s-projects/</guid>
+      <guid>https://sotaro.io/posts/pytorch-s2s-projects/</guid>
       <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;少し前からPytorchをベースとしたSeq2Seqのライブラリ？(or boilerplate的なもの)を作っているんだけど、 それの全体的な構成の参考のために類似プロジェクトを探しているのでリストとしてここにまとめておく。&lt;br&gt;
 OpenNMTとか、allennlpは完成度は非常に高くていいのだが、ここではもう少し小さくて簡単に全体の見通しがたてれるものに絞る。 構造の参考にしたいだけなので、動作確認まではしていない。&lt;br&gt;
@@ -110,10 +110,10 @@ OpenNMTとか、allennlpは完成度は非常に高くていいのだが、こ�
     
     <item>
       <title>Goals 2019</title>
-      <link>https://sobamchan.github.io/posts/goals-2019/</link>
+      <link>https://sotaro.io/posts/goals-2019/</link>
       <pubDate>Tue, 01 Jan 2019 23:37:29 +0900</pubDate>
       
-      <guid>https://sobamchan.github.io/posts/goals-2019/</guid>
+      <guid>https://sotaro.io/posts/goals-2019/</guid>
       <description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;自分はいろんなことに対してすぐに脱線しがちなので、年始にまとめておくことで そのリスクをできるだけ軽減できることを期待している。 今年は大学院終了後のキャリアについても、多くの選択をしなければならないので アドホックな作業が多くなり予想通りに行かないと思うが、終了したときの満足感ができるだけ大きくしたい。&lt;/p&gt;</description>
     </item>

@@ -1,20 +1,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Posts on Tofu Blog</title>
-		<link>https://sobamchan.github.io/posts/</link>
+		<link>https://sotaro.io/posts/</link>
 		<description>Recent content in Posts on Tofu Blog</description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
 		<lastBuildDate>Mon, 25 May 2020 10:53:41 +0900</lastBuildDate>
-		<atom:link href="https://sobamchan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="https://sotaro.io/posts/index.xml" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>PostgreSQL: Rank関数を使ってユーザーの最初の投稿を抽出する</title>
-			<link>https://sobamchan.github.io/posts/postgres-rank-function/</link>
+			<link>https://sotaro.io/posts/postgres-rank-function/</link>
 			<pubDate>Mon, 25 May 2020 10:53:41 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/postgres-rank-function/</guid>
+			<guid>https://sotaro.io/posts/postgres-rank-function/</guid>
 			<description>tl;dr 各ユーザー最初の投稿を PostgreSQL の RANK function を使って抽出する 背景 アプリケーションのデータとして，このような構造を持つものは多いと思います． id user_id content created_at 1 1 hello</description>
 			<content type="html"><![CDATA[<figure>
     <img src="/imgs/postgres-rank-function.jpg"
@@ -243,10 +243,10 @@
 		
 		<item>
 			<title>fastapi と fasttext で fast に作る，言語判定 API</title>
-			<link>https://sobamchan.github.io/posts/fastapi-language-identification/</link>
+			<link>https://sotaro.io/posts/fastapi-language-identification/</link>
 			<pubDate>Sat, 25 Apr 2020 18:06:49 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/fastapi-language-identification/</guid>
+			<guid>https://sotaro.io/posts/fastapi-language-identification/</guid>
 			<description>tl;dr facebook research から提供されている学習済み言語判定モデルを利用 新しめの軽量 python web application framework の FastAPI を利用してAPIとして公開 GitHub repo 背景 現在，暇つぶしで Pocket 的なブックマ</description>
 			<content type="html"><![CDATA[<figure>
     <img src="/imgs/fastapi-language-identification.jpg"
@@ -356,10 +356,10 @@ NLP を行う機械学習の多くの方法では，言語ごとにモデルを�
 		
 		<item>
 			<title>文ベクトル作成ライブラリsisterを使った，簡単な日本語テキスト分類</title>
-			<link>https://sobamchan.github.io/posts/sister-ja-text-classification/</link>
+			<link>https://sotaro.io/posts/sister-ja-text-classification/</link>
 			<pubDate>Sat, 21 Mar 2020 08:20:15 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/sister-ja-text-classification/</guid>
+			<guid>https://sotaro.io/posts/sister-ja-text-classification/</guid>
 			<description>tl;dr 文ベクトルを使って簡単に日本語テキスト分類 Web記事のタイトルを2値分類 -&amp;gt; 正答率90% 概要 前回の記事では，文を入力したら，単語ベクトルを利</description>
 			<content type="html"><![CDATA[<figure>
     <img src="/imgs/sister-ja-text-classification-header.jpg"
@@ -431,10 +431,10 @@ Ultrabookをパワーアップ！　mSATA対応の小型SSDがマイクロンよ
 		
 		<item>
 			<title>自然言語処理ライブラリ sister を使った，簡単な文ベクトルの作成方法 </title>
-			<link>https://sobamchan.github.io/posts/sister-intro/</link>
+			<link>https://sotaro.io/posts/sister-intro/</link>
 			<pubDate>Fri, 20 Mar 2020 09:03:34 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/sister-intro/</guid>
+			<guid>https://sotaro.io/posts/sister-intro/</guid>
 			<description>tl;dr 文埋め込みを簡単に作れるpythonライブラリの紹介 概要 推薦システムをはじめとして，アプリケーションへのデータ利用が盛んになってきた今，自</description>
 			<content type="html"><![CDATA[<figure>
     <img src="/imgs/sister-intro-header.jpg"
@@ -516,10 +516,10 @@ Ultrabookをパワーアップ！　mSATA対応の小型SSDがマイクロンよ
 		
 		<item>
 			<title>gorm.Modelを自分好みの定義にする．</title>
-			<link>https://sobamchan.github.io/posts/gorm-base-model-original/</link>
+			<link>https://sotaro.io/posts/gorm-base-model-original/</link>
 			<pubDate>Wed, 18 Mar 2020 08:02:05 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/gorm-base-model-original/</guid>
+			<guid>https://sotaro.io/posts/gorm-base-model-original/</guid>
 			<description>tl;dr gorm殻提供されている基本モデルを自分の好みに書き直す． 概要 最近，golangを使って簡単なWebアプリを作ろうとしており，横着して実装</description>
 			<content type="html"><![CDATA[<figure>
     <img src="/imgs/gorm-base-header.jpg"
@@ -591,12 +591,12 @@ Webアプリを作ろうとした時，いくつかあるベースとなるコ�
 		
 		<item>
 			<title>kewpie: KEyWord PIckEr with tf-idf</title>
-			<link>https://sobamchan.github.io/posts/kewpie-intro/</link>
+			<link>https://sotaro.io/posts/kewpie-intro/</link>
 			<pubDate>Tue, 17 Mar 2020 09:08:29 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/kewpie-intro/</guid>
+			<guid>https://sotaro.io/posts/kewpie-intro/</guid>
 			<description>&lt;figure&gt;
-    &lt;img src=&#34;https://sobamchan.github.io/imgs/kewpie-intro-header.jpg&#34;
+    &lt;img src=&#34;https://sotaro.io/imgs/kewpie-intro-header.jpg&#34;
          alt=&#34;image&#34;/&gt; 
 &lt;/figure&gt;
 
@@ -687,10 +687,10 @@ Webアプリを作ろうとした時，いくつかあるベースとなるコ�
 		
 		<item>
 			<title>Naacl 2018</title>
-			<link>https://sobamchan.github.io/posts/naacl-2018/</link>
+			<link>https://sotaro.io/posts/naacl-2018/</link>
 			<pubDate>Mon, 16 Mar 2020 23:31:58 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/naacl-2018/</guid>
+			<guid>https://sotaro.io/posts/naacl-2018/</guid>
 			<description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://aclanthology.coli.uni-saarland.de/events/naacl-2018&#34;&gt;NAACL 2018&lt;/a&gt;の論文で自分の興味沿っているやつリストを消化したので、 面白かったものを10本選択して、ここにまとめる。&lt;br&gt;
 基本的には&lt;a href=&#34;https://sobamchan.github.io/summaries/&#34;&gt;ここ&lt;/a&gt;に投稿しているものを選択して、 内容をコピーしただけ。&lt;/p&gt;</description>
@@ -740,10 +740,10 @@ queryをuser utteranceとして、memoryを参照して発話を生成するこ�
 		
 		<item>
 			<title>Pytorch S2s Projects</title>
-			<link>https://sobamchan.github.io/posts/pytorch-s2s-projects/</link>
+			<link>https://sotaro.io/posts/pytorch-s2s-projects/</link>
 			<pubDate>Tue, 22 Jan 2019 23:39:57 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/pytorch-s2s-projects/</guid>
+			<guid>https://sotaro.io/posts/pytorch-s2s-projects/</guid>
 			<description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;少し前からPytorchをベースとしたSeq2Seqのライブラリ？(or boilerplate的なもの)を作っているんだけど、 それの全体的な構成の参考のために類似プロジェクトを探しているのでリストとしてここにまとめておく。&lt;br&gt;
 OpenNMTとか、allennlpは完成度は非常に高くていいのだが、ここではもう少し小さくて簡単に全体の見通しがたてれるものに絞る。 構造の参考にしたいだけなので、動作確認まではしていない。&lt;br&gt;
@@ -773,10 +773,10 @@ fast.ai inspiredな実装になっているらしい。Transformerもある。Do
 		
 		<item>
 			<title>Goals 2019</title>
-			<link>https://sobamchan.github.io/posts/goals-2019/</link>
+			<link>https://sotaro.io/posts/goals-2019/</link>
 			<pubDate>Tue, 01 Jan 2019 23:37:29 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/goals-2019/</guid>
+			<guid>https://sotaro.io/posts/goals-2019/</guid>
 			<description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;自分はいろんなことに対してすぐに脱線しがちなので、年始にまとめておくことで そのリスクをできるだけ軽減できることを期待している。 今年は大学院終了後のキャリアについても、多くの選択をしなければならないので アドホックな作業が多くなり予想通りに行かないと思うが、終了したときの満足感ができるだけ大きくしたい。&lt;/p&gt;</description>
 			<content type="html"><![CDATA[<h1 id="目的">目的</h1>
@@ -808,10 +808,10 @@ fast.ai inspiredな実装になっているらしい。Transformerもある。Do
 		
 		<item>
 			<title>Review 2018</title>
-			<link>https://sobamchan.github.io/posts/review-2018/</link>
+			<link>https://sotaro.io/posts/review-2018/</link>
 			<pubDate>Mon, 31 Dec 2018 23:36:13 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/review-2018/</guid>
+			<guid>https://sotaro.io/posts/review-2018/</guid>
 			<description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;本当は月単位とかで自分をレビューして、それを年単位でまとめ振り返るってのが 本当の粒度としては正しい気がするんだけど、なかなかできなかった。 ここでは、数十年後自分で見て楽しむために一年間なにをしてきたか、を書いておこうと思う。&lt;/p&gt;</description>
 			<content type="html"><![CDATA[<h1 id="目的">目的</h1>
@@ -851,10 +851,10 @@ fast.ai inspiredな実装になっているらしい。Transformerもある。Do
 		
 		<item>
 			<title>Backtranslation Papers</title>
-			<link>https://sobamchan.github.io/posts/backtranslation-papers/</link>
+			<link>https://sotaro.io/posts/backtranslation-papers/</link>
 			<pubDate>Tue, 02 Jan 2018 23:38:56 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/backtranslation-papers/</guid>
+			<guid>https://sotaro.io/posts/backtranslation-papers/</guid>
 			<description>&lt;h1 id=&#34;目的&#34;&gt;目的&lt;/h1&gt;
 &lt;p&gt;最近、教師なし翻訳とかでよく使用されているback-translationだが、 直接翻訳に使用する以外ではどんな感じの研究があるかを知りたかったので、 あまり見つからなかったが論文いくつか読んだのでここにまとめておく。（随時更新）&lt;/p&gt;</description>
 			<content type="html"><![CDATA[<h1 id="目的">目的</h1>
@@ -874,10 +874,10 @@ fast.ai inspiredな実装になっているらしい。Transformerもある。Do
 		
 		<item>
 			<title>How I Read Papers 2018</title>
-			<link>https://sobamchan.github.io/posts/how-i-read-papers-2018/</link>
+			<link>https://sotaro.io/posts/how-i-read-papers-2018/</link>
 			<pubDate>Mon, 01 Jan 2018 23:25:54 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/how-i-read-papers-2018/</guid>
+			<guid>https://sotaro.io/posts/how-i-read-papers-2018/</guid>
 			<description>&lt;p&gt;研究室に所属してから一年経って、自分の論文の「速読」スタイルが少し固まったので記録しておく。（多くの人が似たことをしていると思うが）
 随時、読み方に変更が出たら更新していく。&lt;/p&gt;</description>
 			<content type="html"><![CDATA[<p>研究室に所属してから一年経って、自分の論文の「速読」スタイルが少し固まったので記録しておく。（多くの人が似たことをしていると思うが）
@@ -920,10 +920,10 @@ fast.ai inspiredな実装になっているらしい。Transformerもある。Do
 		
 		<item>
 			<title>scikit-learnのTfidfVectorizerを日本語に使うときの注意</title>
-			<link>https://sobamchan.github.io/posts/sklearn-tfidf-ja/</link>
+			<link>https://sotaro.io/posts/sklearn-tfidf-ja/</link>
 			<pubDate>Mon, 01 Jan 2018 21:51:46 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/sklearn-tfidf-ja/</guid>
+			<guid>https://sotaro.io/posts/sklearn-tfidf-ja/</guid>
 			<description>&lt;p&gt;&lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html&#34;&gt;scikit-learnのTfidfVectorizer&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;はものすごく便利で、分類とか類似度計算とかを数行で実装することができる。&lt;br&gt;
 インターフェイスもシンプルなので、これまでもいくつかのプロジェクトで使用してきたが、結構大きな罠が日本語に対して適応するときにあるのにこの前気づいた。&lt;br&gt;
@@ -959,10 +959,10 @@ fast.ai inspiredな実装になっているらしい。Transformerもある。Do
 		
 		<item>
 			<title>洋楽ラッパーの歌詞の分類問題をchainer使ってやってみる</title>
-			<link>https://sobamchan.github.io/posts/eminem-snoop-chainer/</link>
+			<link>https://sotaro.io/posts/eminem-snoop-chainer/</link>
 			<pubDate>Sat, 04 Feb 2017 09:27:28 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/eminem-snoop-chainer/</guid>
+			<guid>https://sotaro.io/posts/eminem-snoop-chainer/</guid>
 			<description>[Qiitaのアカウント削除のために，移動してきました．] ソースコードはここにあります。 以前同様の分類をscikit-learnを使用してや</description>
 			<content type="html"><![CDATA[<p>[Qiitaのアカウント削除のために，移動してきました．]</p>
 <p>ソースコードは<a href="https://github.com/sobamchan/eminem_snoop_chainer">ここ</a>にあります。
@@ -1042,10 +1042,10 @@ batch size = 10
 		
 		<item>
 			<title>julia nlp入門 [1]</title>
-			<link>https://sobamchan.github.io/posts/julia-nlp-intro-1/</link>
+			<link>https://sotaro.io/posts/julia-nlp-intro-1/</link>
 			<pubDate>Sun, 29 Jan 2017 09:26:13 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/julia-nlp-intro-1/</guid>
+			<guid>https://sotaro.io/posts/julia-nlp-intro-1/</guid>
 			<description>[Qiitaのアカウント削除のために，移動してきました．] 経緯 数値計算や機械学習に強い言語として最近julia langがよく出てくるので入門</description>
 			<content type="html"><![CDATA[<p>[Qiitaのアカウント削除のために，移動してきました．]</p>
 <h2 id="経緯">経緯</h2>
@@ -1145,10 +1145,10 @@ batch size = 10
 		
 		<item>
 			<title>Djangoで簡単なフォロー機能を実装してみる</title>
-			<link>https://sobamchan.github.io/posts/django-simple-following/</link>
+			<link>https://sotaro.io/posts/django-simple-following/</link>
 			<pubDate>Sun, 29 Jan 2017 09:24:24 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/django-simple-following/</guid>
+			<guid>https://sotaro.io/posts/django-simple-following/</guid>
 			<description>[Qiitaのアカウント削除のために，移動してきました．] 経緯 Djangoでユーザー間のフォロー機能を作成しそうなものがあるので、 どのように</description>
 			<content type="html"><![CDATA[<p>[Qiitaのアカウント削除のために，移動してきました．]</p>
 <h2 id="経緯">経緯</h2>
@@ -1209,10 +1209,10 @@ Relationshipモデル内で<code>related_name</code>を定義していますが�
 		
 		<item>
 			<title>洋楽ラッパーの歌詞の分類問題をscrapyとscikit-learnを使ってやってみる</title>
-			<link>https://sobamchan.github.io/posts/eminem-snoop-classification/</link>
+			<link>https://sotaro.io/posts/eminem-snoop-classification/</link>
 			<pubDate>Sun, 29 Jan 2017 09:22:28 +0900</pubDate>
 			
-			<guid>https://sobamchan.github.io/posts/eminem-snoop-classification/</guid>
+			<guid>https://sotaro.io/posts/eminem-snoop-classification/</guid>
 			<description>[Qiitaのアカウント削除のために，移動してきました．] ソースコードはここにあります。 先日機械学習ハンズオンでscikit-learnを用</description>
 			<content type="html"><![CDATA[<p>[Qiitaのアカウント削除のために，移動してきました．]</p>
 <p>ソースコードは<a href="https://bitbucket.org/Sotaro/emimem_vs_snoopdogg">ここ</a>にあります。</p>

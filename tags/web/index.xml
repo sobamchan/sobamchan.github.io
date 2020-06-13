@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>web on Tofu Blog</title>
-    <link>https://sobamchan.github.io/tags/web/</link>
+    <link>https://sotaro.io/tags/web/</link>
     <description>Recent content in web on Tofu Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Sat, 25 Apr 2020 18:06:49 +0900</lastBuildDate>
     
-	<atom:link href="https://sobamchan.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sotaro.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>fastapi と fasttext で fast に作る，言語判定 API</title>
-      <link>https://sobamchan.github.io/posts/fastapi-language-identification/</link>
+      <link>https://sotaro.io/posts/fastapi-language-identification/</link>
       <pubDate>Sat, 25 Apr 2020 18:06:49 +0900</pubDate>
       
-      <guid>https://sobamchan.github.io/posts/fastapi-language-identification/</guid>
+      <guid>https://sotaro.io/posts/fastapi-language-identification/</guid>
       <description>tl;dr facebook research から提供されている学習済み言語判定モデルを利用 新しめの軽量 python web application framework の FastAPI を利用してAPIとして公開 GitHub repo 背景 現在，暇つぶしで Pocket 的なブックマ</description>
     </item>
     
     <item>
       <title>gorm.Modelを自分好みの定義にする．</title>
-      <link>https://sobamchan.github.io/posts/gorm-base-model-original/</link>
+      <link>https://sotaro.io/posts/gorm-base-model-original/</link>
       <pubDate>Wed, 18 Mar 2020 08:02:05 +0900</pubDate>
       
-      <guid>https://sobamchan.github.io/posts/gorm-base-model-original/</guid>
+      <guid>https://sotaro.io/posts/gorm-base-model-original/</guid>
       <description>tl;dr gorm殻提供されている基本モデルを自分の好みに書き直す． 概要 最近，golangを使って簡単なWebアプリを作ろうとしており，横着して実装</description>
     </item>
     
     <item>
       <title>Djangoで簡単なフォロー機能を実装してみる</title>
-      <link>https://sobamchan.github.io/posts/django-simple-following/</link>
+      <link>https://sotaro.io/posts/django-simple-following/</link>
       <pubDate>Sun, 29 Jan 2017 09:24:24 +0900</pubDate>
       
-      <guid>https://sobamchan.github.io/posts/django-simple-following/</guid>
+      <guid>https://sotaro.io/posts/django-simple-following/</guid>
       <description>[Qiitaのアカウント削除のために，移動してきました．] 経緯 Djangoでユーザー間のフォロー機能を作成しそうなものがあるので、 どのように</description>
     </item>
     
