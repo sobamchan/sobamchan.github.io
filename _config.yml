@@ -5,10 +5,10 @@ title: "sotaro.io" # the name of your site, e.g. ACME Corp.
 collections:
   posts:
     output: true
-    permalink: /p/:title
+    permalink: /posts/:title
   journals:
     output: true
-    permalink: /j/:title
+    permalink: /journals/:title
 
 defaults:
     - scope:
