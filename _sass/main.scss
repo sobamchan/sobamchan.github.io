@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root {
+    --baseFontColor: #111518;
+    --light50: rgba(255,255,255,.5);
+}
+
+* {
+    box-sizing: boarder-box;
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+
+span, p, a, button, ul, li {
+    //font-family: "Lato", sans-serif;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue',
+    Ubuntu, Arial, sans-serif;
+    color: var(--baseFontColor);
+    text-decoration: none;
+}
+
+
+a, button, .logo {
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+main {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+header {
+}
+
+ul, ol {
+  margin-left: 30px;
+}
+
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  margin: 18px 0 18px 0;
+}
+
+.logoWrapper {
+    padding: 48px 0 48px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.links {
+    // margin-left: 20%;
+    // margin-right: 20%;
+}
+
+.linkItem {
+    margin-right: 15px;
+}
+
+.content {
+    margin-top: 48px;
+    // margin-left: 20%;
+    // margin-right: 20%;
+}
+
+.pageTitleWrapper {
+    margin-bottom: 48px;
+    width: 100%;
+    height: 6.5rem;
+    background: url(/assets/azisai.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.postItem {
+    margin: 16px 0px 16px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.yearHeader {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    margin: 24px 0px 8px 0px;
+}
+
+.postPageTitleWrapper {
+    margin-bottom: 48px;
+    width: 100%;
+    height: 6.5rem;
+    background: url(/assets/azisai.png);
+    background-size: cover;
+    display: grid;
+    grid-template-rows: 20px 1fr 1fr 1fr 20px;
+    grid-template-columns: 20% 1fr 20%;
+}
+
+.postPageTitle {
+    grid-row: 3 / 4;
+    grid-column: 2;
+    text-align: center;
+}
+
+.postPageDate {
+    grid-row: 4 / 5;
+    grid-column: 2;
+    text-align: center;
+    font-size: 10px;
+}
+
+
+.postContent{
+    p {
+        margin: 24px 0 24px 0;
+    }
+}

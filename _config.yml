@@ -1,0 +1,26 @@
+url: "https://sotaro.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "sotaro.io" # the name of your site, e.g. ACME Corp.
+
+collections:
+  posts:
+    output: true
+    permalink: /p/:title
+  journals:
+    output: true
+    permalink: /j/:title
+
+defaults:
+    - scope:
+        type: "posts"
+      values:
+          layout: "post"
+    - scope:
+        type: "posts"
+      values:
+          layout: "post"
+          layout: "post"
+    - scope:
+        type: "journals"
+      values:
+          layout: "post"

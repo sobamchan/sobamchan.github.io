@@ -1,0 +1,14 @@
+---
+title: tensorboard x
+updated: 2018-12-17 10:14
+---
+今日は1日予定がなかったので，集中してプロジェクトの実装に取り組むことができた．
+強化学習のAgentに対して渡すrewardの計算方法を，今まで使用していた物を変える必要があるかもしれないので，
+何をrewardとして使用するか，baselineをどう置くかを従来手法があまりない分野なので手探りで探していた．
+pongみたいなgameだと，rewardは直感的に一意に決まるし，それをnetworkにfeedbackする手順も考えやすいのだが，
+seq2seqで文を生成するnetworkに間接的に関わるagentに対して，word generation stepごとにactionがあるわけではない
+という問題設定の中でどんな風にrewardを扱うかは結構難しい．
+
+休憩がてら，tensorboardXを実験のフレームに導入して見たのだが，これはいい．
+log自体は特殊なbinaryに格納されるので，一応今ままで使用していた，text file, json fileベースのlogは並行して残すとして，
+それを拡張する形で少しコードを書き換えるだけで，web basedな見やすにlearning curveやtext生成のテスト結果とかも表示してくれる．

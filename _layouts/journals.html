@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<section class="pageTitleWrapper">
+  <p class="pageTitle">journals</p>
+</section>
+
+<section class="postsList">
+  {% assign journals = site.journals | sort: 'date' | reverse %}
+  {%- for post in journals -%}
+  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+  {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+  {% if year != nyear %}
+  <div class="yearHeader">{{ post.date | date: '%Y' }}</div>
+  {% endif %}
+
+  <div class="postItem">
+    <a class="postLink" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="postDate">{{ post.date | date: "%Y-%m-%d" }}</span>
+  </div>
+  {%- endfor -%}
+</section>

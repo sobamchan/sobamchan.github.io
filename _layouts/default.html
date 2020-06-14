@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  </head>
+  <body>
+
+    <main>
+      <header>
+        <div class="logoWrapper">
+          <a href="/">
+            <img class="logo" src="/assets/logo.svg" alt="" />
+          </a>
+        </div>
+        <nav>
+          <div class="links">
+            <a class="linkItem" href="/">posts</a>
+            <a class="linkItem" href="/journals">daily</a>
+            <a class="linkItem" href="#">photos (coming soon)</a>
+            <a class="linkItem" href="/about">about</a>
+          </div>
+        </nav>
+      </header>
+
+      <section class="content">
+        {{ content }}
+      </section>
+
+    </main>
+
+  </body>
+</html>
