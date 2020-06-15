@@ -131,3 +131,10 @@ h1, h2, h3, h4, h5, h6 {
         margin: 24px 0 24px 0;
     }
 }
+
+@media only screen and (max-width: 650px) {
+    main {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
