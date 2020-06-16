@@ -8,7 +8,7 @@ collections:
     permalink: /posts/:title
   journals:
     output: true
-    permalink: /journals/:title
+    permalink: /daily/:title
 
 defaults:
     - scope:
