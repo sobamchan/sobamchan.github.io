@@ -9,6 +9,9 @@ collections:
   journals:
     output: true
     permalink: /daily/:title
+  photos:
+    output: true
+    permalink: /photos/:title
 
 defaults:
     - scope:
@@ -19,8 +22,11 @@ defaults:
         type: "posts"
       values:
           layout: "post"
-          layout: "post"
     - scope:
         type: "journals"
       values:
           layout: "post"
+    - scope:
+        type: "photos"
+      values:
+          layout: "photo"

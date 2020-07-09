@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<section class="postsList">
+  {% assign photos = site.photos | sort: 'date' | reverse %}
+  {%- for photo in photos -%}
+  <div class="photoItem">
+    <a class="" href="{{ photo.url | relative_url }}"><img src="{{ photo.p }}" alt="" class=""></a>
+  </div>
+  {%- endfor -%}
+</section>
