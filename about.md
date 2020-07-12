@@ -49,5 +49,8 @@ My main research interests are following.
   - Advisor: Prof. Dr. Eric Rohmer
   - founded by A National University of Electro-Communications
 - Apr. 2018 - Present, BuildIt, data scientist
+- Sep. 2019, University of Mannheim, research visiting
+  - Advisor: Dr. Goran Glavaš
+
 
 ## Project
