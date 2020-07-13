@@ -51,6 +51,7 @@ My main research interests are following.
 - Apr. 2018 - Present, BuildIt, data scientist
 - Sep. 2019, University of Mannheim, research visiting
   - Advisor: Dr. Goran Glavaš
+  - founded by A National University of Electro-Communications
 
 
 ## Project
