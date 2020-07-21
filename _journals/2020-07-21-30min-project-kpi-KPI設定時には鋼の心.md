@@ -1,5 +1,5 @@
 ---
-title: 30min project - kpi: KPI設定時には鋼の心
+title: 30min project - kpi 3: KPI設定時には鋼の心
 updated: 2020-07-21
 ---
 
