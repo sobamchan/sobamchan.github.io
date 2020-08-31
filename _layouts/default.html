@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-  <head>
+  <head  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <meta property="og:image" content="{{ "/assets/ogp.png" | relative_url }}">
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sotaro.io" />
+    <meta property="og:image" content="{{ "/assets/ogp.png" | absolute_url }}">
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:description" content="blog de sotaro" />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>{{ page.title }} - {{ site.title }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   </head>
