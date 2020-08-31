@@ -6,6 +6,9 @@ collections:
   posts:
     output: true
     permalink: /posts/:title
+  ja:
+    output: true
+    permalink: /ja/:title
   journals:
     output: true
     permalink: /daily/:title
@@ -16,6 +19,10 @@ collections:
 defaults:
     - scope:
         type: "posts"
+      values:
+          layout: "post"
+    - scope:
+        type: "ja"
       values:
           layout: "post"
     - scope:
