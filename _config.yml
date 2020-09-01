@@ -11,7 +11,7 @@ collections:
     permalink: /ja/:title
   journals:
     output: true
-    permalink: /daily/:title
+    permalink: /daily/:year-:month-:day
   photos:
     output: true
     permalink: /photos/:title
