@@ -12,3 +12,4 @@ tl;dr
 - many friends asked how to in ja
   - don't really think of any words correspond to fuck, shit
 - possible to somehow translate but just sounds unreal or childish
+- when japanese ppl really want to hurt others with words, they use normal words but very personalize
