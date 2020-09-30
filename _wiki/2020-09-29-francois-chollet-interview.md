@@ -18,3 +18,7 @@ sample inputs, sample outputs
 つまり，受験者によって難しい問題ってのは変わってくる
 物理の先生に，と，その生徒，にとって難しい物理の問題は変わる．
 なぜなら，見てきた samples の量が違うから
+
+
+objectness
+agentness → object with goal
