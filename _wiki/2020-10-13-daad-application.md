@@ -12,3 +12,7 @@ One application of deep learning on natural language processing (NLP) is univers
 One of my side activities is software development. I developed many web / mobile applications and tools. For instance, I built an English learning app in which users can study English with music. This uses the latest deep learning model behind, and it has been used by more than a hundred people.
 
 > Other comments/information you think might be of relevance to your application or which should be included in the assessment of your achievements and personal suitability (自由記述欄)
+
+- 研究室訪問して内容を先生と詰めているのですぐ開始する事ができる
+- 大学で文化交流していた経験
+- 
