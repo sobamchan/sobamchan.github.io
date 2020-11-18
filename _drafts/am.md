@@ -31,3 +31,43 @@ updated: 2020-11-13
 どんなものかはあとで詳細に説明するが，概要としては，N 個のタスクに対応するために BERT 全体を N 個複製するのではなく，Adapter Modules と呼ばれる小さなパラメーターブロックのみを
 タスクごとに用意することで，パラメーター効率よく転移学習ができるというもの．
 結果として，通常通り BERT 全体を N 個複製した時と比較して，性能はほとんど変わらずに pre-training された BERT の 3 % ほどのパラメーターを足すだけで済んだとのこと．
+
+---
+
+# Adapter Modules
+
+Adapter Modules (以後 AM) がどんなものなのか説明する．(画像は[元論文](https://arxiv.org/abs/1902.00751)から)
+AM は pre-trained BERT の各 transformer block の中に 2 つ挿入される．場所は 1. multi-headed attention レイヤー からの projection の後と 2. 二つの feed forward の後 になる．
+
+<p align="center">
+  <img src="https://lh3.googleusercontent.com/pw/ACtC-3fk_wCRAzDcWFzoaxHCku57Qq2lShx-esHtFChjH-TLPHmGti05NiSPYsu2DutnSIP9JddDU3Yu8qsZRm6Ccc97twDRJZ4qj8lucUuutIdPTSQCKo0mD0ZSO2fy0zxMa0ufFhHU_14PM3IBPBgAHRbKDg=w283-h404-no?authuser=0" />
+</p>
+
+<!-- アーキテクチャデザイン -->
+AM の中身はシンプルな bottole neck アーキテクチャになっている．
+<p align="center">
+  <img src="https://lh3.googleusercontent.com/pw/ACtC-3ephogUzrCIN4i4Ib8t-wWUfAf-WdFzkaJ0evPDwSZ-CNAlkZWJ4S41gnT4IRKaD5Al0b6bOZbC5doS2fEO42sEgR-CsOsDCuS2glG0gKmC-UHHaTk3ifau42itxrWkfYqTUSju40h6WiyVBM0a1qrv_g=w283-h383-no?authuser=0" />
+</p>
+論文中では他にもいくつかのパターン，複雑なものも含めて，試して見たいだが精度比較したところこの割とシンプルな構造が一番良かったのとのこと．
+
+<!-- 初期化の仕方 -->
+pre-trained BERT の内部に後から新しいパラメーターを持つブロックを挿入しているので，このままでは BERT が事前に獲得していた言語統計量が失われてしまう．
+そこで，AM 挿入後にこれのらパラメーターを挿入前の BERT の出力に近くなるように初期化している (near-identify initialization)．
+正直これをすることで，BERT が事前に獲得していた知識を復元することができるのかはわからないが，実験的にこれが安定した学習に必要だったとのころ．
+
+<!-- 利用方法 -->
+AM の初期化が済んだところで，学習のフェーズに入る．
+従来の fine-tuning では，対象のタスクに対して BERT 全体のパラメータを更新しつつ学習するのだが AM を使う場合には，
+新規に挿入した AM のパラメータのにを更新する．
+また，別のタスクにモデルを fine-tune したい時には，BERT 全体を別に用意するのではなくて，新しい AM を用意しそれを最初に挿入した AM と差し替えて 1. 初期化 (near-identify initialization) をして 2. AM のみ更新する fine-tunine をすれば良い．
+これは，fine-tuning の際に BERT 自身のパラメーターは更新せず AM のみを更新の対象とするため可能になる．
+
+<!-- 実験内容 -->
+これの性能を評価するために論文中では GLUE とその他いくつかのテキスト分類データセットで評価している．
+詳細は省略するが，GLUE では 9 つのタスクがあるため従来のタスクでは BERT を 9 つ複製して fine-tuning するため BERT * 9 分のパラメータが必要とされていたが，
+AM を利用すれば BERT * 1.3 分だけのパラメータ量で済んだとのこと．
+そして必要なパラメーターを大幅に下げても，精度的には 80.4 → 80.0 の減少で済んでいる．
+
+AM を BERT に応用した論文は 2019/Jan だがすでにそれを応用・改良した論文がいくつか存在するのでそれらを簡単に紹介していく．
+
+- 
