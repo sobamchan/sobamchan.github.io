@@ -68,6 +68,14 @@ AM の初期化が済んだところで，学習のフェーズに入る．
 AM を利用すれば BERT * 1.3 分だけのパラメータ量で済んだとのこと．
 そして必要なパラメーターを大幅に下げても，精度的には 80.4 → 80.0 の減少で済んでいる．
 
-AM を BERT に応用した論文は 2019/Jan だがすでにそれを応用・改良した論文がいくつか存在するのでそれらを簡単に紹介していく．
+AM を BERT に応用した論文が投稿されたのは 2019/Jan だがすでに応用・改良した論文がいくつか存在するのでそれらを簡単に紹介していく．
 
-- 
+- AdapterFusion: Non-Destructive Task Composition for Transfer Learning
+  複数のタスクのためにそれぞれ AM を用意して fine-tuning するのだが，他のタスクの知見も利用することができるように，AdapterFusion モジュールを用意した．
+  あるタスクの推論を行うときに，他タスクの AM からの情報も混ぜ合わせて利用する．
+- K-ADAPTER: Infusing Knowledge into Pre-Trained Models with Adapters
+  AM を使って，pre-trained RoBERTa にさらなる factural knowledge を注入している．新しい知識には大規模コーパスから自動生成された，一般知識的なものと言語知識を利用した．
+  評価には一般知識を問うデータセットを用いて，結果として精度の向上を確認．
+  RoBERTa の pre-trained 時の知識を破壊することなく，continual に外部知識を注入することができたとのこと．
+- MAD-X: An Adapter-based Framework for Multi-task Cross-lingual Transfer
+  多言語 BERT 
