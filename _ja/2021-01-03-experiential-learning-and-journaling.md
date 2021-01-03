@@ -64,4 +64,4 @@ Kolb が提唱した 4 つのステージをみてみると，「反省」と「
 ---
 
 参考
-- [https://www.simplypsychology.org/learning-kolb.html](https://www.simplypsychology.org/learning-kolb.html)
+- [Kolb's Learning Styles and Experiential Learning Cycle](https://www.simplypsychology.org/learning-kolb.html)
