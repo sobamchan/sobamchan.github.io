@@ -15,6 +15,9 @@ collections:
   photos:
     output: true
     permalink: /photos/:title
+  reading:
+    output: true
+    permalink: /reading/:title
 
 defaults:
     - scope:
@@ -33,6 +36,10 @@ defaults:
         type: "journals"
       values:
           layout: "post"
+    - scope:
+        type: "reading"
+      values:
+          layout: "book"
     - scope:
         type: "photos"
       values:
