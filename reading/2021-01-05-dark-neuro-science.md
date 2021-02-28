@@ -1,6 +1,8 @@
 ---
 title: 自分の脳を改造できるなら何を変えるか
 updated: 2021-01-05
+author: ローン・フランク
+score: ★★★
 ---
 
 [闇の脳科学 「完全な人間」をつくる](https://www.amazon.co.jp/dp/B08L36HFWY/)を読んだ．
