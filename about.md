@@ -10,7 +10,7 @@ My main research interests are following.
 - Text Generation models
 - Narrative Modeling
 - Computer Comprehension
-- contact: oh.sore.sore.soutarou@gmail.com
+- contact: oh.sore.sore.soutarou at gmail.com
 - natural language
   - Japanese, native
   - English, fluent

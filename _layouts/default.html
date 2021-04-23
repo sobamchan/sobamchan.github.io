@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    {% include ga.html %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta property="og:title" content="{{ page.title }}" />
@@ -33,9 +34,11 @@
             <a class="linkItem" href="/">posts</a>
             <a class="linkItem" href="/ja">posts (ja)</a>
             <a class="linkItem" href="/daily">daily</a>
+            <a class="linkItem" href="/reading">reading</a>
             <a class="linkItem" href="/photos">photos</a>
             <a class="linkItem" href="/about">about</a>
             <a class="linkItem" href="https://github.com/sobamchan">github</a>
+            <a class="linkItem" href="/feed.xml" rel="alternate" type="application/rss+xml">feed (ja)</a>
           </div>
         </nav>
       </header>

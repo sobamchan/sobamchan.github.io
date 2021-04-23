@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<section class="pageTitleWrapper">
+  <p class="pageTitle">reading</p>
+</section>
+
+<section class="postsList">
+  {% assign posts = site.reading | sort: 'date' | reverse %}
+  {%- for r in posts -%}
+  {% capture year %}{{ r.date | date: '%Y' }}{% endcapture %}
+  {% capture nyear %}{{ r.next.date | date: '%Y' }}{% endcapture %}
+  {% if year != nyear %}
+  <div class="yearHeader">{{ r.date | date: '%Y' }}</div>
+  {% endif %}
+
+  <div class="postItem">
+    <a class="postLink" href="{{ r.url | relative_url }}">{{ r.title }}</a>
+    <span class="bookAuthor">{{ r.author }}</span>
+    <span class="bookScore">{{ r.score }}</span>
+    <span class="bookDate">{{ r.date | date: "%Y-%m-%d" }}</span>
+  </div>
+  {%- endfor -%}
+</section>

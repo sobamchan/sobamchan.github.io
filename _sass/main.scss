@@ -94,6 +94,28 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
 }
 
+.postLink {
+    flex-basis: 60%;
+    white-space: nowrap; /* 横幅のMAXに達しても改行しない */
+    overflow: hidden; /* ハミ出した部分を隠す */
+    text-overflow: ellipsis; /* 「…」と省略 */
+    -webkit-text-overflow: ellipsis; /* Safari */
+    -o-text-overflow: ellipsis; /* Opera */
+}
+
+.bookAuthor {
+    flex-basis: 20%;
+    white-space: nowrap; /* 横幅のMAXに達しても改行しない */
+    overflow: hidden; /* ハミ出した部分を隠す */
+    text-overflow: ellipsis; /* 「…」と省略 */
+    -webkit-text-overflow: ellipsis; /* Safari */
+    -o-text-overflow: ellipsis; /* Opera */
+}
+
+.bookScore {
+    flex-basis: 10%;
+}
+
 .yearHeader {
     font-style: normal;
     font-weight: 800;
@@ -175,19 +197,40 @@ blockquote p {
 img {
     max-width: 100%;
     max-height: 100%;
+    // display: block;
+    // margin-left: auto;
+    // margin-right: auto;
 }
 
 
+.PageNavigation {
+  font-size: 14px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.PageNavigation .next {
+  text-align: right;
+}
+
 @media only screen and (max-width: 650px) {
     main {
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 15%;
+        margin-right: 15%;
     }
 }
 
 @media only screen and (max-width: 1100px) {
     main {
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-left: 18%;
+        margin-right: 18%;
     }
 }
