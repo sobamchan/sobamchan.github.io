@@ -3,28 +3,17 @@ layout: about
 title: "about"
 ---
 
-Hello, I am Sotaro Takeshita. A student who studies natural language processing (NLP).
-My main research interests are following.
+Hello, I am Sotaro Takeshita. I will soon will be Ph.D. student studying natual language processing (NLP).
+I am interested in 
 
-- Unsupervised Machine Learning
-- Text Generation models
-- Narrative Modeling
-- Computer Comprehension
-- contact: oh.sore.sore.soutarou at gmail.com
-- natural language
-  - Japanese, native
-  - English, fluent
-  - \[WIP\] Spanish
-  - \[WIP\] Portuguese
-- computer language
-  - Python (machine learning, web applications)
-  - SQL
-  - PHP, Ruby, Javascript
-  - Swift
-  - Golang
-- other tools
-  - MaxOS, ubuntu, **vim**
+- multilingual models
+- information extraction
+- knowledge utilization for NLP models
 
+I like to read (both papers and books) and programming checkout my [OSS projects](https://github.com/sobamchan).
+I speak Japanese (native), English (fluent), Spanish (basic) and now learning German.
+As computer languages, I like to use vim to write python.
+Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
 
 ## Education
 
@@ -55,3 +44,8 @@ My main research interests are following.
 
 
 ## Project
+
+- [tofunlp/sister](https://github.com/tofunlp/sister)
+  - Very simple and easy to use pkg to encode sentences in various language into vector representations.
+- [sobamchan/pytorch-lightning-transformers](https://github.com/sobamchan/pytorch-lightning-transformers)
+  - Clean readable code for finetuning transformers with pytorch-lightning.
