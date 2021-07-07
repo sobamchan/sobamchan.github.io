@@ -12,7 +12,7 @@ I am interested in
 
 I like to read (both papers and books) and programming checkout my [OSS projects](https://github.com/sobamchan).
 I speak Japanese (native), English (fluent), Spanish (basic) and now learning German.
-As computer languages, I like to use vim to write python.
+For programming, I like to use vim to write python.
 Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
 
 ## Education
