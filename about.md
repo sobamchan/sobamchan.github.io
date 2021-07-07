@@ -28,7 +28,7 @@ Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
 - Feb. 2016 - Apr. 2016, Research Internship
   -   Sección de Estudios de Posgrado e Investigación de ESIME Culhuacan, Instituto Politecnico Nacional
   -   Advisor: Mariko Nakano Miyatake
-  -   founded by A National University of Electro-Communications
+  -   funded by A National University of Electro-Communications
 - Aug. 2017 - Sep. 2017, Recruit Holdings, data scientist internship
   -   Best work prize
 - Aug. 2018 - Seq. 2018, NTT Media Intelligence Lab, NLP research internship
@@ -36,11 +36,11 @@ Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
 - Nov. 2018 - Dec. 2018, Research Internship
   - The University of Campinas, Faculty of Electrical and Computer Engineering
   - Advisor: Prof. Dr. Eric Rohmer
-  - founded by A National University of Electro-Communications
+  - funded by A National University of Electro-Communications
 - Apr. 2018 - Present, BuildIt, data scientist
 - Sep. 2019, University of Mannheim, research visiting
   - Advisor: Dr. Goran Glavaš
-  - founded by A National University of Electro-Communications
+  - funded by A National University of Electro-Communications
 
 
 ## Project
