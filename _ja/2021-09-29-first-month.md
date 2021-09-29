@@ -3,6 +3,8 @@ title: ドイツに移住して一ヶ月が経過した感想
 updated: 2021-09-29
 ---
 
+<a href="https://imgur.com/Zk8MGOl"><img src="https://i.imgur.com/Zk8MGOl.jpg" title="source: imgur.com" /></a>
+
 8 月の 23 日にドイツに到着したので一ヶ月と少しが経過した。実際に博士課程を開始したのは1週間前からだがここらで少し感想をまとめておく。
 
 ## やったこと
@@ -19,6 +21,9 @@ updated: 2021-09-29
 ### 食事の安定化
 
 また食事関連。日本の食材が手に入るとはいえ、多少値段は高いのでドイツの食生活に合わせる方向にした。最近はパンとサラダとパスタをひたすら食べている。なんか味の濃いものが食べたい時は肉屋のサンドイッチかケバブを食べる。
+
+<a href="https://imgur.com/CN5Lnb1"><img src="https://i.imgur.com/CN5Lnb1.jpg" title="source: imgur.com" /></a>  
+おきにのケバブ
 
 
 ### 散歩
@@ -65,6 +70,9 @@ N26 というヨーロッパで展開しているドイツ初のベンチャー�
 今の家が割と街の中心なので夜でも多少騒がしい。が、10pm 過ぎてうるさいって事はない。
 
 ### マスク
+
+<a href="https://imgur.com/Iqw6NEe"><img src="https://i.imgur.com/Iqw6NEe.jpg" title="source: imgur.com" /></a>  
+誰もマスクはしていない。
 
 街の人が全然屋外ではマスクをしていないのが最初は怖かった。が、もはやもう順応してしまいスーパーから出た瞬間にマスクを外すようになってしまった。
 
