@@ -52,8 +52,23 @@ li {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
   margin: 18px 0 18px 0;
+}
+
+h1 {
+  margin: 40px 0 18px 0;
+  font-weight: 800;
+  font-size: x-large;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: large;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: medium;
 }
 
 strong {
@@ -158,10 +173,6 @@ strong {
     }
     a {
         text-decoration: underline;
-    }
-    h1, h2, h3 {
-        margin: 18px 0 18px 0;
-        font-weight: 800;
     }
 }
 
