@@ -3,20 +3,24 @@ layout: about
 title: "about"
 ---
 
-Hello, I am Sotaro Takeshita. I will soon will be Ph.D. student studying natual language processing (NLP).
+Hello, I am Sotaro Takeshita. I am a first-year Ph.D. student at University of Mannheim focusing on text summarization.
 I am interested in 
 
-- multilingual models
+- text summarization
+- scholarly document processing
 - information extraction
-- knowledge utilization for NLP models
+- multilinguality in NLP models
 
 I like to read (both papers and books) and programming checkout my [OSS projects](https://github.com/sobamchan).
 I speak Japanese (native), English (fluent), Spanish (basic) and now learning German.
-For programming, I like to use vim to write python.
+For programming, I like to use (neo)vim to write python.
 Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
 
 ## Education
 
+- Sep. 2021 - present
+  - The Data and Web Science Group, University of Mannheim
+  - Advisor: Prof. Dr. Simone Paolo Ponzetto
 - Apr. 2013 - Mar. 2018, B.A. in Information Science
   - Faculty of Informatics and Engineering, A National University of Electro-Communications
   - Advisor: Minami Yasuhiro
