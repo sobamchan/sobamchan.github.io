@@ -41,7 +41,7 @@ Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
   - The University of Campinas, Faculty of Electrical and Computer Engineering
   - Advisor: Prof. Dr. Eric Rohmer
   - funded by A National University of Electro-Communications
-- Apr. 2018 - Present, BuildIt, data scientist
+- Apr. 2018 - Jun. 2021, BuildIt, data scientist
 - Sep. 2019, University of Mannheim, research visiting
   - Advisor: Dr. Goran Glavaš
   - funded by A National University of Electro-Communications
