@@ -111,7 +111,7 @@ While these work show approaches to evaluate/provide factual consistency, it see
 
 
 <a href="https://imgur.com/e5fUKWY"><img src="https://i.imgur.com/e5fUKWY.jpg" title="source: imgur.com" /></a>  
-Bigger garbage cans close to my room, has nothing to do with NLP.
+Bigger garbage cans close to my house, has nothing to do with NLP.
 
 
 # Conclusion
