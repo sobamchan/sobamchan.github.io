@@ -116,7 +116,7 @@ Bigger garbage cans close to my house, has nothing to do with NLP.
 
 # Conclusion
 
-In this post, I tried to categorize almost all papers from EMNLP 2021 about summarization by some keywords to grasp the overview of the summarization field.
+In this post, I tried to categorize almost all papers from EMNLP 2021 about summarization by some keywords to grasp the overview of the summarization world.
 After the categorization, I listed two big problems we need to solve to bring the technologies into applications.
 I hope this post help students who just started to study summarization like me to find their own interests.
 
@@ -135,6 +135,6 @@ I hope this post help students who just started to study summarization like me t
   - tldr: T5 pre-trained on nonsense corpus still performs well.
   - why favorite?: We still don't know much about DL models...
 
-## list of summarizes
+## List of Summarizes
 
 [Google Docs](https://docs.google.com/document/d/1wAn9w2GX6_ttYNP09MmoyJjvSNZOvf5k5mwJPPqNk4M/edit?usp=sharing) contains a list of papers above with short summaries.
