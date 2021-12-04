@@ -103,7 +103,8 @@ I here list 13 keywords with their short description, and related papers. Ordere
 Having this overview makes me noticed two big issues in summarization. 1) evaluation, 2) factual consistency, and these two are closely related.
 Since we don't know how to evaluate summaries properly, state-of-the-art models still generate summaries which contain information not alighned with the input document (hullucination).
 This problem prevents us to build cool summarization applications.
-Most of evaluation papers in the list focus to provide ways to assess this issue.
+Most of evaluation papers in the list focus to provide ways to assess this issue.  
+
 [Zhang+](https://aclanthology.org/2021.emnlp-main.531/) propose a hybrid (machine and human) way for evaluation.
 [Zeng+](https://aclanthology.org/2021.emnlp-main.337/) shows adversarial samples can help evaluation for factual consistency.
 While these work show approaches to evaluate/provide factual consistency, it seems there is still a big gap for real-life application.
