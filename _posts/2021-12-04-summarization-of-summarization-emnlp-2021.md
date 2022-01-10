@@ -3,8 +3,7 @@ title: A Summarization of Summarization Papers from EMNLP 2021
 updated: 2021-12-02
 ---
 
-<a href="https://imgur.com/aWLcmz6"><img src="https://i.imgur.com/aWLcmz6.jpg" title="source: imgur.com" /></a>  
-Garbage can close to my house, has nothing to do with NLP.
+<a href="https://imgur.com/m7bSPUP"><img src="https://i.imgur.com/m7bSPUP.png" title="source: imgur.com" /></a>
 
 # Introduction
 
@@ -110,8 +109,7 @@ Most of evaluation papers in the list focus to provide ways to assess this issue
 While these work show approaches to evaluate/provide factual consistency, it seems there is still a big gap for real-life application.
 
 
-<a href="https://imgur.com/e5fUKWY"><img src="https://i.imgur.com/e5fUKWY.jpg" title="source: imgur.com" /></a>  
-Bigger garbage cans close to my house, has nothing to do with NLP.
+<a href="https://imgur.com/XXKSjjO"><img src="https://i.imgur.com/XXKSjjO.png" title="source: imgur.com" /></a>  
 
 
 # Conclusion
