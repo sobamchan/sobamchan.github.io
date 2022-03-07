@@ -20,4 +20,6 @@ List of papers about guided summarizations with short summaries.
   - Use representations of automatically extracted keywords from input document to modify transformer encoder's attention.
 - [Abstractive Summarization with Combination of Pre-trained Sequence-to-Sequence and Saliency Models](https://arxiv.org/abs/2003.13028)
   - Multitask learning of saliency detection task with pseudo labels to enhance attention for keywords.
+- [Highlight-Transformer: Leveraging Key Phrase Aware Attention to Improve Abstractive Multi-Document Summarization](https://aclanthology.org/2021.findings-acl.445)
+  - Use tf-idf to re-weight self-attention for multi-document summarization.
 
