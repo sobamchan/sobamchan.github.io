@@ -3,10 +3,18 @@ title: Papers on Guided Text Generation.
 updated: 2022-03-07
 ---
 
-WORK IN PROGRESS
+# tl;dr
+
+A list of papers about guided summarizations with short summaries.
 
 # Introduction
-List of papers about guided summarizations with short summaries.
+
+When we build abstractive summarization systems, it is important that generated summaries contain certain keywords to deliver precise information.
+However, it is not trivial to controll the behaviour of deep learning-based models which are currently dominant in the field.
+There are quite many works that try to tackle this problem recently.
+To grasp an overview, in this post, I will list papers I read related to this topic first, and then try to categorize them by approaches.
+
+Disclaimer: This list is far from to be comprehensive and I intend to keep updating overtime.
 
 # List
 
