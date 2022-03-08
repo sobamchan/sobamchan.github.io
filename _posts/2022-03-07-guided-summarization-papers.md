@@ -14,7 +14,7 @@ However, it is not trivial to controll the behaviour of deep learning-based mode
 There are quite many works that try to tackle this problem recently.
 To grasp an overview, in this post, I will list papers I read related to this topic first, and then try to categorize them by approaches.
 
-Disclaimer: This list is far from to be comprehensive and I intend to keep updating overtime.
+*Disclaimer*: This list is far from to be comprehensive and I intend to keep updating overtime.
 
 # List
 
