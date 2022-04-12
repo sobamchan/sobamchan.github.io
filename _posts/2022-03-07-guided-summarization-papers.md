@@ -14,7 +14,7 @@ However, it is not trivial to controll the behaviour of deep learning-based mode
 There are quite many works that try to tackle this problem recently.
 To grasp an overview, in this post, I will list papers I read related to this topic first, and then try to categorize them by approaches.
 
-**Disclaimer**: This list is far from to be comprehensive and I intend to keep updating overtime.
+**Disclaimer**: This list is far from comprehensive and I intend to keep updating overtime.
 
 # List
 
@@ -30,4 +30,11 @@ To grasp an overview, in this post, I will list papers I read related to this to
   - Multitask learning of saliency detection task with pseudo labels to enhance attention for keywords.
 - [Highlight-Transformer: Leveraging Key Phrase Aware Attention to Improve Abstractive Multi-Document Summarization](https://aclanthology.org/2021.findings-acl.445)
   - Use tf-idf to re-weight self-attention for multi-document summarization.
-
+- [EntSUM: A Data Set for Entity-Centric Summarization](http://arxiv.org/abs/2204.02213)
+  - New dataset in which summaries are build around entities.
+- [Entity-Aware Abstractive Multi-Document Summarization](https://aclanthology.org/2021.findings-acl.30)
+  - Use co-erfeernce resolution and graph NN on top of it to extract entity features, and use for multi-document summarization.
+- [Planning with Learned Entity Prompts for Abstractive Summarization](https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00438/108867/Planning-with-Learned-Entity-Prompts-for)
+  - Generate scaffold of summary with named entities and numbers first, then generate full summary around them.
+- [Keywords-Guided Abstractive Sentence Summarization](https://ojs.aaai.org/index.php/AAAI/article/view/6333)
+  - Train a keyword extractor on overlapping words between input document and reference summary, then use extracted keywords via gating mechanism as additional signal for encoder.
