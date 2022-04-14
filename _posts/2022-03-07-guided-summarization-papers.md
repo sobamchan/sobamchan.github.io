@@ -38,3 +38,7 @@ To grasp an overview, in this post, I will list papers I read related to this to
   - Generate scaffold of summary with named entities and numbers first, then generate full summary around them.
 - [Keywords-Guided Abstractive Sentence Summarization](https://ojs.aaai.org/index.php/AAAI/article/view/6333)
   - Train a keyword extractor on overlapping words between input document and reference summary, then use extracted keywords via gating mechanism as additional signal for encoder.
+- [CTRLEval: An Unsupervised Reference-Free Metric for Evaluating Controlled Text Generation](http://arxiv.org/abs/2204.00862)
+  - Use PLMs to fill-in-the-bank to evaluate multi-aspect of summaries.
+- [Plug and Play Language Models: A Simple Approach to Controlled Text Generation](https://openreview.net/forum?id=H1edEyBKDS)
+- [CoCon: A Self-Supervised Approach for Controlled Text Generation](https://openreview.net/forum?id=VD_ozqvBy4W)
