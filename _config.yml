@@ -21,6 +21,9 @@ collections:
   reading:
     output: true
     permalink: /reading/:title
+  travel:
+    output: true
+    permalink: /travel/:year-:month-:day-:title
 
 defaults:
     - scope:
