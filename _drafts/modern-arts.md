@@ -1,5 +1,5 @@
 ---
-title: モダンアート入門
+title: 現代美術入門
 updated: 2022-04-21
 ---
 
@@ -20,9 +20,14 @@ updated: 2022-04-21
 
 # 歴史
 
-[Wikipedia](https://ja.wikipedia.org/wiki/%E7%8F%BE%E4%BB%A3%E7%BE%8E%E8%A1%93) からかいつまみ。
+- もともとアートってのは宗教の付属品として発達してきた ([ref](https://casie.jp/media/contemporary-art/))
+- そこから写真としての絵画
+- カメラが出てきてからは個性を出した、印象派
 
-- 戦後にヨーロッパ中心にはじまり、そこにアメリカからの影響
+からの世界大戦があり現代美術となっていく。
+
+初期の作品として有名なのが、[デゥシャンによる「泉」](https://ja.wikipedia.org/wiki/%E6%B3%89_(%E3%83%87%E3%83%A5%E3%82%B7%E3%83%A3%E3%83%B3))で、従来ならアートになりえなかったただの便器をアートと呼んでしまうことで、
+ここからまた一から考え直そう、というメッセージがあったらしい。
 
 
 # 何がモダンアートと呼ばれるのか
@@ -47,11 +52,29 @@ updated: 2022-04-21
 
 # 有名人
 
+- [ジャン・ミシェル・バスキア](https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%83%B3%EF%BC%9D%E3%83%9F%E3%82%B7%E3%82%A7%E3%83%AB%E3%83%BB%E3%83%90%E3%82%B9%E3%82%AD%E3%82%A2)
+  - 挑発的二分法
+- [ダミアン・ハースト](https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%9F%E3%82%A2%E3%83%B3%E3%83%BB%E3%83%8F%E3%83%BC%E3%82%B9%E3%83%88)
+  - ホルマリン漬けうし
+- [村上隆](https://ja.wikipedia.org/wiki/%E6%9D%91%E4%B8%8A%E9%9A%86)
+  - アニメポップ
+- [草間彌生](https://ja.wikipedia.org/wiki/%E8%8D%89%E9%96%93%E5%BD%8C%E7%94%9F)
+  - ドット・ペインティング
+- [アンドレアス・グルスキー](https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%B3%E3%83%89%E3%83%AC%E3%82%A2%E3%82%B9%E3%83%BB%E3%82%B0%E3%83%AB%E3%82%B9%E3%82%AD%E3%83%BC)
+  - 写真家
+- [バンクシー](https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%B3%E3%82%AF%E3%82%B7%E3%83%BC)
 
-# 例
+# 美術館
 
 
 ## 日本
 
+- [金沢21世紀美術館]
+- [ベネッセアートサイト直島]
 
-## ドイツ
+## ヨーロッパ
+
+
+# 参考
+- https://media.thisisgallery.com/20220290
+- https://www.contemporaryart-walk.com/artist/
