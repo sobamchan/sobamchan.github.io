@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<section class="pageTitleWrapper">
+  <p class="pageTitle">travel</p>
+</section>
+
+せっかくヨーロッパに来たので、旅行したエントリをここにまとめる。
+個別に書くかもしれないし、daily からコピペするだけかもしれない。
+
+<section class="postsList">
+  {% assign travel = site.travel | sort: 'date' | reverse %}
+  {%- for post in travel -%}
+  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+  {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+  {% if year != nyear %}
+  <div class="yearHeader">{{ post.date | date: '%Y' }}</div>
+  {% endif %}
+
+  <div class="postItem">
+    <a class="postLink" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="postDate">{{ post.date | date: "%Y-%m-%d" }}</span>
+  </div>
+  {%- endfor -%}
+</section>
