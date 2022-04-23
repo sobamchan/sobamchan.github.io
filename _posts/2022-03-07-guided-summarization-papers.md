@@ -42,5 +42,6 @@ To grasp an overview, in this post, I will list papers I read related to this to
   - Use PLMs to fill-in-the-bank to evaluate multi-aspect of summaries.
 - [Plug and Play Language Models: A Simple Approach to Controlled Text Generation](https://openreview.net/forum?id=H1edEyBKDS)
   - Use signal from an additional style/domain classifier to modify the likelihood from the generation model to change the behaviour without futher fine-tuning.
+- [FUDGE: Controlled Text Generation With Future Discriminators](https://aclanthology.org/2021.naacl-main.276)
 - [CoCon: A Self-Supervised Approach for Controlled Text Generation](https://openreview.net/forum?id=VD_ozqvBy4W)
   - Train additional layer to complement the second half of a sentence given the first half which let us control generation on word/sentence -level signals.
