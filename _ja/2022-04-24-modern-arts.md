@@ -8,6 +8,7 @@ updated: 2022-04-21
 ネトフリで、[アートオブデザイン](https://www.netflix.com/title/80057883)というシリーズを見て、一話目がドイツ人のモダンアーティストに関してだったので少し興味を持った。
 なんかドイツ、特にベルリンはモダンアートが熱いみたいなので、そのうちベルリンは行くだろうし、その前段階として基本的な情報を集めてみる。
 
+
 # 定義
 
 [Wikipedia](https://ja.wikipedia.org/wiki/%E7%8F%BE%E4%BB%A3%E7%BE%8E%E8%A1%93) からかいつまみ。
@@ -64,15 +65,47 @@ updated: 2022-04-21
   - 写真家
 - [バンクシー](https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%B3%E3%82%AF%E3%82%B7%E3%83%BC)
 
+
 # 美術館
+
+日本にも思ったより現代美術をメインで扱った美術館がある。
+が、ヨーロッパの方が圧倒的に数が多く、それぞれの規模も大きそう。
+日本の直島にあるものは行っておけばよかったと公開している。単純にこれまで知らんかった。
 
 
 ## 日本
 
-- [金沢21世紀美術館]
-- [ベネッセアートサイト直島]
+- [金沢21世紀美術館](https://www.kanazawa21.jp/)
+- [ベネッセアートサイト直島](http://benesse-artsite.jp/)
+- [他にも結構ある](https://rtrp.jp/articles/41825/)
 
-## ヨーロッパ
+## ドイツ、とヨーロッパ
+
+- [Hamburger Kunsthalle](https://www.hamburger-kunsthalle.de/)
+  - ドイツ、ハンブルグ
+- [Kunstsammlung Nordrhein-Westfalen](https://www.kunstsammlung.de/de/)
+  - ドイツ、デュッセルドルフ
+- [Museum Ludwig](https://www.museum-ludwig.de/)
+  - ドイツ、ケルン
+- [Schirn Kunsthalle](https://www.schirn.de/)
+  - ドイツ、フランクフルト
+- [Tate Modern](https://www.tate.org.uk/visit/tate-modern)
+  - UK
+- [Centre Pomipidou](https://www.centrepompidou.fr/en/)
+  - フランス
+  - 「泉」がある
+- [ベルリンにはたくさんありそう](https://theculturetrip.com/europe/germany/berlin/articles/berlin-s-10-contemporary-art-galleries-you-should-visit/)
+
+
+# まとめ
+
+直接美術館に行ったりはまだしていないのだが、調べたり動画を見たりする中で既に軽く疲れてしまった。
+格好いいものとかは普通に楽しめそうなのだが、そのほとんどはよくわからんな、で終わりそう。
+社会的なメッセージ自体は興味深いのだが、なぜ記事や本ではなく、アートでなければならないのかわからない。
+個人的には本やドキュメンタリー動画を通した方が伝わりやすいのではと思ってしまう。
+このような実用的すぎる考えをしている時点でアートは向いていないのかもしれない。
+意外と美術館に実際に行ってみたらその雰囲気含め楽しめる可能性はあるので早いとこ行っていたい。
+多分フランクフルトかケルンのものが行きやすい。
 
 
 # 参考
