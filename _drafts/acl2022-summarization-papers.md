@@ -74,12 +74,12 @@ Work in Progress.
   - **Approach**: Annotated disaster related articles with summaries focusing on two aspects, geo and recovery.
 
 - [MemSum: Extractive Summarization of Long Documents Using Multi-Step Episodic Markov Decision Processes](https://aclanthology.org/2022.acl-long.450)
-  - **Problem**: 
-  - **Approach**: 
+  - **Problem**: Existing systems score sentences without updating after sentence selection which leads to redundant summaries.
+  - **Approach**: By using RL, select sentences with reference to the current selection history.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [Automatically Discarding Straplines to Improve Data Quality for Abstractive News Summarization](https://aclanthology.org/2022.nlppower-1.5)
+  - **Problem**: References summaries contain non-summary texts because they were automatically scraped from news websites.
+  - **Approach**: Proposed rule-based cleaning method and show it improves summary quality.
 
 - []()
   - **Problem**: 
