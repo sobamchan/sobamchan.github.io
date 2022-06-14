@@ -81,6 +81,46 @@ Work in Progress.
   - **Problem**: References summaries contain non-summary texts because they were automatically scraped from news websites.
   - **Approach**: Proposed rule-based cleaning method and show it improves summary quality.
 
+- [Graph Enhanced Contrastive Learning for Radiology Findings Summarization](https://aclanthology.org/2022.acl-long.320)
+  - **Problem**: Existing works treat extra knowledge data separatedly from input.
+  - **Approach**: Proposed a unified way to integrate knowledge graph with input text by using contrastive loss.
+
+- [A Multi-Document Coverage Reward for RELAXed Multi-Document Summarization](https://aclanthology.org/2022.acl-long.351)
+  - **Problem**: Popular negative loss likelihood has problems such as exposure bias for multi-document summarization as well.
+  - **Approach**: Proposed a reward function which takes ROUGE and input text coverage into account.
+
+- [SummaReranker: A Multi-Task Mixture-of-Experts Re-ranking Framework for Abstractive Summarization](https://aclanthology.org/2022.acl-long.309)
+  - **Problem**: Because of the large search space, decoding process is challenging.
+  - **Approach**: Proposed a Mixture-of-experts model which reranks the generated summary candidates.
+
+- [PRIMERA: Pyramid-based Masked Sentence Pre-training for Multi-document Summarization](https://aclanthology.org/2022.acl-long.360)
+  - **Problem**: Existing pretrained language models for text generation are for single document.
+  - **Approach**: Proposed a longformer-based model which can attention globally, and a new pretraining task called gap sentence generation.
+
+- [Summ$^N$: A Multi-Stage Summarization Framework for Long Input Dialogues and Documents](https://aclanthology.org/2022.acl-long.112)
+  - **Problem**: Recently large models have difficulty processing long texts efficiently.
+  - **Approach**: Proposed to generate summaries in arbitrary number of stages so can process long documents.
+
+- [Learning Non-Autoregressive Models from Search for Unsupervised Sentence Summarization](https://aclanthology.org/2022.acl-long.545)
+  - **Problem**: Edit-based unsupervised approach can be slow and constrain to keep the input word order.
+  - **Approach**: Proposed to generate training samples by edit-based approach, train a non-autoregressive model on them.
+
+- [Hallucinated but Factual! Inspecting the Factuality of Hallucinations in Abstractive Summarization](https://aclanthology.org/2022.acl-long.236)
+  - **Problem**: Factually correct hallucinations are not considered in existing works.
+  - **Approach**: Proposed to use how a word probablity in a summary shifts given a input document to predict entity's hallucination and factuality.
+
+- []()
+  - **Problem**: 
+  - **Approach**: 
+
+- []()
+  - **Problem**: 
+  - **Approach**: 
+
+- []()
+  - **Problem**: 
+  - **Approach**: 
+
 - []()
   - **Problem**: 
   - **Approach**: 
