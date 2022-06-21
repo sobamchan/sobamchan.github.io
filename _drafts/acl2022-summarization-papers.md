@@ -109,13 +109,13 @@ Work in Progress.
   - **Problem**: Factually correct hallucinations are not considered in existing works.
   - **Approach**: Proposed to use how a word probablity in a summary shifts given a input document to predict entity's hallucination and factuality.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [DQ-BART: Efficient Sequence-to-Sequence Model via Joint Distillation and Quantization](https://aclanthology.org/2022.acl-short.22)
+  - **Problem**: Efficient quantization for seq2seq models are not studied well.
+  - **Approach**: Proposed a join framework of distillation and quantization to reduce model footprint by 16.5x.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [Sparsifying Transformer Models with Trainable Representation Pooling](https://aclanthology.org/2022.acl-long.590)
+  - **Problem**: Existing sparsing approaches don't drop entire connections to other units which prevents futher model size reduction.
+  - **Approach**: Proposed to estimate importance scores for unit outputs to drop non-informative ones.
 
 - []()
   - **Problem**: 
