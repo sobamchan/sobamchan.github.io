@@ -1,5 +1,5 @@
 ---
-title: ★ Terres de café
+title: ★ Terres de café, Paris
 updated: 2022-05-05
 ---
 
