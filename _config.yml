@@ -24,6 +24,9 @@ collections:
   travel:
     output: true
     permalink: /travel/:year-:month-:day-:title
+  coffee:
+    output: true
+    permalink: /coffee/:title
 
 defaults:
     - scope:
@@ -44,6 +47,10 @@ defaults:
           layout: "post"
     - scope:
         type: "travel"
+      values:
+          layout: "post"
+    - scope:
+        type: "coffee"
       values:
           layout: "post"
     - scope:
