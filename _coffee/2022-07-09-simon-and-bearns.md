@@ -1,5 +1,5 @@
 ---
-title: SIMON & BEARNS Coffee Roastery and Café
+title: ★ SIMON & BEARNS Coffee Roastery and Café
 updated: 2022-07-09
 ---
 
