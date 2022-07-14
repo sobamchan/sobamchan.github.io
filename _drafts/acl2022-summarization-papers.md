@@ -117,13 +117,45 @@ Work in Progress.
   - **Problem**: Existing sparsing approaches don't drop entire connections to other units which prevents futher model size reduction.
   - **Approach**: Proposed to estimate importance scores for unit outputs to drop non-informative ones.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [FrugalScore: Learning Cheaper, Lighter and Faster Evaluation Metrics for Automatic Text Generation](https://aclanthology.org/2022.acl-long.93)
+  - **Problem**: Recent NLG metrics such as BERTScore are expensive to run.
+  - **Approach**: Present smaller versions of variety of such models perform on par or even better than the original model.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [Discriminative Marginalized Probabilistic Neural Method for Multi-Document Summarization of Medical Literature](https://aclanthology.org/2022.acl-long.15)
+  - **Problem**: Many systems for multi-document summarization truncate input and miss valuable information.
+  - **Approach**: Present a system with discriminator which finds worthy information from a cluster of documents.
+
+- [Keywords and Instances: A Hierarchical Contrastive Learning Framework Unifying Hybrid Granularities for Text Generation](https://aclanthology.org/2022.acl-long.304)
+  - **Problem**: Existing contrastive loss focus on instance level while there are words more important than the others in a sentence.
+  - **Approach**: Introduce a hierarchie in a sentence to compute more precise contrastive loss.
+
+- [A Variational Hierarchical Model for Neural Cross-Lingual Summarization](https://aclanthology.org/2022.acl-long.148/)
+  - **Problem**: Two-staged pipeline approach performs better on cross-lingual summarization but it's expensive to run.
+  - **Approach**: Propose to model summarization and translation separetely via latent variable.
+
+- [BRIO: Bringing Order to Abstractive Summarization](https://aclanthology.org/2022.acl-long.207/)
+  - **Problem**: Current autoregressive models don't care the quality of already generated tokens while inference time.
+  - **Approach**: Propose to use contrastive loss to measure the relative qualities of candidate summaries.
+
+- [EntSUM: A Data Set for Entity-Centric Summarization](https://aclanthology.org/2022.acl-long.237/)
+  - **Problem**: There are no dataset to evaluate controllable summarization systems.
+  - **Approach**: Present a new summarization dataset based on entities.
+
+- [DYLE: Dynamic Latent Extraction for Abstractive Long-Input Summarization](https://aclanthology.org/2022.acl-long.118)
+  - **Problem**: It is still challenging to summarize long texts.
+  - **Approach**: Propose to jointly train extractor and generator with loss for each and joint consistency loss.
+
+- [Benchmarking Answer Verification Methods for Question Answering-Based Summarization Evaluation Metrics](https://aclanthology.org/2022.findings-acl.296)
+  - **Problem**: Answer verification methods for QA-based summarization evaluations are under-studied.
+  - **Approach**: Analyzed four answer verification methods and found that LERC performs the best but not always reflected the summary evaluation quality.
+
+- [A Well-Composed Text is Half Done! Composition Sampling for Diverse Conditional Generation](https://aclanthology.org/2022.acl-long.94)
+  - **Problem**: It is challenging to generate texts about same information but in different surface.
+  - **Approach**: Propose to first generate entity chain and then generate texts from it.
+
+- [Spurious Correlations in Reference-Free Evaluation of Text Generation](https://aclanthology.org/2022.acl-long.102)
+  - **Problem**: Reference-free summarization evaluation metrics can have spurious bias.
+  - **Approach**: Show that there are spurious correlation such as simple word overlaps in model-based reference-free evaluation methods and propose a simple adversarial method to avoid them.
 
 - []()
   - **Problem**: 
