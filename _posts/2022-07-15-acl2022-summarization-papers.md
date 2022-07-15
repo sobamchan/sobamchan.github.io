@@ -11,8 +11,8 @@ Unexpected japanese object at Liège, Belgium.
 39 summarization-related papers from [ACL 2022](https://aclanthology.org/events/acl-2022/).
 Not all papers on summarization are covered because of time limitation.
 
-I only skim-read many of the papers so there can be hullucinations or missing information, don't trust my summaries, if you find some interesting papers here, better read youself.
-Feel free to contact me for mistakes and etc.
+I only skim-read many of the papers so there can be hullucinations or missing information, don't trust my summaries, use this list just as a starting point.
+Feel free to contact me for mistakes, additions and etc.
 
 # Three personal favorites
 
