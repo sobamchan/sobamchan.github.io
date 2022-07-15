@@ -7,7 +7,7 @@ updated: 2022-07-15
 Unexpected japanese object at Liège, Belgium.
 
 39 summarization-related papers.
-Not all papers on summarization are covered because of personal interests and time limitation.
+Not all papers on summarization are covered because of time limitation.
 
 I only skim-read many of the papers so there can be hullucinations or missing information, don't trust my summaries, if you find some interesting papers here, better read youself.
 Feel free to contact me for mistakes and etc.
