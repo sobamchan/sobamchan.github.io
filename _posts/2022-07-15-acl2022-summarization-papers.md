@@ -3,6 +3,9 @@ title: [ACL 2022] A Summarization of Summarization Papers.
 updated: 2022-07-15
 ---
 
+<a href="https://imgur.com/tV7NMLE"><img src="https://i.imgur.com/tV7NMLE.png" title="source: imgur.com" /></a>  
+Unexpected japanese object at Liège, Belgium.
+
 39 summarization-related papers.
 Not all papers on summarization are covered because of personal interests and time limitation.
 
