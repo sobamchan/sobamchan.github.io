@@ -1,5 +1,5 @@
 ---
-title: ACL 2022: A Summarization of Summarization Papers.
+title: [ACL 2022] A Summarization of Summarization Papers.
 updated: 2022-07-15
 ---
 
