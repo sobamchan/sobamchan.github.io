@@ -1,17 +1,34 @@
 ---
 title: ACL 2022: A Summarization of Summarization Papers.
-updated: 2022-05-19
+updated: 2022-07-15
 ---
 
-Work in Progress.
+39 summarization-related papers.
+Not all papers on summarization are covered because of personal interests and time limitation.
 
-- [Zero-Shot Aspect-Based Scientific Document Summarization using Self-Supervised Pre-training](https://aclanthology.org/2022.bionlp-1.5)
-  - **Problem**: In existing datasets for research paper summarization, summaries focus on limited variety of aspects, limiting applications.
-  - **Approach**: Using texts in each section from papers as signals to perform self-supervised leraning.
+I only skim-read many of the papers so there can be hullucinations or missing information, don't trust my summaries, if you find some interesting papers here, better read youself.
+Feel free to contact me for mistakes and etc.
+
+# 3 Personal Favorite Papers
+
+- [Faithful or Extractive? On Mitigating the Faithfulness-Abstractiveness Trade-off in Abstractive Summarization](https://aclanthology.org/2022.acl-long.100)
+  - **Problem**: There is no evaluation how much we give up abstractiveness over faifulness.
+  - **Approach**: Propose a way to compute faithfulness abstractiveness trade-off curve by separating training data samples by extractiveness.
+
+- [Hallucinated but Factual! Inspecting the Factuality of Hallucinations in Abstractive Summarization](https://aclanthology.org/2022.acl-long.236)
+  - **Problem**: Factually correct hallucinations are not considered in existing works.
+  - **Approach**: Proposed to use how a word probablity in a summary shifts given a input document to predict entity's hallucination and factuality.
 
 - [Attention Temperature Matters in Abstractive Summarization Distillation](https://aclanthology.org/2022.acl-long.11)
   - **Problem**: BART is large. In current distillation, teacher output distribution is "too shart" for students.
   - **Approach**: By relaxing attention temperature, make signal easier for students.
+
+
+# Others
+
+- [Zero-Shot Aspect-Based Scientific Document Summarization using Self-Supervised Pre-training](https://aclanthology.org/2022.bionlp-1.5)
+  - **Problem**: In existing datasets for research paper summarization, summaries focus on limited variety of aspects, limiting applications.
+  - **Approach**: Using texts in each section from papers as signals to perform self-supervised leraning.
 
 - [Read Top News First: A Document Reordering Approach for Multi-Document News Summarization](https://aclanthology.org/2022.findings-acl.51)
   - **Problem**: Simple documents concatenation ignores document importance. While summarization models tend to pay more attention to the beginneing of the inputs.
@@ -24,10 +41,6 @@ Work in Progress.
 - [HiStruct+: Improving Extractive Text Summarization with Hierarchical Structure Information](https://aclanthology.org/2022.findings-acl.102)
   - **Problem**: Structure of the document is not considered.
   - **Approach**: Propose to use section names and sentence position to explicitly encode document structure.
-
-- [Faithful or Extractive? On Mitigating the Faithfulness-Abstractiveness Trade-off in Abstractive Summarization](https://aclanthology.org/2022.acl-long.100)
-  - **Problem**: There is no evaluation how much we give up abstractiveness over faifulness.
-  - **Approach**: Propose a way to compute faithfulness abstractiveness trade-off curve by separating training data samples by extractiveness.
 
 - [Length Control in Abstractive Summarization by Pretraining Information Selection](https://aclanthology.org/2022.acl-long.474)
   - **Problem**: Most length-controling happens in decoding time only. How to encode is not considered.
@@ -105,10 +118,6 @@ Work in Progress.
   - **Problem**: Edit-based unsupervised approach can be slow and constrain to keep the input word order.
   - **Approach**: Proposed to generate training samples by edit-based approach, train a non-autoregressive model on them.
 
-- [Hallucinated but Factual! Inspecting the Factuality of Hallucinations in Abstractive Summarization](https://aclanthology.org/2022.acl-long.236)
-  - **Problem**: Factually correct hallucinations are not considered in existing works.
-  - **Approach**: Proposed to use how a word probablity in a summary shifts given a input document to predict entity's hallucination and factuality.
-
 - [DQ-BART: Efficient Sequence-to-Sequence Model via Joint Distillation and Quantization](https://aclanthology.org/2022.acl-short.22)
   - **Problem**: Efficient quantization for seq2seq models are not studied well.
   - **Approach**: Proposed a join framework of distillation and quantization to reduce model footprint by 16.5x.
@@ -157,26 +166,6 @@ Work in Progress.
   - **Problem**: Reference-free summarization evaluation metrics can have spurious bias.
   - **Approach**: Show that there are spurious correlation such as simple word overlaps in model-based reference-free evaluation methods and propose a simple adversarial method to avoid them.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
-
-- []()
-  - **Problem**: 
-  - **Approach**: 
-
-- []()
-  - **Problem**: 
-  - **Approach**: 
-
-- []()
-  - **Problem**: 
-  - **Approach**: 
-
-- []()
-  - **Problem**: 
-  - **Approach**: 
-
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [Mix and Match: Learning-free Controllable Text Generationusing Energy Language Models](https://aclanthology.org/2022.acl-long.31)
+  - **Problem**: Controlling trained model's output text is expensive.
+  - **Approach**: Propose an approach to its generation-time which utilizes pretrained blackbox models to guide the generation.
