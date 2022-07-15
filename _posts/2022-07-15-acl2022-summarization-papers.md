@@ -9,7 +9,7 @@ Not all papers on summarization are covered because of personal interests and ti
 I only skim-read many of the papers so there can be hullucinations or missing information, don't trust my summaries, if you find some interesting papers here, better read youself.
 Feel free to contact me for mistakes and etc.
 
-# 3 Personal Favorite Papers
+# Three personal favorites
 
 - [Faithful or Extractive? On Mitigating the Faithfulness-Abstractiveness Trade-off in Abstractive Summarization](https://aclanthology.org/2022.acl-long.100)
   - **Problem**: There is no evaluation how much we give up abstractiveness over faifulness.
