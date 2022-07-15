@@ -6,6 +6,8 @@ updated: 2022-07-15
 <a href="https://imgur.com/tV7NMLE"><img src="https://i.imgur.com/tV7NMLE.png" title="source: imgur.com" /></a>  
 Unexpected japanese object at Liège, Belgium.
 
+# Introduction
+
 39 summarization-related papers from [ACL 2022](https://aclanthology.org/events/acl-2022/).
 Not all papers on summarization are covered because of time limitation.
 
