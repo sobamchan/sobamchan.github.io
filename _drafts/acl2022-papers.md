@@ -13,13 +13,13 @@ updated: 2022-07-16
   - **Problem**: It's not clear yet which transfer learning strategy to take.
   - **Approach**: Compared multitask learning and intermediate fine-tuning on GLUE benchmark and found that multitask learning is better than intermediate fine-tuning when the target task has fewer samples than the supporting task (vice versa).
 
-- []()
-  - **Problem**: 
-  - **Approach**:
+- [How does the pre-training objective affect what large language models learn about linguistic properties?](https://aclanthology.org/2022.acl-short.16)
+  - **Problem**: There are no study investitages the relationship between pre-training objective and linguistic properties of models.
+  - **Approach**: Compared MLM and rather random objective functions and performed linguistic knowledge probing, and show that there are no significant difference.
 
-- []()
-  - **Problem**: 
-  - **Approach**:
+- [Problems with Cosine as a Measure of Embedding Similarity for High Frequency Words](https://aclanthology.org/2022.acl-short.45)
+  - **Problem**: Relationship between word frequency and contextualized embebeddings is understudied.
+  - **Approach**: Showed that contextualized embeddings are very sensitive to word frequency, underestimates similarity of frequent words by cosine similarity.
 
 - []()
   - **Problem**: 

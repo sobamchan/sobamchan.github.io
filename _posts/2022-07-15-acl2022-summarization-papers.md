@@ -25,7 +25,7 @@ Feel free to contact me for mistakes, additions and etc.
   - **Approach**: Proposed to use how a word probablity in a summary shifts given a input document to predict entity's hallucination and factuality.
 
 - [Attention Temperature Matters in Abstractive Summarization Distillation](https://aclanthology.org/2022.acl-long.11)
-  - **Problem**: BART is large. In current distillation, teacher output distribution is "too shart" for students.
+  - **Problem**: BART is large. In current distillation, teacher output distribution is "too sharp" for students.
   - **Approach**: By relaxing attention temperature, make signal easier for students.
 
 
