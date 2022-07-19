@@ -20,17 +20,17 @@ updated: 2022-07-18
   - **Problem**: We don't quite know that current direction of summarization research can actually help users.
   - **Approach**: Designed a survey, and collected answers from students, and propose some understudied aspects required by them.
 
-- []()
+- [Falsesum: Generating Document-level NLI Examples for Recognizing Factual Inconsistency in Summarization](https://aclanthology.org/2022.naacl-main.199)
   - **Problem**: Using NLI models to compare input document and hypothesis is not straighforward.
   - **Approach**: Propose a pipeline to generate pairs of documents and hypothesis to train NLI models for factual incosistency detection.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [Exploring Neural Models for Query-Focused Summarization](https://aclanthology.org/2022.findings-naacl.109)
+  - **Problem**: Contributions to query-focused summarization is increasing but there is no comprehensive study on models.
+  - **Approach**: Systematic study on two approaches, two-stage extractive-abstract and end-to-end, and also the effectiveness of transfer learning, and two extensions.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [Reference-free Summarization Evaluation via Semantic Correlation and Compression Ratio](https://aclanthology.org/2022.naacl-main.153)
+  - **Problem**: Shannon score, by generate source document w/ or w/o summary as prompt, to computes information and compare to evaluate summaries but ignores saliency and token position.
+  - **Approach**: Propose to extend Shannon score to compute the correlation of distributions w/ or w/o summary prompt to take saliency adn token position into account.
 
 - []()
   - **Problem**: 
