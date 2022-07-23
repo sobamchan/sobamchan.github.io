@@ -10,7 +10,7 @@ updated: 2022-07-19
 
 No human validation on summaries, so you can't trust them, please just use them as a starting point of your work.
 
-I generated summaries in other four languages. If you read [English](https://sotaro.io/posts/2022naacl-tldrs), [Japanese](https/sotaro.io/info/2022naacl-tldr-ja.md), [Italian](https/sotaro.io/info/2022naacl-tldr-it.md) or [Chinese](https/sotaro.io/info/2022naacl-tldr-zh.md), check them out too.
+I generated summaries in other four languages. If you read [English](https://sotaro.io/posts/2022naacl-tldrs), [Japanese](https/sotaro.io/info/2022naacl-tldr-ja), [Italian](https/sotaro.io/info/2022naacl-tldr-it) or [Chinese](https/sotaro.io/info/2022naacl-tldr-zh), check them out too.
 
 
 # Summaries
