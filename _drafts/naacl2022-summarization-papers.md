@@ -32,16 +32,16 @@ updated: 2022-07-18
   - **Problem**: Shannon score, by generate source document w/ or w/o summary as prompt, to computes information and compare to evaluate summaries but ignores saliency and token position.
   - **Approach**: Propose to extend Shannon score to compute the correlation of distributions w/ or w/o summary prompt to take saliency adn token position into account.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [Investigating Crowdsourcing Protocols for Evaluating the Factual Consistency of Summaries](https://aclanthology.org/2022.naacl-main.417)
+  - **Problem**: There are no standardalized human evaluation method for factual consistency of summarization systems.
+  - **Approach**: Performed cloudsource-based human evaluation on various models for factual consistency to analyze the best setup.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [Proposition-Level Clustering for Multi-Document Summarization](https://aclanthology.org/2022.naacl-main.128)
+  - **Problem**: Sentence level clustering for multi-document summarization can be noisy and redundant.
+  - **Approach**: Propose to perform clustering on proposition-level to obtain more precise salient pieces of texts.
 
-- []()
-  - **Problem**: 
+- [Improving Multi-Document Summarization through Referenced Flexible Extraction with Credit-Awareness](https://aclanthology.org/2022.naacl-main.120)
+  - **Problem**: Extract-then-abstract approach for multi-document summarization has some problems, such as quality of pseudo oracles for extraction model.
   - **Approach**: 
 
 - []()
