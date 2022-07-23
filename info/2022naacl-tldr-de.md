@@ -13,7 +13,12 @@ layout: post
 No human validation on summaries, so you can't trust them, please just use them as a starting point of your work.
 
 
-I generated summaries in other four languages. If you read [English](/posts/2022naacl-tldrs), [Japanese](/info/2022naacl-tldr-ja), [Italian](/info/2022naacl-tldr-it) or [Chinese](/info/2022naacl-tldr-zh), check them out too.
+For other languages,
+
+- [English](/posts/2022naacl-tldrs)
+- [Italian](/info/2022naacl-tldr-it)
+- [Chinese](/info/2022naacl-tldr-zh)
+- [Japanese](/info/2022naacl-tldr-ja)
 
 
 # Summaries
