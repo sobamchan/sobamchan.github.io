@@ -1,6 +1,7 @@
 ---
 title: NAACL 2022 - Papers with Machine-generated summaries in German
 updated: 2022-07-19
+layout: post
 ---
 
 # Background
