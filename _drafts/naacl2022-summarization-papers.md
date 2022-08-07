@@ -44,25 +44,25 @@ updated: 2022-07-18
   - **Problem**: Extract-then-abstract approach for multi-document summarization has some problems, such as quality of pseudo oracles for extraction model.
   - **Approach**: 
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [Does Summary Evaluation Survive Translation to Other Languages?](https://aclanthology.org/2022.naacl-main.173)
+  - **Problem**: Extending summarization datasets to other languages is expensive with manual annotations.
+  - **Approach**: By translating English SumEval dataset to seven languages, they evaluated whether they can still use English human scores to evaluate qualities after machine translation.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [SueNes: A Weakly Supervised Approach to Evaluating Single-Document Summarization via Negative Sampling](https://aclanthology.org/2022.naacl-main.175)
+  - **Problem**: Reference-free evaluation models often based on non summarizatino datasets such as QA which introduce noises and biases.
+  - **Approach**: By mutating reference summaries, they propose to generate training samples for reference free summary evaluation models.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [Masked Summarization to Generate Factually Inconsistent Summaries for Improved Factual Consistency Checking](https://aclanthology.org/2022.findings-naacl.76)
+  - **Problem**: Obtaining factually incorrect summaries yet relevant to the source text is challenging.
+  - **Approach**: Propose to generate factually incorrect summaries by masking key information in the reference summaries.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [Improving the Faithfulness of Abstractive Summarization via Entity Coverage Control](https://aclanthology.org/2022.findings-naacl.40)
+  - **Problem**: Applying pre-training language models to abstractive summarization is known to lead generating unfaithful summaries.
+  - **Approach**: Propose to prepend a new special token computed by number of named entity overlap between source text and reference summary to inform model the level of faithfullness.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [ExtraPhrase: Efficient Data Augmentation for Abstractive Summarization](https://aclanthology.org/2022.naacl-srw.3)
+  - **Problem**: Obtaining abstractive summarization dataset is expensive.
+  - **Approach**: Propose a two-step method that generates pseudo summaries, first extract salient sentences from a text, second generate paraphrases of them.
 
 - []()
   - **Problem**: 
