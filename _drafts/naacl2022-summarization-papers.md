@@ -64,9 +64,9 @@ updated: 2022-07-18
   - **Problem**: Obtaining abstractive summarization dataset is expensive.
   - **Approach**: Propose a two-step method that generates pseudo summaries, first extract salient sentences from a text, second generate paraphrases of them.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [Interactive Query-Assisted Summarization via Deep Reinforcement Learning](https://aclanthology.org/2022.naacl-main.184)
+  - **Problem**: Current neural models for interactive summarization models have latency problem prevents from real-time processing.
+  - **Approach**: Propose to decompose the interactive summarization system actions into 1) initial summary and query responses generation and 2) generation of suggested queries, and model them with reinforcement learning.
 
 - []()
   - **Problem**: 
