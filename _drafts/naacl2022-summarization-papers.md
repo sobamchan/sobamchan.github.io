@@ -72,9 +72,9 @@ updated: 2022-07-18
   - **Problem**: How each media frame a savme event in their articles differ depending on its political learnings.
   - **Approach**: Present a new task/dataset aiming to generate framing-bias-free summaries from articles with different political bias.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [FactGraph: Evaluating Factuality in Summarization with Semantic Graph Representations](https://aclanthology.org/2022.naacl-main.236)
+  - **Problem**: Graph representations of texts are not yet used to evaluation factual aspect of summarization systems.
+  - **Approach**: Propose to AMR and adapter enhanced models to evaluate summaries for factuality.
 
 - []()
   - **Problem**: 
