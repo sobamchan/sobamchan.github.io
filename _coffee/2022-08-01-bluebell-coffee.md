@@ -1,5 +1,5 @@
 ---
-title:Bluebell Coffee, Valencia
+title: Bluebell Coffee, Valencia
 updated: 2022-08-01
 ---
 
