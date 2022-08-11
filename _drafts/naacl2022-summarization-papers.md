@@ -68,9 +68,9 @@ updated: 2022-07-18
   - **Problem**: Current neural models for interactive summarization models have latency problem prevents from real-time processing.
   - **Approach**: Propose to decompose the interactive summarization system actions into 1) initial summary and query responses generation and 2) generation of suggested queries, and model them with reinforcement learning.
 
-- []()
-  - **Problem**: 
-  - **Approach**: 
+- [NeuS: Neutral Multi-News Summarization for Mitigating Framing Bias](https://aclanthology.org/2022.naacl-main.228)
+  - **Problem**: How each media frame a savme event in their articles differ depending on its political learnings.
+  - **Approach**: Present a new task/dataset aiming to generate framing-bias-free summaries from articles with different political bias.
 
 - []()
   - **Problem**: 
