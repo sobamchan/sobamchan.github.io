@@ -77,7 +77,7 @@ updated: 2022-07-18
   - **Approach**: Propose to AMR and adapter enhanced models to evaluate summaries for factuality.
 
 - []()
-  - **Problem**: 
+  - **Problem**: Current interactive summarization systems require too much computational costs, and sample effeciency is not studied well.
   - **Approach**: 
 
 - []()
