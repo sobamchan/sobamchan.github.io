@@ -48,7 +48,7 @@ Stuttgart は都会感が強く街としてはそこまでみて回るものが�
 雨が止んで日も少し出てきたのでワイン畑の丘を少しだけ登るミニハイキングをしてきた。
 
 <a href="https://imgur.com/vxohvXj"><img src="https://i.imgur.com/vxohvXj.jpg" title="source: imgur.com" /></a>  
-上から D*ick。
+上から D*ck。
 
 <a href="https://imgur.com/zOMlw4z"><img src="https://i.imgur.com/zOMlw4z.jpg" title="source: imgur.com" /></a>  
 典型的なドイツ感
