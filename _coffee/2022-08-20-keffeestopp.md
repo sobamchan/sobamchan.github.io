@@ -1,5 +1,5 @@
 ---
-title: Kaffeestopp Privatrösterei
+title: Kaffeestopp Privatrösterei, Birkenau
 updated: 2022-08-20
 ---
 
