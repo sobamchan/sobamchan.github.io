@@ -30,7 +30,8 @@ updated: 2022-08-27
 Stuttgart は都会感が強く街としてはそこまでみて回るものがなかったので、電車で 20min ほど移動して、ネットで人気のありそうだった Eislingen という街に行ってきた。
 
 <a href="https://imgur.com/yF81Zwv"><img src="https://i.imgur.com/yF81Zwv.jpg" title="source: imgur.com" /></a>  
-駅前に D*ick。どういう意味なんだろう。
+駅前に D*ck。どういう意味なんだろう。
+同僚に聞いたら、"fat" らしい。さらによくある名前でもあるらしい。ここはナイフを作っている向上でおそらくそのボスの名前が Dick さんなのだろうとのこと。英語の意味とは一切関係がないみたい。当然そうか。
 
 <a href="https://imgur.com/QWYjxi4"><img src="https://i.imgur.com/QWYjxi4.jpg" title="source: imgur.com" /></a>  
 本物の人じゃないよ

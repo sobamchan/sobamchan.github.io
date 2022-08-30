@@ -1,5 +1,5 @@
 ---
-title: Mókuska Caffè
+title: Mókuska Caffè, Stuttgart
 updated: 2022-08-27
 ---
 
