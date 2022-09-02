@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 :root {
     --baseFontColor: #111518;
@@ -13,10 +13,19 @@
     font-size: 14px;
 }
 
+@font-face {
+	font-family: "nerd";
+	src: url("../fonts/agave_regular_nerd_font_complete.ttf");
+}
 
-span.postPageTitle, span.postPageDate, p, a, button, ul, li {
+@font-face {
+	font-family: "corporate";
+	src: url("../fonts/corporate_logo_medium_ver2.ttf");
+}
+
+span.postPageTitle, span.postPageDate, p, a, button, ul, li, span, div, section {
     //font-family: "Lato", sans-serif;
-    font-family: -apple-system, system-ui, BlinkMacSystemFont,
+    font-family: "corporate", "nerd", -apple-system, system-ui, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue',
     Ubuntu, Arial, sans-serif;
     color: var(--baseFontColor);
