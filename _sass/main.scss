@@ -25,7 +25,7 @@
 
 span.postPageTitle, span.postPageDate, p, a, button, ul, li, span, div, section {
     //font-family: "Lato", sans-serif;
-    font-family: "corporate", "nerd", -apple-system, system-ui, BlinkMacSystemFont,
+    font-family: -apple-system, system-ui, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue',
     Ubuntu, Arial, sans-serif;
     color: var(--baseFontColor);
@@ -96,6 +96,7 @@ strong {
 }
 
 .linkItem {
+    font-family: "nerd";
     margin-right: 10px;
 }
 
