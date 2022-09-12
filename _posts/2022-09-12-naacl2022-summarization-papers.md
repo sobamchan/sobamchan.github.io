@@ -3,6 +3,24 @@ title: NAACL 2022 - A Summarization of Summarization Papers.
 updated: 2022-07-18
 ---
 
+21 summarization-related papers from NAACL 2022. Not all papers on summarization are covered because of time limitation.
+
+I only skim-read many of the papers so there can be hullucinations or missing information, don’t trust my summaries, use this list just as a starting point. Feel free to contact me for mistakes, additions and etc.
+
+
+# Summary
+
+- There are many works on evaluating/improving factual inconsistency in generated summaries.
+- Because of the theme in NAACL 2022, there are some papers focus on human-AI interaction.
+
+# A personal favorite
+
+- [What Makes a Good and Useful Summary? Incorporating Users in Automatic Summarization Research](https://aclanthology.org/2022.naacl-main.4)
+  - **Problem**: We don't quite know that current direction of summarization research can actually help users.
+  - **Approach**: Designed a survey, and collected answers from students, and propose some understudied aspects required by them.
+
+
+# List
 
 - [FactPEGASUS: Factuality-Aware Pre-training and Fine-tuning for Abstractive Summarization](https://aclanthology.org/2022.naacl-main.74)
   - **Problem**: Summarization models can generate factually incorrect information.
@@ -15,10 +33,6 @@ updated: 2022-07-18
 - [TSTR: Too Short to Represent, Summarize with Details! Intro-Guided Extended Summary Generation](https://aclanthology.org/2022.naacl-main.25)
   - **Problem**: Abstract-long sumamries are not informative enough for documents like scholarly documents.
   - **Approach**: Propose a model which uses introduction text as pointer feature to the main text to select salient information.
-
-- [What Makes a Good and Useful Summary? Incorporating Users in Automatic Summarization Research](https://aclanthology.org/2022.naacl-main.4)
-  - **Problem**: We don't quite know that current direction of summarization research can actually help users.
-  - **Approach**: Designed a survey, and collected answers from students, and propose some understudied aspects required by them.
 
 - [Falsesum: Generating Document-level NLI Examples for Recognizing Factual Inconsistency in Summarization](https://aclanthology.org/2022.naacl-main.199)
   - **Problem**: Using NLI models to compare input document and hypothesis is not straighforward.
@@ -42,7 +56,7 @@ updated: 2022-07-18
 
 - [Improving Multi-Document Summarization through Referenced Flexible Extraction with Credit-Awareness](https://aclanthology.org/2022.naacl-main.120)
   - **Problem**: Extract-then-abstract approach for multi-document summarization has some problems, such as quality of pseudo oracles for extraction model.
-  - **Approach**: 
+  - **Approach**: Propose to provide model with additional signal by weighting loss value according to the reference sentence importance during training.
 
 - [Does Summary Evaluation Survive Translation to Other Languages?](https://aclanthology.org/2022.naacl-main.173)
   - **Problem**: Extending summarization datasets to other languages is expensive with manual annotations.
@@ -76,18 +90,14 @@ updated: 2022-07-18
   - **Problem**: Graph representations of texts are not yet used to evaluation factual aspect of summarization systems.
   - **Approach**: Propose to AMR and adapter enhanced models to evaluate summaries for factuality.
 
-- []()
+- [QAFactEval: Improved QA-Based Factual Consistency Evaluation for Summarization](https://aclanthology.org/2022.naacl-main.187)
+  - **Problem**: Two categories for factual consistency evaluation; 1) entailment-based, 2) QA-based, haven't been fairly compared.
+  - **Approach**: Found that QA-based methods captures the factual consistency better than entailment-based methods and propose a new evaluation metric.
+
+- [Mapping the Design Space of Human-AI Interaction in Text Summarization](https://aclanthology.org/2022.naacl-main.33)
+  - **Problem**: There is no study on humans involved in developments of text sumamrization systems.
+  - **Approach**: Conducted experiments on five human-AI interactions on text summarization task to evaluate their experience.
+
+- [Interactive Query-Assisted Summarization via Deep Reinforcement Learning](https://aclanthology.org/2022.naacl-main.184)
   - **Problem**: Current interactive summarization systems require too much computational costs, and sample effeciency is not studied well.
-  - **Approach**: 
-
-- []()
-  - **Problem**: 
-  - **Approach**: 
-
-- []()
-  - **Problem**: 
-  - **Approach**: 
-
-- []()
-  - **Problem**: 
-  - **Approach**: 
+  - **Approach**: Propose two reinforcement-based modules to achieve; 1) to find salient information in user queries, 2) to list possible queries.
