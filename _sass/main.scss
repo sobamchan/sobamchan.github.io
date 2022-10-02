@@ -23,6 +23,14 @@
 	src: url("../fonts/corporate_logo_medium_ver2.ttf");
 }
 
+code {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
 span.postPageTitle, span.postPageDate, p, a, button, ul, li, span, div, section {
     //font-family: "Lato", sans-serif;
     font-family: -apple-system, system-ui, BlinkMacSystemFont,
