@@ -72,6 +72,12 @@ Run following command,
 ```
 
 this will generate summaries for 10 most recent papers in your Zotero library.
+
+Now, if you go back to your Zotero App and check the most recently added paper, you will see a note attached with one sentence summary.
+
+<a href="https://imgur.com/Sn0hALn"><img src="https://i.imgur.com/Sn0hALn.png" title="source: imgur.com" /></a>  
+Like this
+
 Increase `--limit` argument to do it for more papers.
 You can change `--model-name` as well to meet your need.
 For instance, setting `--model-name sobamchan/bart-large-scitldr-distilled-3-3`, model to be used will be smaller so it runs faster.
