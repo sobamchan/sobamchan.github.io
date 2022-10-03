@@ -3,7 +3,7 @@ title: Schnitsum - Easy to use summarization package for CLI and Python.
 updated: 2022-10-02
 ---
 
-## TLDR
+## TL;DR
 
 Super easy to use, python package for text summarization ([GitHub page](https://github.com/sobamchan/schnitsum/)).
 
