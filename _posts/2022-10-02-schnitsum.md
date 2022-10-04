@@ -133,3 +133,9 @@ Enjoy!
   - **TLDR**: We present a framework for evaluating the effective faithfulness of summarization systems, by generating a faithfulness-abstractiveness trade-off curve that serves as a control at different operating points on the abstractiveness spectrum.
 - [BabelBERT: Massively Multilingual Transformers Meet a Massively Multilingual Lexical Resource](https://arxiv.org/abs/2208.01018)
   - **TLDR**: We show that multilingual lexical specialization of PLMs can improve performance in type-level lexical tasks and also enables generalization to languages with no lexical constraints.
+
+
+## Applications
+
+- [zotero_tldr_api](https://github.com/sobamchan/zotero_tldr_api)
+  - Generate summaries for paper in your Zotero library
