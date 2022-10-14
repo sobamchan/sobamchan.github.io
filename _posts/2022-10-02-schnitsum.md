@@ -24,7 +24,7 @@ While we have many methodologies on this field, it is still not very accessible 
 As my first little step of improvement, in this article, I will introduce a python package which also provides a CLI command that let you utilize modern summarization models easily.
 
 
-## Schinisum
+## Schnitsum
 
 The name was rather picked randomly after one iconic German dish (I'm a Ph.D. student in Germany) called [Schnitzel](https://en.wikipedia.org/wiki/Schnitzel), fried thin pork meat often with salty sauce and french fries.
 I found it is quite difficult to type "schnitsum" with my keyboard but still happy with it.
