@@ -33,7 +33,7 @@ code {
 
 span.postPageTitle, span.postPageDate, p, a, button, ul, li, span, div, section {
     //font-family: "Lato", sans-serif;
-    font-family: -apple-system, system-ui, BlinkMacSystemFont,
+    font-family: Palatino, -apple-system, system-ui, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue',
     Ubuntu, Arial, sans-serif;
     color: var(--baseFontColor);
@@ -104,12 +104,12 @@ strong {
 }
 
 .linkItem {
-    font-family: "nerd";
+    // font-family: "nerd";
     margin-right: 10px;
 }
 
 .pageTitle {
-    font-family: "nerd";
+    // font-family: "nerd";
 }
 
 .content {
