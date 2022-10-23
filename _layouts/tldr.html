@@ -2,6 +2,7 @@
 <html lang="{{ site.lang | default: "en-US" }}">
   <head  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     {% include ga.html %}
+    {% include text-expand.html %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta property="og:title" content="{{ page.title }}" />
@@ -25,34 +26,27 @@
     <main>
       <header>
         <div class="logoWrapper">
-          <a href="/">
-            <img class="logo" src="/assets/logo.svg" alt="" />
+          <a href="/tldrs" style="font-size:30px;">
+	    TLDRs
           </a>
         </div>
-        <nav>
-          <div class="links">
-            <a class="linkItem" href="/">posts</a>
-            <a class="linkItem" href="/ja">posts (ja)</a>
-            <a class="linkItem" href="/travel">travel</a>
-            <a class="linkItem" href="/coffee">coffee</a>
-            <a class="linkItem" href="/daily">daily</a>
-            <a class="linkItem" href="/reading">reading</a>
-            <a class="linkItem" href="/photos">photos</a>
-            <a class="linkItem" href="/tldrs">tldrs</a>
-            <a class="linkItem" href="/about">about</a>
-            <a class="linkItem" href="/publication">publication</a>
-            <a class="linkItem" href="https://github.com/sobamchan">github</a>
-            <a class="linkItem" href="./assets/cv.pdf">CV</a>
-            <a class="linkItem" href="/feed.xml" rel="alternate" type="application/rss+xml">feed (ja)</a>
-          </div>
-        </nav>
       </header>
 
       <section class="content">
         {{ content }}
       </section>
 
+      <div class="PageNavigation">
+        {% if page.previous.url %}
+          <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+        {% endif %}
+        {% if page.next.url %}
+          <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+        {% endif %}
+      </div>
+
     </main>
 
   </body>
 </html>
+

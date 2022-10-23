@@ -2,7 +2,7 @@ url: "https://sotaro.io" # the base hostname & protocol for your site, e.g. http
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "sotaro.io" # the name of your site, e.g. ACME Corp.
 name: sotaro.io (ja)
-description: 主にプログラミングと生産性関連
+description: Random notes about random things
 url: https://sotaro.io
 
 collections:
@@ -27,6 +27,9 @@ collections:
   coffee:
     output: true
     permalink: /coffee/:title
+  tldrs:
+    output: true
+    permalink: /tldrs/:title
 
 defaults:
     - scope:
@@ -61,3 +64,7 @@ defaults:
         type: "photos"
       values:
           layout: "photo"
+    - scope:
+        type: "tldrs"
+      values:
+          layout: "tldr"
