@@ -3,7 +3,7 @@ layout: about
 title: "about"
 ---
 
-Hello, I am Sotaro Takeshita. I am a first-year Ph.D. student at University of Mannheim focusing on text summarization.
+Hello, I am Sotaro Takeshita. I am a second-year Ph.D. student at University of Mannheim focusing on text summarization.
 I am interested in 
 
 - text summarization
