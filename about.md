@@ -49,7 +49,11 @@ Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
 
 ## Project
 
+- [NLP TLDRs](https://sotaro.io/tldrs)
+  - A list of major NLP conference proceedings with one sentence summaries.
 - [tofunlp/sister](https://github.com/tofunlp/sister)
   - Very simple and easy to use pkg to encode sentences in various language into vector representations.
 - [sobamchan/pytorch-lightning-transformers](https://github.com/sobamchan/pytorch-lightning-transformers)
   - Clean readable code for finetuning transformers with pytorch-lightning.
+
+
