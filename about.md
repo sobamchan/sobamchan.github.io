@@ -51,6 +51,8 @@ Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
 
 - [NLP TLDRs](https://sotaro.io/tldrs)
   - A list of major NLP conference proceedings with one sentence summaries.
+- [schnitsum](https://github.com/sobamchan/schnitsum/)
+  - Easy to use python pkg to generate summaries with state-of-the-art neural network models.
 - [tofunlp/sister](https://github.com/tofunlp/sister)
   - Very simple and easy to use pkg to encode sentences in various language into vector representations.
 - [sobamchan/pytorch-lightning-transformers](https://github.com/sobamchan/pytorch-lightning-transformers)
