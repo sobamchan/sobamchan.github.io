@@ -23,3 +23,7 @@ updated: 2022-12-01
 <a href="https://imgur.com/4RLThOU"><img src="https://i.imgur.com/4RLThOU.jpg" title="source: imgur.com" /></a>
 
 <a href="https://imgur.com/BwzRivZ"><img src="https://i.imgur.com/BwzRivZ.jpg" title="source: imgur.com" /></a>
+
+<a href="https://imgur.com/wTe8Cxu"><img src="https://i.imgur.com/wTe8Cxu.jpg" title="source: imgur.com" /></a>
+
+<a href="https://imgur.com/ecgmNnw"><img src="https://i.imgur.com/ecgmNnw.jpg" title="source: imgur.com" /></a>
