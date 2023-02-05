@@ -10,15 +10,17 @@ I think it's an important role for researchers to make research outcome accessib
 
 # Goal
 
-In this article, we first write small scripts which let you train a SVM-based text classification model and also use the trained model to make inferences. And later port these functionalities to CLI commands, so other people can pip-install and call it from terminal.
+In this article, we first write small scripts which let you train a SVM-based text classification model with Transformer-based feature and also use the trained model to make inferences. And later port these functionalities to CLI commands, so other people can pip-install and call it from terminal.
 
 After tutorial, we will be able to do something like
 
 ```bash
-> awesome-lib train -f train.csv -o model.pkl
-> awesome-lib pred -m model.pkl -i "i like apple"
+> cool_python_lib train -f train.jsonl -o model.pkl
+> cool_python_lib pred -m model.pkl -i "I like apple"  # 0 -> Positive
+> cool_python_lib pred -m model.pkl -i "I hate apple"  # 1 -> Negative
 ```
 
+the fisrt part, `cool_python_lib` is just a dummy packge name, you can set a name as you like.
 
 # Preparation
 
@@ -29,8 +31,8 @@ So follow their [documentation](https://python-poetry.org/docs/#installation) an
 After you installed Poetry, now you can make a poetry repository by simply running
 
 ```bash
-> poetry new <your-cool-lib-name>
-> cd <your-cool-lib-name>
+> poetry new cool_python_lib
+> cd cool_python_lib
 > poetry shell  # to enter the environment
 ```
 
@@ -43,5 +45,32 @@ Of course you can easily chanage the name of this repository anytime you want.
 In this article, we will implement a SVM-based text classification model by using [scikit-learn](https://scikit-learn.org/stable/) so let's first install some external libraries we need on our poetry environment by running
 
 ```bash
-> poetry add scikit-learn pandas
+> poetry add sienna scikit-learn sentence-transformers click
+```
+
+- sienna
+  - A little library helps you to load json files easily
+- scikit-learn
+  - A mighty toolkit for ML projects.
+- sentence-transformers
+  - A easy to use feature extractor for texts.
+- click
+  - A utility package that makes package development super easy.
+
+
+# Make some python files
+
+We will write following three different python program files to achieve our goal.
+
+- `./cool_python_lib/cli.py`
+  - A script gathers functions from following two feature scripts and expose them to CLI interface by using the click package.
+- `./cool_python_lib/train.py`
+  - A script has a function (train) which takes a training data, train a model, and saves it as a pickle file.
+- `./cool_python_lib/pred.py`
+  - A script has a function (pred) which takes a text and a path to trained model, and makes a prediction.
+
+You can make these files by just running,
+
+```bash
+touch ./cool_python_lib/cli.py ./cool_python_lib/train.py ./cool_python_lib/pred.py
 ```
