@@ -66,7 +66,7 @@ train-model = "<repo-name>.train:run"
 ```
 
 After having this block in the file, you can use `poetry run train-model` as an alias for `python <repo-name>/train.py:run`.
-Doesn't look much different but it works quite well with [click](https://github.com/pallets/click) to develop a command line tool. More on that on another article.
+Doesn't look much different but it works quite well with [click](https://github.com/pallets/click) to develop a command line tool. More on that in [another article](https://sotaro.io/posts/pip-installable-lib-poetry).
 
 ### 7. Publish your package
 
