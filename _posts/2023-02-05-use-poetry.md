@@ -30,6 +30,27 @@ updated: 2023-02-05
 - `poetry show hoge --tree` for dependency tree
 
 
+# One memo for deep learning forks
+
+If you use pytorch with GPUs, and your machines have CUDA version order than 11.6, you need a little trick to install it.
+What you need to do is instead of installing pytorch by using `poetry add`, add followings to specify the pytorch version you want, and where to find it.
+
+```toml
+[tool.poetry.dependencies]
+torch = { version = "^1.12.1+cu116", source = "torchcu116" }
+<OTHER YOUR DEPENDENCIES>
+
+[[tool.poetry.source]]
+name = "torchcu116"
+url = "https://download.pytorch.org/whl/cu116"
+default = false
+secondary = true
+```
+
+Then, run `poetry install`, it will install the pytorch you need.
+We need to do in this way because poetry doesn't yet support `--extra-index-url` option for `poetry add` which pip does at the moment.
+
+
 # Usage
 
 ## Installation
