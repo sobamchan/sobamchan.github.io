@@ -1,5 +1,5 @@
 ---
-title: Publish a pip installable python package with Poetry
+title: Publish a pip installable python package with Poetry and Click
 updated: 2023-01-11
 ---
 
