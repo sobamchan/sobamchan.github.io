@@ -54,8 +54,11 @@ a:hover {
 }
 
 main {
-    margin-left: 25%;
-    margin-right: 25%;
+    display: flex;
+    max-width: 50rem;
+    margin: -5rem auto 0;
+    padding: 2.4rem 2rem;
+    flex-direction: column;
 }
 
 header {
