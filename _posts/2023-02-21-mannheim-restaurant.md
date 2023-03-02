@@ -19,3 +19,7 @@ I am just a Ph.D. student in the city without much budget for food my list of fa
   - Italian restaurant
   - Music is little too loud, not recommended if you want to discuss deep philosophical topics with your friends
   - Very good pizza, large portion, one pizza is enough to feed two Japanese people
+
+- [YEnat](https://goo.gl/maps/55CwTc3DPeAgmKk77)
+  - Ethiopian restaurant
+  - I don't know their main dish is called but it's very good and recommended for a nice small group gathering.
