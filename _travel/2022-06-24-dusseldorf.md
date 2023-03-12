@@ -1,5 +1,5 @@
 ---
-title: Düsseldorf
+title: Düsseldorf, Germany
 updated: 2022-06-24
 ---
 

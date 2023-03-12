@@ -1,5 +1,5 @@
 ---
-title: Maastricht
+title: Maastricht, Netherland
 updated: 2022-06-26
 ---
 

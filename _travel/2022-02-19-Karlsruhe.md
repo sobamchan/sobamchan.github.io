@@ -1,5 +1,5 @@
 ---
-title: Karlsruhe
+title: Karlsruhe, Germany
 updated: 2022-02-19
 ---
 

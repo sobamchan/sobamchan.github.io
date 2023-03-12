@@ -1,5 +1,5 @@
 ---
-title: Frankfurt
+title: Frankfurt, Germany
 updated: 2022-06-11
 ---
 

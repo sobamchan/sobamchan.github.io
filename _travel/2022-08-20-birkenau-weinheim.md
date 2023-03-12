@@ -1,5 +1,5 @@
 ---
-title: Birkenau/Weinheim
+title: Birkenau/Weinheim, Germany
 updated: 2022-08-20
 ---
 

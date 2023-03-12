@@ -1,5 +1,5 @@
 ---
-title: Schwetzingen
+title: Schwetzingen, Germany
 updated: 2022-05-24
 ---
 
