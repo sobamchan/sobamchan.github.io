@@ -63,7 +63,7 @@ google map 眺めるだけで伝わる街の構造の特殊感が、少し歩く
 運河のサイズとそれに掛けられた橋に合わせてデザインされているだろう船が観光客を乗せて巡回している。
 
 <a href="https://imgur.com/XzZHZgJ"><img src="https://i.imgur.com/XzZHZgJ.jpg" title="source: imgur.com" /></a>  
-中央広場っぽいところ。観光向けっぽい可愛いトラムがあった。
+中央広場っぽいところ。観光向けっぽい可愛いトラムがあった。それを管理する可愛いおじさんもいた。
 
 <a href="https://imgur.com/8Lv1ZGG"><img src="https://i.imgur.com/8Lv1ZGG.jpg" title="source: imgur.com" /></a>  
 [マーストリヒト](https://sotaro.io/travel/2022-06-26-maastricht)でもそうだったけど、このクリーム色っぽい建物結構好き。
