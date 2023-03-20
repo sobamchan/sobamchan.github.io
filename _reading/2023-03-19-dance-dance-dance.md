@@ -15,3 +15,6 @@ Wikipedia 関連ページを見てみたところ、このダンス・ダンス�
 
 <a href="https://imgur.com/jLMbIc7"><img src="https://i.imgur.com/jLMbIc7.png" title="source: imgur.com" /></a>  
 行ってきた。好みの方向性のコーヒーではないが、日本のコンビニコーヒーを思い出せる一杯だった。
+
+<a href="https://imgur.com/CzGGDVz"><img src="https://i.imgur.com/CzGGDVz.png" title="source: imgur.com" /></a>  
+資本主義をダンキンのイメージ図
