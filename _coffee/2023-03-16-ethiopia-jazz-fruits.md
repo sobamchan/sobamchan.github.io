@@ -1,5 +1,5 @@
 ---
-title: Ethiopia Jazz Fruits (coffee)
+title: 🫘  Ethiopia Jazz Fruits (coffee)
 updated: 2023-03-16
 ---
 
