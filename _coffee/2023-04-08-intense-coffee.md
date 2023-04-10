@@ -1,5 +1,5 @@
 ---
-title: Intense Coffee
+title: Intense Coffee, Luxembourg
 updated: 2023-04-09
 ---
 
