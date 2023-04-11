@@ -8,6 +8,17 @@ Although, I don't explore food aspect of life so much but I would like to share 
 
 I am just a Ph.D. student in the city without much budget for food my list of far from extensive, keep that in mind.
 
+## Lunch
+
+- [Instanbul Q1](https://istanbul-q1.de/)
+  - Large space, quick service, reasonable price, crispy doner
+- [Nabati](https://nabati-mannheim.eatbu.com/?lang=en)
+  - Large space, service can be slow, cheap, fresh falafel
+- [Mensa at Uni Mannheim](https://www.stw-ma.de/men%C3%BCplan_schlossmensa.html)
+  - Bad food, low price
+
+## Dinner
+
 - [La Loba](https://goo.gl/maps/f7fjxFTuSXo9YS8N8)
   - Spanish Tapas bar
   - Wide selection for tapas and some wines, each dish/drink is affordable, high-quality.
