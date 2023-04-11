@@ -15,7 +15,7 @@ I am just a Ph.D. student in the city without much budget for food my list of fa
 - [Nabati](https://nabati-mannheim.eatbu.com/?lang=en)
   - Large space, service can be slow, cheap, fresh falafel
 - [Mensa at Uni Mannheim](https://www.stw-ma.de/men%C3%BCplan_schlossmensa.html)
-  - Bad food, low price
+  - cheap for students
 
 ## Dinner
 
