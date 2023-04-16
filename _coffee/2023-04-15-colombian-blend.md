@@ -1,5 +1,5 @@
 ---
-title: Colombian Blend
+title: Colombian Blend (coffee)
 updated: 2023-04-15
 ---
 
