@@ -3,6 +3,8 @@ title: Promissing Restaurants in Mannheim
 updated: 2023-02-21
 ---
 
+Now maintained [here](http://monnem.sotaro.io/).
+
 While there are quite a lot of restaurant options in this beautiful city of Mannheim, it's not trivial to spot truely good ones.
 Although, I don't explore food aspect of life so much but I would like to share few good places I know in the city to ease the life of new coming Mannheimers.
 
