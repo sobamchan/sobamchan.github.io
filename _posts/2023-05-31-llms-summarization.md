@@ -26,13 +26,11 @@ I give a number to each paper but the order has no meaning, it's just for refere
 
 - 1. [News Summarization and Evaluation in the Era of GPT-3](http://arxiv.org/abs/2209.12356)
   - TLDR: We show that humans overwhelmingly prefer GPT-3 summaries, but these also do not suffer from common dataset-specific issues such as poor factuality.
-
 - 2. [Benchmarking Large Language Models for News Summarization](http://arxiv.org/abs/2301.13848)
   - TLDR: We show that instruction tuning, not model size, is the key to the LLM's zero-shot summarization capability.
   - Comments
     - The number of evaluated dataset may be too small to draw their conclusion given these two datasets are known to have some critical problems.
     - But I agree to that at least on this relatively simple setup, i.e., single document news summarization, large models can generate human-level summaries.
-
 - 3. [On Learning to Summarize with Large Language Models as References](http://arxiv.org/abs/2305.14239)
   - TLDR: We propose a novel reward-based learning paradigm for text summarization models that considers the LLMs as the reference or the gold-standard oracle on commonly used summarization datasets such as the CNN/DailyMail dataset.
   - Comments
