@@ -14,7 +14,7 @@ This page contains the following things.
 - A list of papers about LLMs + summarization
 - My thoughts on the topic/direction at the time of updating
 
-Both will change over time, and this link to the git history page will show you how it has develop so far.
+Both will change over time, and [this link](https://github.com/sobamchan/sobamchan.github.io/commits/master/_posts/2023-05-31-llms-summarization.md) to the git history page will show you how it has develop so far.
 
 
 ## Paper list
@@ -53,7 +53,7 @@ This "problem" results in two super critical issues which can mislead research o
 
 It's a fact that LLMs can generate high-quality summaries but because of the first issue, fine-tuned models are underestimated specially if they are evaluated human annotators because they are asked to evaluate text quality as summaries which are not what models are trained to generate.
 
-There have been much work on "better evaluation metrics" but there is a small possibility that what we need is "real" summarization datasets with summaries.
+There have been much work on "better evaluation metrics" but there is a possibility that what we need is "real" summarization datasets with summaries.
 
 I strongly believe that we need such datasets to re-evaluate the tools we have now.
 
