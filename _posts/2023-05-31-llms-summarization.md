@@ -35,8 +35,6 @@ If you know other relevant papers, I would appreciate a lot if you could raise a
     - But I agree to that at least on this relatively simple setup, i.e., single document news summarization, large models can generate human-level summaries.
 3. [On Learning to Summarize with Large Language Models as References](http://arxiv.org/abs/2305.14239)
   - TLDR: We propose a novel reward-based learning paradigm for text summarization models that considers the LLMs as the reference or the gold-standard oracle on commonly used summarization datasets such as the CNN/DailyMail dataset.
-  - Comments
-    - I have no idea if it makes sense to train and evaluate models using the one big model.
 
 
 
@@ -60,6 +58,6 @@ I strongly believe that we need such datasets to re-evaluate the tools we have n
 ### Ignoring instructions
 
 Paper 2 mentions that LLMs often ignore instruction. Such as generating some texts which are not summaries or exceeding length limit. Even though smaller fine-tuned models sometimes low-quality texts but they are still "summaries" that the models are trained to generate.
-This is unaccepted for many applications, for instance where users can't interact with models to actually make them to generate summaries, e.g., [my paper tldr pages](https://sotaro.io/tldrs).
+This is unaccepted for many applications, e.g., where users can't interact with models to actually make them to generate summaries, e.g., [my paper tldr pages](https://sotaro.io/tldrs).
 
 So I at the moment in my opinion if there are datasets which fit the application needs, it is safer to take fine-tuned models.
