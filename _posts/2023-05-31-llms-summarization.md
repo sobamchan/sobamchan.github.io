@@ -5,7 +5,7 @@ updated: 2023-05-31
 
 ## Background
 
-I don't know how much other summarization people are confused but I am almost panicing by seeing how well these LLMs can generate summaries without being exposed to summarization training objectives, and also the increasing development speed within the research community, and in a larger tech community.
+I don't know how much other summarization people are confused but I am almost panicing by seeing how well these LLMs can generate summaries, and also the increasing development speed within the research community, and in a larger tech community.
 
 To find out whether I should just stop working on summarization or if there is something that I can still find interesting and meaningful, I started to maintain this page which I will keep updating until I go crazy.
 
