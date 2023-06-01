@@ -1,7 +1,7 @@
 ---
 title: LLMs and Summarization
 updated: 2023-05-31
-ogp: https://i.imgur.com/c0ZGQ1u.png
+ogp: https://i.imgur.com/c0ZGQ1ut.png
 ---
 
 ## Background
