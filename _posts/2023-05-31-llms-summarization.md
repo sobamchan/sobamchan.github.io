@@ -50,7 +50,7 @@ This "problem" results in two super critical issues which can mislead research o
 - fine-tuned models generate "the first sentence in the article" not summaries,
 - automatic metrics (e.g., ROUGE-x) doesn't correlate well with human evaluations.
 
-It's a fact that LLMs can generate high-quality summaries but because of the first issue, fine-tuned models are underestimated specially if they are evaluated human annotators because they are asked to evaluate text quality as summaries which are not what models are fine-tuned to produce.
+It's a fact that LLMs can generate high-quality summaries. However, due to the first issue, fine-tuned models may be underestimated when they are evaluated by human annotators because the annotators are asked to evaluate text quality as summaries which are not what models are trained to produce.
 
 There have been a lot of works that propose "better evaluation metric" but there is a possibility that what we need is datasets with reference summaries actually summarize input documents.
 I strongly believe that we need such datasets to re-evaluate the tools we have now.
