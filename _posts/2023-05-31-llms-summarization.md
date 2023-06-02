@@ -1,7 +1,7 @@
 ---
 title: LLMs and Summarization
 updated: 2023-05-31
-ogp: https://i.imgur.com/c0ZGQ1ut.png
+ogp: /assets/img/2020-06-12-azisai.jpg
 ---
 
 ## Background

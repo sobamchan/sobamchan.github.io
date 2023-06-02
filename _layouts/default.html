@@ -14,9 +14,9 @@
       <meta property="og:image" content="https://ogpapi.herokuapp.com/{{ page.title }}">
 		{% endif %}
     <meta property="og:site_name" content="{{ site.title }}" />
-    <meta property="og:description" content="random notes" />
+    <meta property="og:description" content="{{ site.description }}" />
     <meta name="twitter:card" content="summary_large_image" />
-    <title>{{ page.title }} - {{ site.title }}</title>
+    <title>{{ site.title }} - {{ page.title }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
 
     <link rel="stylesheet" href="{{ "/assets/css/solarized-light.css" | relative_url }}">
