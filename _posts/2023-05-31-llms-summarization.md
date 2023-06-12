@@ -36,6 +36,11 @@ If you know other relevant papers, I would appreciate if you could tell by raisi
     - But I agree to that at least on this relatively simple setup, i.e., single document news summarization, large models can generate human-level summaries.
 3. [On Learning to Summarize with Large Language Models as References](http://arxiv.org/abs/2305.14239)
   - TLDR: We propose a novel reward-based learning paradigm for text summarization models that considers the LLMs as the reference or the gold-standard oracle on commonly used summarization datasets such as the CNN/DailyMail dataset.
+4. [LMGQS: A Large-scale Dataset for Query-focused Summarization](http://arxiv.org/abs/2305.13086)
+  - TLDR: We propose a large-scale query-focused summarization dataset for query-centric summarization and demonstrate state-of-the-art performance on multiple existing QFS benchmarks.
+  - Finally we have a large scale QFS dataset by generating it (?)
+5. [Multi-Dimensional Evaluation of Text Summarization with In-Context Learning](http://arxiv.org/abs/2306.01200)
+  - TLDR: We study the efficacy of large language models as multi-dimensional evaluators using in-context learning, obviating the need for large training datasets.
 
 
 
@@ -62,3 +67,10 @@ Paper 2 mentions that LLMs often ignore instruction. Such as generating some tex
 This is unaccepted for many applications, e.g., where users can't interact with models to actually make them to generate summaries, e.g., [my paper tldr pages](https://sotaro.io/tldrs).
 
 So I at the moment in my opinion if there are datasets which fit the application needs, it is safer to take fine-tuned models.
+
+
+### Evaluate models by models
+
+(Still thinking...)
+
+If you have a LLM which can evaluate other models (almost) zero-shot, can't this LLM just generate "perfect" summaries? (ref. paper 5)
