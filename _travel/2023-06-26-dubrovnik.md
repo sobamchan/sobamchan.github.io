@@ -117,6 +117,9 @@ latex のソースコードとそれをビルドした PDF を少し前に提出
 
 適当に腕と顔に日焼け止めを塗り、その残りを腹に、足は完全に忘れていたので、ビーチから戻る時にはすでに火傷状態になってしまっていたがまあ楽しかったのでよしとする。
 
+<a href="https://imgur.com/375fyJj"><img src="https://i.imgur.com/375fyJj.jpg" title="source: imgur.com" /></a>  
+水も最高に綺麗だった
+
 <a href="https://imgur.com/OQCF2Zt"><img src="https://i.imgur.com/OQCF2Zt.jpg" title="source: imgur.com" /></a>  
 1週間過ぎてもしっかりとまだ跡が残っている
 
