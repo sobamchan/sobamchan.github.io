@@ -88,7 +88,7 @@ updated: 2023-07-25
 <a href="https://imgur.com/TWeJQrb"><img src="https://i.imgur.com/TWeJQrb.jpg" title="source: imgur.com" /></a>  
 中心から少しだけ歩いたとは思えない緑っぷり
 
-<a href="https://imgur.com/TWeJQrb"><img src="https://i.imgur.com/TWeJQrb.jpg" title="source: imgur.com" /></a>  
+<a href="https://imgur.com/S05g4zc"><img src="https://i.imgur.com/S05g4zc.jpg" title="source: imgur.com" /></a>  
 緑と川と可愛い建物が見えて珍しい眺め
 
 事前調査から入りたいと思っていたところに昨日は人が多すぎて入れなかったのだが、予約を入れていたおかげで今日は入ることができた。
