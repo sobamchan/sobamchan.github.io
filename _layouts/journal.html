@@ -15,6 +15,10 @@ layout: default
 	<a href="/daily/{{ page.date | date: '%Y' | minus: 2 }}-{{ page.date | date: '%m-%d'}}">Two years ago</a>
 </div>
 
+<div>
+	<a href="/daily/{{ page.date | date: '%Y' | minus: 3 }}-{{ page.date | date: '%m-%d'}}">Three years ago</a>
+</div>
+
 <section class="postContent">
   {{content}}
 </section>
