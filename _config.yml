@@ -47,7 +47,7 @@ defaults:
     - scope:
         type: "journals"
       values:
-          layout: "post"
+          layout: "journal"
     - scope:
         type: "travel"
       values:
