@@ -1,5 +1,5 @@
 ---
-title: ★ SIMON & BEARNS Coffee Roastery and Café, Heidelberg
+title: SIMON & BEARNS Coffee Roastery and Café, Heidelberg
 updated: 2022-07-09
 ---
 
