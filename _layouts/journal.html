@@ -7,16 +7,13 @@ layout: default
   <span class="postPageDate">{{ page.date | date: "%Y-%m-%d" }}</span>
 </section>
 
-<div display:inline-block>
+<div>
 	<a href="/daily/{{ page.date | date: '%Y' | minus: 1 }}-{{ page.date | date: '%m-%d'}}">One year ago</a>
-	<a href="/daily/{{ page.date | date: '%Y' | plus: 1 }}-{{ page.date | date: '%m-%d'}}" style="float:right">One year later</a>
 </div>
 
-<div>
-	<section class="postContent">
-	  {{content}}
-	</section>
-</div>
+<section class="postContent">
+  {{content}}
+</section>
 
 <div class="PageNavigation">
   {% if page.previous.url %}
