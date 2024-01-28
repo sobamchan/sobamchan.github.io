@@ -35,16 +35,11 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Build pagefind index
+        uses: actions/setup-node@v4
+        run: 'npx -y pagefind --site ./_site'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-
-  pagefind:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-      - run: 'npx -y pagefind --site ${{ github.workspace }}/_site'
 
   # Deployment job
   deploy:
@@ -54,7 +49,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: 
       - build
-      - pagefind
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
