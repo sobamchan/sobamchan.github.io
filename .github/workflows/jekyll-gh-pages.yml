@@ -35,8 +35,9 @@ jobs:
         with:
           source: ./
           destination: ./_site
-      - name: Build pagefind index
+      - name: setup node
         uses: actions/setup-node@v4
+      - name: Build pagefind index
         run: 'npx -y pagefind --site ./_site'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
