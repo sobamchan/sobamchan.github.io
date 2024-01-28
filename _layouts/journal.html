@@ -7,8 +7,9 @@ layout: default
   <span class="postPageDate">{{ page.date | date: "%Y-%m-%d" }}</span>
 </section>
 
-<div>
+<div display:inline-block>
 	<a href="/daily/{{ page.date | date: '%Y' | minus: 1 }}-{{ page.date | date: '%m-%d'}}">One year ago</a>
+	<a href="/daily/{{ page.date | date: '%Y' | plus: 1 }}-{{ page.date | date: '%m-%d'}}" style="float:right">One year later</a>
 </div>
 
 <section class="postContent">
