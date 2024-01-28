@@ -44,7 +44,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - run: 'npx -y pagefind --site _site'
+      - run: npx -y pagefind --site ${GITHUB_WORKSPACE}/_site
 
   # Deployment job
   deploy:
