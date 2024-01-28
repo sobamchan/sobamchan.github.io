@@ -46,7 +46,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           cache: 'npm'
-    - run: npx -y pagefind --site _site
+    - run: 'npx -y pagefind --site _site'
 
   # Deployment job
   deploy:
