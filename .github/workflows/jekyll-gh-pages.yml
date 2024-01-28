@@ -44,6 +44,17 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
+<<<<<<< HEAD
+=======
+  pagefind:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - run: 'npx -y pagefind --site _site'
+
+>>>>>>> parent of 8cd26e2 (path to workspace)
   # Deployment job
   deploy:
     environment:
