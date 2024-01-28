@@ -4,6 +4,7 @@ title: "sotaro.io" # the name of your site, e.g. ACME Corp.
 name: sotaro.io (ja)
 description: Random notes about random things
 url: https://sotaro.io
+lang: ja
 
 collections:
   posts:
