@@ -49,6 +49,8 @@ Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
 
 ## Project
 
+- [The Token](https://the-token.org/)
+  - "The open community for all NLP people" where I contribute technical stuff.
 - [NLP TLDRs](https://sotaro.io/tldrs)
   - A list of major NLP conference proceedings with one sentence summaries.
 - [schnitsum](https://github.com/sobamchan/schnitsum/)
