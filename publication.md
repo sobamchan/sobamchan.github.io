@@ -17,3 +17,13 @@ title: "publication"
   - **Sotaro Takeshita**, [Tommaso Green](https://green-t.io/), Niklas Friedrich, [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/) and [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
   - [International Journal on Digital Libraries](https://www.springer.com/journal/799) / [paper](https://link.springer.com/article/10.1007/s00799-023-00373-2) / [code](https://github.com/sobamchan/xscitldr) / [data](https://huggingface.co/datasets/umanlp/xscitldr)
   - tl;dr: publishing a journal paper takes time
+
+- "ACLSum: A New Dataset for Aspect-based Summarization of Scientific Publications"
+  - **Sotaro Takeshita**, [Tommaso Green](https://green-t.io/), [Ines Reinig](https://www.uni-mannheim.de/dws/people/researchers/phd-students/ines-reinig/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/) and [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
+  - To appear at NAACL 2023 / [pdf](https://arxiv.org/abs/2403.05303) / [data](https://huggingface.co/datasets/sobamchan/aclsum)
+  - tl;dr: annotation for summarization task take a lot of time
+
+- "ROUGE-K: Do Your Summaries Have Keywords?"
+  - **Sotaro Takeshita**, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
+  - [pdf](https://arxiv.org/abs/2403.05186)
+  - tl;dr: what is keyword?
