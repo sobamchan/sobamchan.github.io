@@ -25,5 +25,5 @@ title: "publication"
 
 - "ROUGE-K: Do Your Summaries Have Keywords?"
   - **Sotaro Takeshita**, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
-  - [pdf](https://arxiv.org/abs/2403.05186)
+  - To appear at *SEM 2023 / [pdf](https://arxiv.org/abs/2403.05186)
   - tl;dr: what is keyword?
