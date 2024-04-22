@@ -20,10 +20,10 @@ title: "publication"
 
 - "ACLSum: A New Dataset for Aspect-based Summarization of Scientific Publications"
   - **Sotaro Takeshita**, [Tommaso Green](https://green-t.io/), [Ines Reinig](https://www.uni-mannheim.de/dws/people/researchers/phd-students/ines-reinig/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/) and [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
-  - To appear at NAACL 2023 / [pdf](https://arxiv.org/abs/2403.05303) / [data](https://huggingface.co/datasets/sobamchan/aclsum)
+  - To appear at NAACL 2024 / [pdf](https://arxiv.org/abs/2403.05303) / [data](https://huggingface.co/datasets/sobamchan/aclsum)
   - tl;dr: annotation for summarization task take a lot of time
 
 - "ROUGE-K: Do Your Summaries Have Keywords?"
   - **Sotaro Takeshita**, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
-  - To appear at *SEM 2023 / [pdf](https://arxiv.org/abs/2403.05186)
+  - To appear at *SEM 2024 / [pdf](https://arxiv.org/abs/2403.05186)
   - tl;dr: what is keyword?
