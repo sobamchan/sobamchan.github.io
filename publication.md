@@ -27,3 +27,8 @@ title: "publication"
   - **Sotaro Takeshita**, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
   - To appear at *SEM 2024 / [pdf](https://arxiv.org/abs/2403.05186)
   - tl;dr: what is keyword?
+
+- "GenGO: ACL Paper Explorer with Semantic Features"
+  - **Sotaro Takeshita**, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
+  - To appear at ACL System demonstrations 2024
+  - tl;dr: keep running ML app cheaply is hard
