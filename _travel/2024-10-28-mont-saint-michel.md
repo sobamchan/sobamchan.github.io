@@ -1,6 +1,6 @@
 ---
 title: Mont Saint-Michel, France
-updated: 2024-10-27
+updated: 2024-10-28
 ---
 
 パリに住んでいる友人を三日間訪問した後に、せっかくなので Mont Saint-Michel まで行ってみた。自分は二度目だがワイフは初めて。
