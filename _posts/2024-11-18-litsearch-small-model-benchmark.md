@@ -69,3 +69,4 @@ The list below is a few highlights,
 # Conclusion
 
 The series of Arctic models from Snowflake is quite impressive, they show strong performance even when compared to large ones.
+*snowflake-arctic-embed-s* and *snowflake-arctic-embed-xs* are particularly interesting to me since by changing the current model to these, I can enjoy better search performance without sacrificing the inference speed.
