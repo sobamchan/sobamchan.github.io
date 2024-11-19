@@ -3,6 +3,8 @@ title: Benchmark of small embedding models on LitSearch
 updated: 2024-11-18
 ---
 
+<a href="https://imgur.com/F2tf5aQ"><img src="https://i.imgur.com/F2tf5aQ.jpg" title="source: imgur.com" /></a>
+
 # Background
 
 In the current implementation of [GenGO](https://gengo.sotaro.io/), the ACL paper exploration system, we use a small and rather old sentence encoder, namely [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) to provide the semantic search and paper recommendation features.
