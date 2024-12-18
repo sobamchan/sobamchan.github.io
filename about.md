@@ -11,7 +11,7 @@ I am interested in
 - information extraction
 - multilinguality in NLP models
 
-I like to read (both papers and books) and programming checkout my [OSS projects](https://github.com/sobamchan).
+I like to read (both papers and books) and programming checkout [my paper search system](https://gengo.sotaro.io) and its [extension with an LLM](https://gengo-chat.sotaro.io), as well as my [OSS projects](https://github.com/sobamchan).
 I speak Japanese (native), English (fluent), Spanish (basic) and now learning German.
 For programming, I like to use (neo)vim to write python.
 Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
@@ -49,6 +49,10 @@ Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
 
 ## Project
 
+- [GenGO](https://gengo.sotaro.io)
+  - Paper exploration system with NLP technologies.
+- [GenGO Chat](https://gengo.sotaro.io)
+  - LLM-powered RAG system to support literature search for NLPers.
 - [The Token](https://the-token.org/)
   - "The open community for all NLP people" where I contribute technical stuff.
 - [NLP TLDRs](https://sotaro.io/tldrs)
