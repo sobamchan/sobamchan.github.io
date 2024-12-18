@@ -51,7 +51,7 @@ Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
 
 - [GenGO](https://gengo.sotaro.io)
   - Paper exploration system with NLP technologies.
-- [GenGO Chat](https://gengo.sotaro.io)
+- [GenGO Chat](https://gengo-chat.sotaro.io)
   - LLM-powered RAG system to support literature search for NLPers.
 - [The Token](https://the-token.org/)
   - "The open community for all NLP people" where I contribute technical stuff.
