@@ -1,5 +1,5 @@
 ---
-title: Noordlingen, Germany
+title: Nordlingen, Germany
 updated: 2025-04-18
 ---
 
