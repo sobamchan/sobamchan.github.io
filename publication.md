@@ -35,6 +35,6 @@ title: "publication"
   - tl;dr: keep running ML app cheaply is hard
 
 - "GenGO Ultra: ACL Paper Explorer with Semantic Features"
-  - **Sotaro Takeshita**, [Tornike Tsereteli](https://e-tornike.github.io/), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
+  - **Sotaro Takeshita**, [Tornike Tsereteli](https://e-tornike.github.io/), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
   - To appear at ACL System demonstrations 2025, [system](https://gengo-ultra.sotaro.io/)
   - tl;dr: keep running LLM app cheaply is even harder
