@@ -38,3 +38,8 @@ title: "publication"
   - **Sotaro Takeshita**, [Tornike Tsereteli](https://e-tornike.github.io/), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
   - To appear at ACL System demonstrations 2025, [system](https://gengo-ultra.sotaro.io/)
   - tl;dr: keep running LLM app cheaply is even harder
+
+- "IRSum: One Model to Rule Summarization and Retrieval"
+  - **Sotaro Takeshita**, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
+  - To appear at GEM Workshop at ACL 2025
+  - tl;dr: now we don't have to process the same document twice
