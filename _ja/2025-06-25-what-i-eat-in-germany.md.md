@@ -28,8 +28,18 @@ updated: 2025-06-25
 
 ![](https://i.imgur.com/eb8oymH.jpeg)
 
+![](https://i.imgur.com/G4Mbxo9.jpeg)
 
 ### 金曜日
+
+![](https://i.imgur.com/UIXZ7JF.jpeg)
+
+![](https://i.imgur.com/zcddBgq.jpeg)
+
+![](https://i.imgur.com/BOLrs9P.jpeg)
+
+![](https://i.imgur.com/DKBLwas.jpeg)
+
 
 ### 土曜日
 
