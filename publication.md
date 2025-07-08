@@ -34,7 +34,7 @@ title: "publication"
   - ACL 2024 SDT / [paper](https://gengo.sotaro.io/2024.acl-demos.12) / [system](https://gengo.sotaro.io/)
   - tl;dr: keep running ML app cheaply is hard
 
-- "GenGO Ultra: ACL Paper Explorer with Semantic Features"
+- "GenGO Ultra: an LLM-powered ACL Paper Explorer"
   - **Sotaro Takeshita**, [Tornike Tsereteli](https://e-tornike.github.io/), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
   - To appear at ACL System demonstrations 2025, [system](https://gengo-ultra.sotaro.io/)
   - tl;dr: keep running LLM app cheaply is even harder
