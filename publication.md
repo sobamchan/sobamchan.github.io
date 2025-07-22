@@ -36,7 +36,7 @@ title: "publication"
 
 - "GenGO Ultra: an LLM-powered ACL Paper Explorer"
   - **Sotaro Takeshita**, [Tornike Tsereteli](https://e-tornike.github.io/), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
-  - To appear at ACL System demonstrations 2025, [system](https://gengo-ultra.sotaro.io/)
+  - ACL System demonstrations 2025, [system](https://gengo-ultra.sotaro.io/) / [paper](https://aclanthology.org/2025.acl-demo.24/)
   - tl;dr: keep running LLM app cheaply is even harder
 
 - "IRSum: One Model to Rule Summarization and Retrieval"
