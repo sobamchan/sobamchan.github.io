@@ -30,16 +30,16 @@ title: "publication"
 
 - "GenGO: ACL Paper Explorer with Semantic Features"
   - **Sotaro Takeshita**, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
-  - To appear at ACL System demonstrations 2024
+  - ACL SDT 2024
   - ACL 2024 SDT / [paper](https://gengo.sotaro.io/2024.acl-demos.12) / [system](https://gengo.sotaro.io/)
   - tl;dr: keep running ML app cheaply is hard
 
 - "GenGO Ultra: an LLM-powered ACL Paper Explorer"
   - **Sotaro Takeshita**, [Tornike Tsereteli](https://e-tornike.github.io/), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
-  - ACL System demonstrations 2025, [system](https://gengo-ultra.sotaro.io/) / [paper](https://aclanthology.org/2025.acl-demo.24/)
+  - ACL SDT 2025, [system](https://gengo-ultra.sotaro.io/) / [paper](https://aclanthology.org/2025.acl-demo.24/)
   - tl;dr: keep running LLM app cheaply is even harder
 
 - "IRSum: One Model to Rule Summarization and Retrieval"
   - **Sotaro Takeshita**, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
-  - To appear at GEM Workshop at ACL 2025
+  - GEM Workshop at ACL 2025, [paper](https://aclanthology.org/2025.gem-1.23/)
   - tl;dr: now we don't have to process the same document twice
