@@ -43,3 +43,8 @@ title: "publication"
   - **Sotaro Takeshita**, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
   - GEM Workshop at ACL 2025, [paper](https://aclanthology.org/2025.gem-1.23/)
   - tl;dr: now we don't have to process the same document twice
+
+- "Randomly Removing 50% of Dimensions in Text Embeddings has Minimal Impact on Retrieval and Classification Tasks"
+  - **Sotaro Takeshita**, Yurina Takeshita, Daniel Ruffinelli, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
+  - To appear at EMNLP main 2025, [arXiv](https://arxiv.org/abs/2508.17744)
+  - tl;dr: just remove half
