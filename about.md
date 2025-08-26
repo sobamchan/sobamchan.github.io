@@ -4,12 +4,11 @@ title: "about"
 ---
 
 Hello, I am Sotaro Takeshita. I am a second-year Ph.D. student at University of Mannheim focusing on text summarization.
-I am interested in 
+I am interested in
 
+- analyzing text embeddings
 - text summarization
 - scholarly document processing
-- information extraction
-- multilinguality in NLP models
 
 I like to read (both papers and books) and programming checkout [my paper search system](https://gengo.sotaro.io) and its [extension with an LLM](https://gengo-chat.sotaro.io), as well as my [OSS projects](https://github.com/sobamchan).
 I speak Japanese (native), English (fluent), Spanish (basic) and now learning German.
@@ -29,12 +28,13 @@ Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
   - Advisor: Minami Yasuhiro
 
 ## Experience
+
 - Feb. 2016 - Apr. 2016, Research Internship
-  -   Sección de Estudios de Posgrado e Investigación de ESIME Culhuacan, Instituto Politecnico Nacional
-  -   Advisor: Mariko Nakano Miyatake
-  -   funded by A National University of Electro-Communications
+  - Sección de Estudios de Posgrado e Investigación de ESIME Culhuacan, Instituto Politecnico Nacional
+  - Advisor: Mariko Nakano Miyatake
+  - funded by A National University of Electro-Communications
 - Aug. 2017 - Sep. 2017, Recruit Holdings, data scientist internship
-  -   Best work prize
+  - Best work prize
 - Aug. 2018 - Seq. 2018, NTT Media Intelligence Lab, NLP research internship
   - Advisor: Dr. Ryuichiro Higashinaka
 - Nov. 2018 - Dec. 2018, Research Internship
@@ -45,7 +45,7 @@ Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
 - Sep. 2019, University of Mannheim, research visiting
   - Advisor: Dr. Goran Glavaš
   - funded by A National University of Electro-Communications
-
+- Nov. 2025, Amazon, Applied Science Internship
 
 ## Project
 
@@ -63,5 +63,3 @@ Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
   - Very simple and easy to use pkg to encode sentences in various language into vector representations.
 - [sobamchan/pytorch-lightning-transformers](https://github.com/sobamchan/pytorch-lightning-transformers)
   - Clean readable code for finetuning transformers with pytorch-lightning.
-
-
