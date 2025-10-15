@@ -45,6 +45,6 @@ title: "publication"
   - tl;dr: now we don't have to process the same document twice
 
 - "Randomly Removing 50% of Dimensions in Text Embeddings has Minimal Impact on Retrieval and Classification Tasks"
-  - **Sotaro Takeshita**, Yurina Takeshita, Daniel Ruffinelli, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
-  - To appear at EMNLP main 2025, [arXiv](https://arxiv.org/abs/2508.17744)
+  - **Sotaro Takeshita**, Yurina Takeshita, [Daniel Ruffinelli](https://ruffinelli.io/), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
+  - To appear at EMNLP main 2025, [arXiv](https://arxiv.org/abs/2508.17744), [project page](https://sotaro.io/papers/trunbed), [code](https://github.com/sobamchan/random-embedding-truncation)
   - tl;dr: just remove half
