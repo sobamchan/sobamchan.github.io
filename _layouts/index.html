@@ -10,20 +10,20 @@ layout: default
   <a href="/daily" style="font-weight: bold;">daily ↓</a>
   {% assign journals = site.journals | sort: 'date' | reverse %}
   {%- for post in journals limit: 5 -%}
-    <div class="postItem">
-      <a class="postLink" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="postDate">{{ post.date | date: "%Y-%m-%d" }}</span>
-    </div>
+  <div class="postItem">
+    <a class="postLink" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="postDate">{{ post.date | date: "%Y-%m-%d" }}</span>
+  </div>
   {%- endfor -%}
 </section>
 
 <section class="postsList" style="margin-bottom: 32px;">
   <a href="/en" style="font-weight: bold;">posts in english ↓</a>
   {%- for post in site.posts limit: 3 -%}
-    <div class="postItem">
-      <a class="postLink" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="postDate">{{ post.date | date: "%Y-%m-%d" }}</span>
-    </div>
+  <div class="postItem">
+    <a class="postLink" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="postDate">{{ post.date | date: "%Y-%m-%d" }}</span>
+  </div>
   {%- endfor -%}
 </section>
 
@@ -31,10 +31,10 @@ layout: default
   <a href="/ja" style="font-weight: bold;">posts in 日本語 ↓</a>
   {% assign ja = site.ja | sort: 'date' | reverse %}
   {%- for post in ja limit: 5 -%}
-    <div class="postItem">
-      <a class="postLink" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="postDate">{{ post.date | date: "%Y-%m-%d" }}</span>
-    </div>
+  <div class="postItem">
+    <a class="postLink" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="postDate">{{ post.date | date: "%Y-%m-%d" }}</span>
+  </div>
   {%- endfor -%}
 </section>
 
@@ -42,10 +42,10 @@ layout: default
   <a href="/travel" style="font-weight: bold;">travel ↓</a>
   {% assign travel = site.travel | sort: 'date' | reverse %}
   {%- for post in travel limit: 5 -%}
-    <div class="postItem">
-      <a class="postLink" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="postDate">{{ post.date | date: "%Y-%m-%d" }}</span>
-    </div>
+  <div class="postItem">
+    <a class="postLink" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="postDate">{{ post.date | date: "%Y-%m-%d" }}</span>
+  </div>
   {%- endfor -%}
 </section>
 
@@ -54,9 +54,9 @@ layout: default
   <a href="reading" style="font-weight: bold;">reading ↓</a>
   {% assign reading = site.reading | sort: 'date' | reverse %}
   {%- for post in reading limit: 5 -%}
-    <div class="postItem">
-      <a class="postLink" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="postDate">{{ post.date | date: "%Y-%m-%d" }}</span>
-    </div>
+  <div class="postItem">
+    <a class="postLink" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="postDate">{{ post.date | date: "%Y-%m-%d" }}</span>
+  </div>
   {%- endfor -%}
 </section>
