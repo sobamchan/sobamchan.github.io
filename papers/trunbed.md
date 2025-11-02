@@ -7,5 +7,6 @@ updated: 2025-09-09
 Thank you for reading our paper. Here is the list of related links.
 
 - [Code](https://github.com/sobamchan/random-embedding-truncation)
+- [paper](https://aclanthology.org/2025.emnlp-main.1410/)
 - [arXiv](https://arxiv.org/abs/2508.17744)
 - [Contact](mailto:sotaro.takeshita@uni-mannheim.de)
