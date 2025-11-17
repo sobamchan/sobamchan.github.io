@@ -23,10 +23,20 @@ this article is incomplete. currently, I am using this page to just collect pape
   - efficiency comparison by flops and empirical analysis (examples per second during training and inference)
     - and shows that enc-dec has "clear advantage"
 - [T5Gemma: A new collection of encoder-decoder Gemma models - Google Developers Blog](https://developers.googleblog.com/en/t5gemma/)
+- [What Language Model Architecture and Pretraining Objective Works Best for Zero-Shot Generalization?](https://proceedings.mlr.press/v162/wang22u.html)
+- [Examining Scaling and Transfer of Language Model Architectures for Machine Translation](https://proceedings.mlr.press/v162/zhang22h.html)
+- [\[2304.04052\] Decoder-Only or Encoder-Decoder? Interpreting Language Model as a Regularized Encoder-Decoder](https://arxiv.org/abs/2304.04052)
+
 
 ## encoder-decoder design
 
 - [Layer-Wise Coordination between Encoder and Decoder for Neural Machine Translation](https://papers.nips.cc/paper_files/paper/2018/hash/4fb8a7a22a82c80f2c26fe6c1e0dcbb3-Abstract.html)
 - [\[2501.16273v2\] Return of the Encoder: Maximizing Parameter Efficiency for SLMs](https://arxiv.org/abs/2501.16273v2)
 - [Bidirectional Language Models Are Also Few-shot Learners \| OpenReview](https://openreview.net/forum?id=wCFB37bzud4)
+- [\[2205.05131\] UL2: Unifying Language Learning Paradigms](https://arxiv.org/abs/2205.05131)
+
+
+## Others
+
+- [GitHub - google-research/t5x](https://github.com/google-research/t5x)
 
