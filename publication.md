@@ -48,3 +48,4 @@ title: "publication"
   - **Sotaro Takeshita**, Yurina Takeshita, [Daniel Ruffinelli](https://ruffinelli.io/), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
   - To appear at EMNLP main 2025, [paper](https://aclanthology.org/2025.emnlp-main.1410/), [arXiv](https://arxiv.org/abs/2508.17744), [project page](https://sotaro.io/papers/trunbed), [code](https://github.com/sobamchan/random-embedding-truncation)
   - tl;dr: just remove half
+  - **People's Choice Award** ([link](https://x.com/emnlpmeeting/status/1987285128775639117?s=20))
