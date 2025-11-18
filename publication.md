@@ -3,49 +3,42 @@ layout: publication
 title: "publication"
 ---
 
-- "X-SCITLDR: Cross-Lingual Extreme Summarization of Scholarly Documents"
-  - **Sotaro Takeshita**, [Tommaso Green](https://green-t.io/), Niklas Friedrich, [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/) and [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
-  - [ACM/IEEE Joint Conference on Digital Libraries (JCDL), 2022](https://2022.jcdl.org/) / [paper](https://arxiv.org/abs/2205.15051) / [code](https://github.com/sobamchan/xscitldr) / [data](https://huggingface.co/datasets/umanlp/xscitldr)
-  - tl;dr: Dataset for papers in en to summaries in (de/it/zh/ja).
-
-- "ZusammenQA: Data Augmentation with Specialized Models for Cross-lingual Open-retrieval Question Answering System"
-  - [Chia-Chien Hung](https://chiachienhung.github.io/), [Tommaso Green](https://green-t.io/), [Robert Litschko](https://rlitschk.github.io/), [Tornike Tsereteli](https://www.torniketsereteli.com/), **Sotaro Takeshita**, Marco Bombieri, [Goran Glavaš](https://sites.google.com/view/goranglavas), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
-  - [NAACL 2022 - MIA shared-task](https://mia-workshop.github.io/index.html) / [pdf](https://arxiv.org/abs/2205.14981) / [code](https://github.com/umanlp/zusammenqa)
-  - tl;dr: Cross-lingual QA is hard.
-
-- "Cross-lingual extreme summarization of scholarly documents"
-  - **Sotaro Takeshita**, [Tommaso Green](https://green-t.io/), Niklas Friedrich, [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/) and [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
-  - [International Journal on Digital Libraries](https://www.springer.com/journal/799) / 2023 / [paper](https://link.springer.com/article/10.1007/s00799-023-00373-2) / [code](https://github.com/sobamchan/xscitldr) / [data](https://huggingface.co/datasets/umanlp/xscitldr)
-  - tl;dr: publishing a journal paper takes time
-
-- "ACLSum: A New Dataset for Aspect-based Summarization of Scientific Publications"
-  - **Sotaro Takeshita**, [Tommaso Green](https://green-t.io/), [Ines Reinig](https://www.uni-mannheim.de/dws/people/researchers/phd-students/ines-reinig/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/) and [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
-  - NAACL 2024 / [pdf](https://arxiv.org/abs/2403.05303) / [data](https://huggingface.co/datasets/sobamchan/aclsum)
-  - tl;dr: annotation for summarization task take a lot of time
-
-- "ROUGE-K: Do Your Summaries Have Keywords?"
+- "Randomly Removing 50% of Dimensions in Text Embeddings has Minimal Impact on Retrieval and Classification Tasks"
+  - **Sotaro Takeshita**, Yurina Takeshita, [Daniel Ruffinelli](https://ruffinelli.io/), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
+  - EMNLP main 2025 (oral), [paper](https://aclanthology.org/2025.emnlp-main.1410/), [arXiv](https://arxiv.org/abs/2508.17744), [project page](https://sotaro.io/papers/trunbed), [code](https://github.com/sobamchan/random-embedding-truncation)
+  - tl;dr: just remove half
+  - **People's Choice Award** ([link](https://x.com/emnlpmeeting/status/1987285128775639117?s=20))
+- "IRSum: One Model to Rule Summarization and Retrieval"
   - **Sotaro Takeshita**, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
-  - *SEM 2024, Best Long Paper / [pdf](https://aclanthology.org/2024.starsem-1.6/)
-  - tl;dr: what is keyword?
-
+  - GEM Workshop at ACL 2025, [paper](https://aclanthology.org/2025.gem-1.23/)
+  - tl;dr: now we don't have to process the same document twice
+- "GenGO Ultra: an LLM-powered ACL Paper Explorer"
+  - **Sotaro Takeshita**, [Tornike Tsereteli](https://e-tornike.github.io/), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
+  - ACL SDT 2025, [system](https://gengo-ultra.sotaro.io/) / [paper](https://aclanthology.org/2025.acl-demo.24/)
+  - tl;dr: keep running LLM app cheaply is even harder
 - "GenGO: ACL Paper Explorer with Semantic Features"
   - **Sotaro Takeshita**, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
   - ACL SDT 2024
   - ACL 2024 SDT / [paper](https://gengo.sotaro.io/2024.acl-demos.12) / [system](https://gengo.sotaro.io/)
   - tl;dr: keep running ML app cheaply is hard
-
-- "GenGO Ultra: an LLM-powered ACL Paper Explorer"
-  - **Sotaro Takeshita**, [Tornike Tsereteli](https://e-tornike.github.io/), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
-  - ACL SDT 2025, [system](https://gengo-ultra.sotaro.io/) / [paper](https://aclanthology.org/2025.acl-demo.24/)
-  - tl;dr: keep running LLM app cheaply is even harder
-
-- "IRSum: One Model to Rule Summarization and Retrieval"
+- "ROUGE-K: Do Your Summaries Have Keywords?"
   - **Sotaro Takeshita**, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
-  - GEM Workshop at ACL 2025, [paper](https://aclanthology.org/2025.gem-1.23/)
-  - tl;dr: now we don't have to process the same document twice
-
-- "Randomly Removing 50% of Dimensions in Text Embeddings has Minimal Impact on Retrieval and Classification Tasks"
-  - **Sotaro Takeshita**, Yurina Takeshita, [Daniel Ruffinelli](https://ruffinelli.io/), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
-  - To appear at EMNLP main 2025, [paper](https://aclanthology.org/2025.emnlp-main.1410/), [arXiv](https://arxiv.org/abs/2508.17744), [project page](https://sotaro.io/papers/trunbed), [code](https://github.com/sobamchan/random-embedding-truncation)
-  - tl;dr: just remove half
-  - **People's Choice Award** ([link](https://x.com/emnlpmeeting/status/1987285128775639117?s=20))
+  - *SEM 2024 / [pdf](https://aclanthology.org/2024.starsem-1.6/)
+  - **Best Long Paper** ([link](https://x.com/_starsem/status/1803814080567759162?s=20))
+  - tl;dr: what is keyword?
+- "ACLSum: A New Dataset for Aspect-based Summarization of Scientific Publications"
+  - **Sotaro Takeshita**, [Tommaso Green](https://green-t.io/), [Ines Reinig](https://www.uni-mannheim.de/dws/people/researchers/phd-students/ines-reinig/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/) and [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
+  - NAACL 2024 / [pdf](https://arxiv.org/abs/2403.05303) / [data](https://huggingface.co/datasets/sobamchan/aclsum)
+  - tl;dr: annotation for summarization task take a lot of time
+- "Cross-lingual extreme summarization of scholarly documents"
+  - **Sotaro Takeshita**, [Tommaso Green](https://green-t.io/), Niklas Friedrich, [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/) and [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
+  - [International Journal on Digital Libraries](https://www.springer.com/journal/799) / 2023 / [paper](https://link.springer.com/article/10.1007/s00799-023-00373-2) / [code](https://github.com/sobamchan/xscitldr) / [data](https://huggingface.co/datasets/umanlp/xscitldr)
+  - tl;dr: publishing a journal paper takes time
+- "ZusammenQA: Data Augmentation with Specialized Models for Cross-lingual Open-retrieval Question Answering System"
+  - [Chia-Chien Hung](https://chiachienhung.github.io/), [Tommaso Green](https://green-t.io/), [Robert Litschko](https://rlitschk.github.io/), [Tornike Tsereteli](https://www.torniketsereteli.com/), **Sotaro Takeshita**, Marco Bombieri, [Goran Glavaš](https://sites.google.com/view/goranglavas), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
+  - [NAACL 2022 - MIA shared-task](https://mia-workshop.github.io/index.html) / [pdf](https://arxiv.org/abs/2205.14981) / [code](https://github.com/umanlp/zusammenqa)
+  - tl;dr: Cross-lingual QA is hard.
+- "X-SCITLDR: Cross-Lingual Extreme Summarization of Scholarly Documents"
+  - **Sotaro Takeshita**, [Tommaso Green](https://green-t.io/), Niklas Friedrich, [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/) and [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
+  - [ACM/IEEE Joint Conference on Digital Libraries (JCDL), 2022](https://2022.jcdl.org/) / [paper](https://arxiv.org/abs/2205.15051) / [code](https://github.com/sobamchan/xscitldr) / [data](https://huggingface.co/datasets/umanlp/xscitldr)
+  - tl;dr: Dataset for papers in en to summaries in (de/it/zh/ja).
