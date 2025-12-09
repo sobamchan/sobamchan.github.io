@@ -7,7 +7,7 @@ title: "publication"
   - **Sotaro Takeshita**, Yurina Takeshita, [Daniel Ruffinelli](https://ruffinelli.io/), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
   - EMNLP main 2025 (oral), [paper](https://aclanthology.org/2025.emnlp-main.1410/), [arXiv](https://arxiv.org/abs/2508.17744), [project page](https://sotaro.io/papers/trunbed), [code](https://github.com/sobamchan/random-embedding-truncation)
   - tl;dr: just remove half
-  - <b style="color:red;font-weight:bold;">People's Choice Award</b> ([link](https://x.com/emnlpmeeting/status/1987285128775639117?s=20))
+  - <b style="color:red;font-weight:bold;">People's Choice Award</b> ([link](https://2025.emnlp.org/program/awards/#peoples-choice-award), [post](https://x.com/emnlpmeeting/status/1987285128775639117?s=20))
 - "IRSum: One Model to Rule Summarization and Retrieval"
   - **Sotaro Takeshita**, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
   - GEM Workshop at ACL 2025, [paper](https://aclanthology.org/2025.gem-1.23/)
