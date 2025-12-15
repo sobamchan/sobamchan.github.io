@@ -26,6 +26,7 @@ this article is incomplete. currently, I am using this page to just collect pape
 - [What Language Model Architecture and Pretraining Objective Works Best for Zero-Shot Generalization?](https://proceedings.mlr.press/v162/wang22u.html)
 - [Examining Scaling and Transfer of Language Model Architectures for Machine Translation](https://proceedings.mlr.press/v162/zhang22h.html)
 - [\[2304.04052\] Decoder-Only or Encoder-Decoder? Interpreting Language Model as a Regularized Encoder-Decoder](https://arxiv.org/abs/2304.04052)
+- [Return of the Encoder: Maximizing Parameter Efficiency for SLMs](https://arxiv.org/abs/2501.16273)
 
 
 ## encoder-decoder design
