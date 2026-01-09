@@ -18,7 +18,7 @@ title: "publication"
   - tl;dr: keep running LLM app cheaply is even harder
 - "SciLaD: A Large-Scale, Transparent, Reproducible Dataset for Natural Scientific Language Processing"
   - Luca Foppiano, **Sotaro Takeshita**, [Pedro Ortiz Suarez](https://portizs.eu/), Ekaterina Borisova, Raia Abu Ahmad, Malte Ostendorff, Fabio Barth, Julian Moreno-Schneider, Georg Rehm
-  - [arXiv](https://arxiv.org/abs/2512.11192)
+  - 2025, [arXiv](https://arxiv.org/abs/2512.11192)
   - tl;dr: pre-training is expensive
 - "GenGO: ACL Paper Explorer with Semantic Features"
   - **Sotaro Takeshita**, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
