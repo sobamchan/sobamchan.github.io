@@ -29,23 +29,34 @@ Feel free to get in touch by email (oh.sore.sore.soutarou at gmail.com).
 
 ## Experience
 
-- Feb. 2016 - Apr. 2016, Research Internship
-  - Sección de Estudios de Posgrado e Investigación de ESIME Culhuacan, Instituto Politecnico Nacional
-  - Advisor: Mariko Nakano Miyatake
+- Nov. 2025, Amazon, Applied Science Internship
+- Sep. 2019, University of Mannheim, research visiting
+  - Advisor: Dr. Goran Glavaš
   - funded by A National University of Electro-Communications
-- Aug. 2017 - Sep. 2017, Recruit Holdings, data scientist internship
-  - Best work prize
-- Aug. 2018 - Seq. 2018, NTT Media Intelligence Lab, NLP research internship
-  - Advisor: Dr. Ryuichiro Higashinaka
+- Apr. 2018 - Jun. 2021, BuildIt, data scientist
 - Nov. 2018 - Dec. 2018, Research Internship
   - The University of Campinas, Faculty of Electrical and Computer Engineering
   - Advisor: Prof. Dr. Eric Rohmer
   - funded by A National University of Electro-Communications
-- Apr. 2018 - Jun. 2021, BuildIt, data scientist
-- Sep. 2019, University of Mannheim, research visiting
-  - Advisor: Dr. Goran Glavaš
+- Aug. 2018 - Seq. 2018, NTT Media Intelligence Lab, NLP research internship
+  - Advisor: Dr. Ryuichiro Higashinaka
+- Aug. 2017 - Sep. 2017, Recruit Holdings, data scientist internship
+  - Best work prize
+- Feb. 2016 - Apr. 2016, Research Internship
+  - Sección de Estudios de Posgrado e Investigación de ESIME Culhuacan, Instituto Politecnico Nacional
+  - Advisor: Mariko Nakano Miyatake
   - funded by A National University of Electro-Communications
-- Nov. 2025, Amazon, Applied Science Internship
+
+## Awards
+
+- "Randomly Removing 50% of Dimensions in Text Embeddings has Minimal Impact on Retrieval and Classification Tasks"
+  - **Sotaro Takeshita**, Yurina Takeshita, [Daniel Ruffinelli](https://ruffinelli.io/), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
+  - EMNLP main 2025 (oral), [paper](https://aclanthology.org/2025.emnlp-main.1410/), [arXiv](https://arxiv.org/abs/2508.17744), [project page](https://sotaro.io/papers/trunbed), [code](https://github.com/sobamchan/random-embedding-truncation)
+  - <b style="color:red;font-weight:bold;">People's Choice Award</b> ([link](https://2025.emnlp.org/program/awards/#peoples-choice-award), [post](https://x.com/emnlpmeeting/status/1987285128775639117?s=20))
+- "ROUGE-K: Do Your Summaries Have Keywords?"
+  - **Sotaro Takeshita**, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/), [Kai Eckert](http://wiss.iuk.hdm-stuttgart.de/people/kai-eckert/)
+  - *SEM 2024 / [pdf](https://aclanthology.org/2024.starsem-1.6/)
+  - <b style="color:red;font-weight:bold;">Best Long Paper</b> ([link](https://x.com/_starsem/status/1803814080567759162?s=20))
 
 ## Project
 
