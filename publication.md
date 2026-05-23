@@ -3,6 +3,10 @@ layout: publication
 title: "publication"
 ---
 
+- "To MRL or not to MRL: Text Embeddings are Robust to Truncation Without Matryoshka Embeddings, Except In Heavy Truncation Scenarios"
+  - **Sotaro Takeshita**, Yurina Takeshita, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/),  [Daniel Ruffinelli](https://ruffinelli.io/)
+  - pre-print, [arxiv](https://arxiv.org/abs/2605.16608), [project page](https://sotaro.io/papers/mrl-or-random), [code](https://github.com/sobamchan/mrl-or-random)
+  - tl;dr: MRL?
 - "Randomly Removing 50% of Dimensions in Text Embeddings has Minimal Impact on Retrieval and Classification Tasks"
   - **Sotaro Takeshita**, Yurina Takeshita, [Daniel Ruffinelli](https://ruffinelli.io/), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
   - EMNLP main 2025 (oral), [paper](https://aclanthology.org/2025.emnlp-main.1410/), [arXiv](https://arxiv.org/abs/2508.17744), [project page](https://sotaro.io/papers/trunbed), [code](https://github.com/sobamchan/random-embedding-truncation)
