@@ -5,7 +5,7 @@ updated: 2026-06-08
 
 ## Background
 
-This is the last year in Mannheim for us.
+This may be the last year in Mannheim for us.
 We are visiting every bar at Mannheim and blog.
 
 The bar list is constructed from 
