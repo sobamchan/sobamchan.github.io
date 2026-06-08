@@ -40,7 +40,7 @@ I will update the list with a picture and a comment as I make a visit.
 - [Sieferle & Sailer - Bar & Barber Shop](https://maps.app.goo.gl/eDgUSuPbb5uWXwXz6)
 - [Ella & Louis](https://maps.app.goo.gl/vFJrk3WiiXUhrxmP6)
 - [Cadde - Mannheim - Restaurant & Hookah](https://maps.app.goo.gl/AMmaZi3MXpbaigJ88)
-- [café|bar](https://maps.app.goo.gl/2rgKYt1QAcBbDMhz9)
+- [café\|bar](https://maps.app.goo.gl/2rgKYt1QAcBbDMhz9)
 - [Blau](https://maps.app.goo.gl/ny162QVbDh6bxYWZ7)
 - [Onkel Otto Bar](https://maps.app.goo.gl/8pQQW7pm89LzLfdYA)
 - [Sieferle und Sailer Bar](https://maps.app.goo.gl/eDgUSuPbb5uWXwXz6)
