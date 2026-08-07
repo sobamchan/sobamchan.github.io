@@ -16,6 +16,7 @@ Note that I did not validate the output report.
 ### Sample reports
 
 - [ACL 2025 → 2026 Research Topic Trend Analysis](/info/gengomcp/acl_2025_2026_trend_analysis)
+- [Text Embedding Geometry & Input Length Effects Literature Report](/info/gengomcp/embedding_geometry_and_length_report)
 
 
 ### Refs
