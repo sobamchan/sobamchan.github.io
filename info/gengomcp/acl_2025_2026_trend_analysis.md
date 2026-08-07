@@ -1,7 +1,7 @@
 ---
 title: ACL 2025 → 2026 Research Topic Trend Analysis
 updated: 2026-08-07
-layout: index
+layout: about
 ---
 
 # ACL 2025 → 2026 Research Topic Trend Analysis

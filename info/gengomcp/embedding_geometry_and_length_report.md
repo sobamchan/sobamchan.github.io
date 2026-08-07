@@ -1,7 +1,7 @@
 ---
 title: Text Embedding Geometry & Input Length Effects -- Literature Report
 updated: 2026-08-07
-layout: index
+layout: about
 ---
 
 # Text Embedding Geometry & Input Length Effects: Literature Report
