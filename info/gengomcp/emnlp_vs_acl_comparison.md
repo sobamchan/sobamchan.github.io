@@ -1,3 +1,9 @@
+---
+title: ACL vs EMNLP
+updated: 2026-08-07
+layout: index
+---
+
 # ACL vs EMNLP: Comparative Research Topic Trend Analysis (2024–2026)
 
 ## Methodology

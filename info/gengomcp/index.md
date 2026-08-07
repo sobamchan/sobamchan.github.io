@@ -1,6 +1,7 @@
 ---
 title: GenGO MCP
 updated: 2026-08-07
+layout: index
 ---
 
 ### Context

@@ -1,3 +1,9 @@
+---
+title: ACL 2025 → 2026 Research Topic Trend Analysis
+updated: 2026-08-07
+layout: index
+---
+
 # ACL 2025 → 2026 Research Topic Trend Analysis
 
 *Based on a **150-paper sample** from each year (300 total), retrieved via the gengomcp MCP tool suite.*
