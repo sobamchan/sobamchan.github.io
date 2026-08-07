@@ -17,6 +17,10 @@ Note that I did not validate the output report.
 
 - [ACL 2025 → 2026 Research Topic Trend Analysis](/info/gengomcp/acl_2025_2026_trend_analysis)
 - [Text Embedding Geometry & Input Length Effects Literature Report](/info/gengomcp/embedding_geometry_and_length_report)
+- [ACL vs EMNLP: Comparative Research Topic Trend Analysis (2024–2026)](/info/gengomcp/emnlp_vs_acl_comparison)
+  - the conclusion is interesting. ACL seems more "empirical" than EMNLP from the report
+  - "ACL has evolved into a systems-focused conference"
+  - "EMNLP has evolved into a reasoning-focused conference"
 
 
 ### Refs
