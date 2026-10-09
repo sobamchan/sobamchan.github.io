@@ -58,7 +58,7 @@ title: "publication"
   
 - "SciLaD: A Large-Scale, Transparent, Reproducible Dataset for Natural Scientific Language Processing"
   - Luca Foppiano, **Sotaro Takeshita**, [Pedro Ortiz Suarez](https://portizs.eu/), Ekaterina Borisova, Raia Abu Ahmad, Malte Ostendorff, Fabio Barth, Julian Moreno-Schneider, Georg Rehm
-  - To appear at LREC 2026, [arXiv](https://arxiv.org/abs/2512.11192)
+   - LREC 2026, [paper](https://aclanthology.org/2026.lrec-1.603/), [arXiv](https://arxiv.org/abs/2512.11192)
   - tl;dr: pre-training is expensive
 - "ZusammenQA: Data Augmentation with Specialized Models for Cross-lingual Open-retrieval Question Answering System"
   - [Chia-Chien Hung](https://chiachienhung.github.io/), [Tommaso Green](https://green-t.io/), [Robert Litschko](https://rlitschk.github.io/), [Tornike Tsereteli](https://www.torniketsereteli.com/), **Sotaro Takeshita**, Marco Bombieri, [Goran Glavaš](https://sites.google.com/view/goranglavas), [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/)
