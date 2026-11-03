@@ -12,7 +12,7 @@ title: "publication"
   - <b style="color:red;font-weight:bold;">People's Choice Award</b> ([link](https://2025.emnlp.org/program/awards/#peoples-choice-award), [post](https://x.com/emnlpmeeting/status/1987285128775639117?s=20))
 - "To MRL or not to MRL: Text Embeddings are Robust to Truncation Without Matryoshka Learning, Except In Heavy Truncation Scenarios"
   - **Sotaro Takeshita**, Yurina Takeshita, [Simone Paolo Ponzetto](https://www.uni-mannheim.de/dws/people/professors/prof-dr-simone-paolo-ponzetto/),  [Daniel Ruffinelli](https://ruffinelli.io/)
-  - To appear at EMNLP 2026 (Findings), [arxiv](https://arxiv.org/abs/2605.16608), [project page](https://sotaro.io/papers/mrl-or-random), [code](https://github.com/sobamchan/mrl-or-random)
+  - EMNLP 2026 (Findings), [paper](https://aclanthology.org/2026.findings-emnlp.2441/), [arxiv](https://arxiv.org/abs/2605.16608), [project page](https://sotaro.io/papers/mrl-or-random), [code](https://github.com/sobamchan/mrl-or-random)
   - tl;dr: MRL?
   
   
